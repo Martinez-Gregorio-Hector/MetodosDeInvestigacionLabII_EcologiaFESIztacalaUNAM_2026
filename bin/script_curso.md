@@ -1,6 +1,8 @@
-# Código para el análisis bioinformático 
+# Código para el análisis bioinformático
 
-## Conectarse al servidor 
+En esta sección se trabajará en grupo para optimizar recursos computacionales
+
+## Conectarse al servidor y dirigirse a la carpeta de trabajo
 
 ```
 Dirección ip
@@ -10,13 +12,20 @@ Password
 ULabo13.
 ```
 
-## Dirigirse al a la carpeta del trabajo
+Dirigirse al a la carpeta del trabajo
 
+```
+cd /home/lab13/Documents/Ecologia2026
+```
 
-cd /home/lab13/Documents/Ecologia2025
-# Hacer un listado de archivos y directorios
-ls -lh
-# cambiar al directorio que vamos a trabajar
+Hacer un listado de archivos y directorios
+
+```
+ls - lh
+```
+
+Cambiar al directorio que vamos a trabajar
+
 cd Ecologia01
 cd Ecologia02
 cd EcologiaXX
