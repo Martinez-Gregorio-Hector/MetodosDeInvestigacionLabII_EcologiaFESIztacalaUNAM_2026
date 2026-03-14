@@ -20,6 +20,3 @@ Ligas de interés para aprender **[bash](https://vinuesa.github.io/intro2linux/i
   <img src="Figuras/logos.jpg? raw=true" alt="shell" width="800" height="700">
 </p>
 
-
-
-
