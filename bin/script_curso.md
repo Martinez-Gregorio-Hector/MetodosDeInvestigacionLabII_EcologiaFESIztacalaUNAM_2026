@@ -1,4 +1,4 @@
-# Código para el análisis bioinformático
+# Código para el análisis bioinformático (por equipo)
 
 En esta sección se trabajará en grupo para optimizar recursos computacionales
 
