@@ -1,12 +1,14 @@
 # Métodos de Investigación en Laboratorio II
 
-Este repositorio forma parte de la asignatura **Métodos de Investigación en Laboratorio II** de la Licenciatura en Ecología de la Facultad de Estudios Superiores Iztacala de la Universidad Nacional Autónoma de México.
+Este repositorio forma parte de la asignatura de **Métodos de Investigación en Laboratorio II** de la Licenciatura en Ecología de la Facultad de Estudios Superiores Iztacala de la Universidad Nacional Autónoma de México.
 
 El curso se divide en dos componentes principales:
 
 **i) Componente experimental**
 
-En esta sección, los estudiantes adquieren habilidades prácticas de laboratorio, incluyendo el manejo de material y equipo básico, la extracción de ácidos nucleicos, la preparación de bibliotecas de secuenciación para estudios de microbioma y los fundamentos de la secuenciación masiva.
+En esta sección, los estudiantes adquieren habilidades prácticas de laboratorio, incluyendo el manejo de material y equipo básico, la extracción de ácidos nucleicos, la preparación de bibliotecas de secuenciación para estudios de microbioma y los fundamentos de la secuenciación masiva. Nu
+
+**[bash](https://github.com/Martinez-Gregorio-Hector/MetodosDeInvestigacion_LabII_FESIztacalaEcologia/blob/main/Data/SecuenciacionMasivaManual_Analisis16s_rRNA_2026.pdf)**
 
 **ii) Componente bioinformático**
 
