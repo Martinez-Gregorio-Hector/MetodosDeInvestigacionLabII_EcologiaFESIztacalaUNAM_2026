@@ -6,7 +6,7 @@ El curso se divide en dos componentes principales:
 
 **i) Componente experimental**
 
-En esta sección, los estudiantes adquirirán habilidades prácticas de laboratorio, incluyendo el manejo del material del laboratorio, la extracción de ácidos nucleicos, fundamentos de secuenciación masiva y la preparación de bibliotecas genómicas para el estudio del microbioma amplificando la region v3-v4 del gen 16S rRNA. En la siguiente liga se encuentra el **[manual de trabajo de laboratorio](https://github.com/Martinez-Gregorio-Hector/MetodosDeInvestigacion_LabII_FESIztacalaEcologia/blob/main/Data/SecuenciacionMasivaManual_Analisis16s_rRNA_2026.pdf)**
+En esta sección, los estudiantes adquirirán habilidades prácticas de laboratorio, incluyendo el manejo del material del laboratorio, la extracción de ácidos nucleicos, fundamentos de secuenciación masiva y la preparación de bibliotecas genómicas para el estudio del microbioma amplificando la region v3-v4 del gen 16S rRNA. En la siguiente liga se encuentra el **[manual-de-trabajo-de-laboratorio](https://github.com/Martinez-Gregorio-Hector/MetodosDeInvestigacion_LabII_FESIztacalaEcologia/blob/main/Data/SecuenciacionMasivaManual_Analisis16s_rRNA_2026.pdf)**
 
 **ii) Componente bioinformático**
 
