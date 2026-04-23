@@ -13,4 +13,6 @@ Su principal objetivo es impulsar el software de libre distribución junto con s
 
 ## Línea de tiempo de los SO
 
-
+<p align="center">  
+  <img src="Figuras/TimelineOS.jpg? raw=true" alt="shell" width="1000" height="600">
+</p>
