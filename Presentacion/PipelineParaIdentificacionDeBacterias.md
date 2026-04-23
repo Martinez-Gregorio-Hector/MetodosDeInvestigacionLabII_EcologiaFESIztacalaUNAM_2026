@@ -80,7 +80,7 @@ Las primeras(20 pb) y las últimas lecturas (a partir de 410 pb) son eliminadas 
 
 **[Sukjung Choi et al., 2021](https://link.springer.com/article/10.1186/s12967-021-03154-0)**
 
-## Datos de salida de qiime2
+## Cómo se almacena la información en qiime2
 
 El algoritmo de qiime proporciona dos tipos de datos **qza** y **qzv**. **[QIIME 2 View](https://view.qiime2.org/)** permite visualizar archivos **qza** y **qzv** directamente en un navegador.
 
