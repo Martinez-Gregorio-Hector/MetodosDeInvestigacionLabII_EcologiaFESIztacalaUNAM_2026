@@ -144,6 +144,10 @@ Esta máquina cuenta con los programas que se usarán en el curso.
   <img src="Figuras/LocalRemota.jpg? raw=true" alt="shell" width="1000" height="600">
 </p>
 
+<p align="center">  
+  <img src="Figuras/shell2.jpg? raw=true" alt="shell" width="1000" height="600">
+</p>
+
 ## Conexión remota
 
 **ssh user@host**
@@ -158,12 +162,22 @@ ssh claraestela@132.248.216.138
 
 ssh emiliocordoba@132.248.216.138
 
-Vamos a acceder al servidor con la siguiente dirección ip
+Vamos a acceder al servidor con la siguiente dirección **ip**
 
 ```
 ssh lab13@132.248.216.138
 ```
 
+Una vez que accedemos al servidor nos dirigimos a la carpeta de Ecologia2026
+
+```
+cd Documents/Ecologia2026
+```
+## Introducción a línea de comandos
+
+```
+command [-flag(s)] [-option(s)] [value] [argument(s)]
+```
 
 
 
