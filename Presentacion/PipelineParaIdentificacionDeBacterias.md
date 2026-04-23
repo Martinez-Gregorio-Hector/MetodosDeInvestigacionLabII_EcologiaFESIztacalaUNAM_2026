@@ -64,6 +64,13 @@ Las primeras(20 pb) y las últimas lecturas (a partir de 410 pb) son eliminadas 
 
 **[Bolyen et al., 2019](https://www.nature.com/articles/s41587-019-0209-9)**
 
+<p align="center">  
+  <img src="Figuras/CancerDeColon2.png? raw=true" alt="shell" width="1000" height="600">
+</p>
+
+<p align="center">  
+  <img src="Figuras/CancerDeColon3.png? raw=true" alt="shell" width="1000" height="600">
+</p>
 
 <p align="center">  
   <img src="Figuras/CancerDeColon.svg? raw=true" alt="shell" width="1000" height="600">
