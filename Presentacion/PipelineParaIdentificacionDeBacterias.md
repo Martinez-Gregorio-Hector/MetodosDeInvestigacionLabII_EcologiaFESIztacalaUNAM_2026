@@ -91,6 +91,7 @@ El algoritmo de qiime proporciona dos tipos de datos **qza** y **qzv**. **[QIIME
 - rep-seqs.qza → Secuencias representativas
 - taxonomy.qza → Clasificación taxonómica
 - rooted-tree.qza → Árbol filogenético
+
   
 * **qzv** son archivos para visualizar resultados
 
@@ -100,3 +101,4 @@ El algoritmo de qiime proporciona dos tipos de datos **qza** y **qzv**. **[QIIME
 - alpha-rarefaction.qzv → Curvas de rarefacción
 - barplot.qzv → Gráficos de abundancia taxonómica
 
+En el tutorial de qiime2 podemos ver las características de estos **[archivos](https://docs.qiime2.org/2023.7/tutorials/pd-mice/)**
