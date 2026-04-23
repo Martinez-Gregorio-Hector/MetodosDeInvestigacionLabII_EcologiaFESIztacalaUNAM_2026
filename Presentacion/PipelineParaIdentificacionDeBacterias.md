@@ -108,3 +108,9 @@ En el tutorial de qiime2 podemos ver las características de estos **[archivos](
 <p align="center">  
   <img src="Figuras/Taxonomic_Rank_Graph.svg? raw=true" alt="shell" width="1000" height="600">
 </p>
+
+## Métodos para el estudio del microbioma
+
+<p align="center">  
+  <img src="Figuras/TecnicasBacterias.svg? raw=true" alt="shell" width="1000" height="600">
+</p>
