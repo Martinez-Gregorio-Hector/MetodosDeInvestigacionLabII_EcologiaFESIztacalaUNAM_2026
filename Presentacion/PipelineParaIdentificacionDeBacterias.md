@@ -84,7 +84,7 @@ Las primeras(20 pb) y las últimas lecturas (a partir de 410 pb) son eliminadas 
 
 El algoritmo de qiime proporciona dos tipos de datos **qza** y **qzv**. **[QIIME 2 View](https://view.qiime2.org/)** permite visualizar archivos **qza** y **qzv** directamente en un navegador.
 
-* **qza** son los archivos de datos procesados que se usan como entrada en los siguientes pasos
+**qza** son los archivos de datos procesados que se usan como entrada en los siguientes pasos
   
 - demux.qza → Secuencias importadas
 - table.qza → Tabla de abundancia (ASVs/OTUs)
@@ -93,7 +93,7 @@ El algoritmo de qiime proporciona dos tipos de datos **qza** y **qzv**. **[QIIME
 - rooted-tree.qza → Árbol filogenético
 
   
-* **qzv** son archivos para visualizar resultados
+**qzv** son archivos para visualizar resultados
 
 - demux.qzv → Calidad de secuencias
 - table.qzv → Resumen de tabla
