@@ -13,3 +13,4 @@ Su principal objetivo es impulsar el software de libre distribución junto con s
 
 ## Línea de tiempo de los SO
 
+
