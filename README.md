@@ -7,7 +7,8 @@ El curso se divide en dos componentes principales:
 
 **i) Componente experimental**
 
-En esta sección, los estudiantes adquirirán habilidades prácticas de laboratorio, incluyendo el manejo del material del laboratorio, la extracción de ácidos nucleicos, fundamentos de secuenciación masiva y la preparación de bibliotecas genómicas para el estudio del microbioma, analizando la region v3-v4 del gen **_16S rRNA_**. En la siguiente liga se encuentra el **[manual-de-trabajo-de-laboratorio](https://github.com/Martinez-Gregorio-Hector/MetodosDeInvestigacion_LabII_FESIztacalaEcologia/blob/main/Data/SecuenciacionMasivaManual_Analisis16s_rRNA_2026.pdf)** y la **[plantilla](https://github.com/Martinez-Gregorio-Hector/MetodosDeInvestigacion_LabII_FESIztacalaEcologia/blob/main/Data/plantilla_ecologia.pptx)** que usaremos en las presentaciones y exposiciones.
+En esta sección, los estudiantes adquirirán habilidades prácticas de laboratorio, incluyendo el manejo del material del laboratorio, la extracción de ácidos nucleicos, fundamentos de secuenciación masiva y la preparación de bibliotecas genómicas para el estudio del microbioma, analizando la region v3-v4 del gen **_16S rRNA_**. En la siguiente liga se encuentra el **[manual-de-trabajo-de-laboratorio](https://github.com/Martinez-Gregorio-Hector/MetodosDeInvestigacion_LabII_FESIztacalaEcologia/blob/main/Data/SecuenciacionMasivaManual_Analisis16s_rRNA_2026.pdf)** y la **[plantilla para las exposiciones](https://github.com/Martinez-Gregorio-Hector/MetodosDeInvestigacion_LabII_FESIztacalaEcologia/blob/main/Data/plantilla_ecologia.pptx)**, **(presentaciones en clases)[]** y **[articulos de técnicas de laboratorio]()**
+
 
 **ii) Componente bioinformático**
 
