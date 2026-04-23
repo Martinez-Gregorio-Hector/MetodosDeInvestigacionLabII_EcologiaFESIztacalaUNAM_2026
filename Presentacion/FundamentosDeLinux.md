@@ -16,3 +16,32 @@ Su principal objetivo es impulsar el software de libre distribución junto con s
 <p align="center">  
   <img src="Figuras/TimelineOS.jpg? raw=true" alt="shell" width="1000" height="600">
 </p>
+
+Breve historia de los **[SO](https://techsnap.tv/operating-systems/a-brief-history-of-operating-systems/)**
+
+## ¿Por qué usar Linux y no Windows?
+
+| Ventajas de usar Windows                 | Ventajas de usar Linux                                                     |
+|------------------------------------------|----------------------------------------------------------------------------|
+| 1. Es fácil de Usar                      | 1. Software de libre distribución                                          |
+| 2. Amplio catálogo de software comercial | 2. Aprovechamiento de hardware                                             |
+| 3. Compatibilidad de hardware            | 3. Es seguro y fiable                                                      |
+|                                          | 4. Completamente personalizable                                            |
+|                                          | 5. Modular                                                                 |
+|                                          | 6. Su desarrollo es independiente a los intereses de grandes corporaciones |
+|                                          | 7. Multitarea y multiusuario                                               |
+|                                          | 8. Administrador                                                           |
+
+
+<p align="center">  
+  <img src="Figuras/LinuxVsWindows.png? raw=true" alt="shell" width="1000" height="600">
+</p>
+
+
+
+
+
+
+
+
+
