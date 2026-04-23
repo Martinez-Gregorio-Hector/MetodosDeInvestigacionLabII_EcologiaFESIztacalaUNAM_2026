@@ -61,28 +61,29 @@ Ordena el acceso a la(s) CPU(s) de los programas.
 
 ## Shell
 
-* El Shell permite interactuar con el sistema (vía el kernel).
+El Shell permite interactuar con el sistema (vía el kernel).
 
-* Lee los comandos tecleados por el usuario y los ejecuta.
+Lee los comandos tecleados por el usuario y los ejecuta.
   
-* El shell puede servir como base para escribir scripts (tareas más complejas).
+El shell puede servir como base para escribir scripts (tareas más complejas).
 
-  
-Existen varios Shell disponibles (lista no exhaustiva): 
- Bourne shell (sh) 
- Korn shell (ksh) 
- C shell (csh) 
- Bash shell (bash) 
- Z shell (zsh) 
+Existen varios Shell disponibles (lista no exhaustiva): 
+
+* Bourne shell (sh)
+* Korn shell (ksh)
+* C shell (csh)
+* Bash shell (bash)
+* Z shell (zsh) 
 
 <p align="center">  
   <img src="Figuras/shell.png? raw=true" alt="shell" width="1000" height="600">
 </p>
 
+## Las responsabilidades de shell
 
-
-
-
+<p align="center">  
+  <img src="Figuras/ActividadesShell.png? raw=true" alt="shell" width="1000" height="600">
+</p>
 
 
 
