@@ -89,6 +89,30 @@ Existen varios Shell disponibles (lista no exhaustiva):
   <img src="Figuras/ActividadesShell.png? raw=true" alt="shell" width="1000" height="600">
 </p>
 
+## bash
+
+Bash es amigable.
+
+Las flechas ↑ y ↓ permiten navegar dentro del historial de los comandos.
+
+La tecla ”tabulador” [TAB] permite auto-completar los nombres de los archivos y/o comandos.
+
+Gestión de jobs en segundo plano (background).
+
+Posibilidad de definir alias.
+
+## Sistema de archivos
+
+El sistema de archivos representa el método con el cual el sistema operativo organiza los datos. 
+
+Incluye los archivos, y tambien los directorios ( o carpetas)
+
+El referencial de todo el sistema de archivo de una máquina es el caracter **“/"**
+
+<p align="center">  
+  <img src="Figuras/EstructuraLinux.png? raw=true" alt="shell" width="1000" height="600">
+</p>
+
 
 
 
