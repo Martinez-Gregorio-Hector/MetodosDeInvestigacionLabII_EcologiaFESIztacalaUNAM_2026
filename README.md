@@ -3,11 +3,6 @@
 Este repositorio forma parte de la asignatura de **Métodos de Investigación en Laboratorio II** de la Licenciatura en Ecología de la Facultad de Estudios Superiores Iztacala de la Universidad Nacional Autónoma de México.
 
 
-<p align="center">  
-  <img src="Figuras/TrabajoDeLaboratorio.jpg? raw=true" alt="shell" width="1000" height="500">
-</p>
-
-
 El curso se divide en dos componentes principales:
 
 **i) Componente experimental**
@@ -19,6 +14,12 @@ En esta sección, los estudiantes adquirirán habilidades prácticas de laborato
 En esta sección, los estudiantes analizan los datos generados durante el componente experimental. Para ello, aprenden herramientas de análisis computacional y lenguajes de programación utilizados en bioinformática, como bash, aplicados al procesamiento y análisis de datos de secuenciación masiva del gel **_16S rRNA_**.
 
 Ligas de interés para aprender **[bash](https://vinuesa.github.io/intro2linux/index.html#expresiones-regulares---una-breve-introducci%C3%B3n)** y **[r](https://r4ds.had.co.nz/index.html)**.
+
+
+<p align="center">  
+  <img src="Figuras/TrabajoDeLaboratorio.jpg? raw=true" alt="shell" width="1000" height="500">
+</p>
+
 
 <p align="center">  
   <img src="Figuras/Logos.jpg? raw=true" alt="shell" width="1000" height="700">
