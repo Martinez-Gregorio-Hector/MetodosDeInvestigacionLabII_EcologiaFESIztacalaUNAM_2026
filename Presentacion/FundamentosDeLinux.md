@@ -184,13 +184,41 @@ command [-flag(s)] [-option(s)] [value] [argument(s)]
 </p>
 
 
-## ¿Dónde encuentro una lista y descripción básica de los comandos disponibles ? 
+## ¿Dónde encuentro una descripción básica de los comandos disponibles? 
 
 
-* En Wikipedia: **[Linux_commands](http://en.wikibooks.org/wiki/Linux_Guide/Linux_commands)** y **[List_of_Unix_programs](http://en.wikipedia.org/wiki/List_of_Unix_programs)**
+* En Wikipedia: **[Linux commands](http://en.wikibooks.org/wiki/Linux_Guide/Linux_commands)** y **[List of Unix programs](http://en.wikipedia.org/wiki/List_of_Unix_programs)**
 
 
 * Un sencillo tutorial (caps 1-5): **[Unix](http://www.ee.surrey.ac.uk/Teaching/Unix/)**
 
 * **[intro2linux](https://vinuesa.github.io/intro2linux/index.html)**
+
+## Introducción a línea de comandos
+
+Vamos a trabajar en el directorio de Ecologia2026, si todavía no estás en la carpeta puedes utilizar la siguiente ruta para que puedas llegar a la carpeta
+
+```
+cd /home/lab13/Documents/Ecologia2026
+```
+
+Antes de crear una carpeta persona, vamos a utilizar el comando **ls** para listar que archivos se encuentran dentro de la carpeta **Ecologia2026**. Recuerda que ls tiene varias opciones que puedes convinar con el comando **ls**
+
+```
+ls -lh
+
+## drwxr-xr-x. 2 lab13 lab13 6 Apr 22 22:16 Alumnos
+## drwxr-xr-x. 2 lab13 lab13 6 Apr 22 22:16 Equipo01
+## drwxr-xr-x. 2 lab13 lab13 6 Apr 22 22:16 Equipo02
+## drwxr-xr-x. 2 lab13 lab13 6 Apr 22 22:16 Equipo03
+## drwxr-xr-x. 2 lab13 lab13 6 Apr 22 22:16 Equipo04
+## drwxr-xr-x. 2 lab13 lab13 6 Apr 22 22:16 Equipo05
+## drwxr-xr-x. 2 lab13 lab13 6 Apr 22 22:16 Equipo06
+## drwxr-xr-x. 2 lab13 lab13 6 Apr 22 22:16 Equipo07
+## drwxr-xr-x. 2 lab13 lab13 6 Apr 22 22:16 Equipo08
+## drwxr-xr-x. 2 lab13 lab13 6 Apr 22 22:16 Equipo09
+## drwxr-xr-x. 2 lab13 lab13 6 Apr 22 22:16 Equipo10
+```
+
+
 
