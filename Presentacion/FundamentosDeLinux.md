@@ -179,10 +179,18 @@ cd Documents/Ecologia2026
 command [-flag(s)] [-option(s)] [value] [argument(s)]
 ```
 
+<p align="center">  
+  <img src="Figuras/bash-cheat-sheet.webp? raw=true" alt="shell" width="1000" height="600">
+</p>
 
 
+## ¿Dónde encuentro una lista y descripción básica de los comandos disponibles ? 
 
 
+* En Wikipedia: **[Linux_commands](http://en.wikibooks.org/wiki/Linux_Guide/Linux_commands)** y **[List_of_Unix_programs](http://en.wikipedia.org/wiki/List_of_Unix_programs)**
 
 
+* Un sencillo tutorial (caps 1-5): **[Unix](http://www.ee.surrey.ac.uk/Teaching/Unix/)**
+
+* **[intro2linux](https://vinuesa.github.io/intro2linux/index.html)**
 
