@@ -29,7 +29,7 @@ En esta sección describiremos el algoritmos y pipelines que se usarán para la 
   <img src="Figuras/MultiQC2.svg? raw=true" alt="shell" width="1000" height="600">
 </p>
 
-## 2a.Ensambale de lecturas pareadas
+## 2a. Ensambale de lecturas pareadas
 
 <p align="center">  
   <img src="Figuras/Ensamble.jpg? raw=true" alt="shell" width="1000" height="600">
@@ -39,7 +39,7 @@ i) generar un solo archivo fastq
 ii) dejar aquellas bases con una calidad arriba de 20
 
 ```
-pear -f [lectura_forward] –r [lectura_reverse] -o ensamblado.fastq -j 10 -q 30
+pear -f [lectura_forward] –r [lectura_reverse] -o ensamblado.fastq -j 10 -q 20
 ```
 
 Por cada muestra se generan tres archivos:
@@ -48,7 +48,7 @@ Por cada muestra se generan tres archivos:
 * Discarded, lecturas descartadas (un archivo).
 * Unassambled, lecturas que no ensambló por que no se traslaparon (dos archivos).
 
-## 2b.Evaluación de la calidad del llamado de bases después del ensamblado
+## 2b. Evaluación de la calidad del llamado de bases después del ensamblado
 
 <p align="center">  
   <img src="Figuras/MultiQC.svg? raw=true" alt="shell" width="1000" height="600">
