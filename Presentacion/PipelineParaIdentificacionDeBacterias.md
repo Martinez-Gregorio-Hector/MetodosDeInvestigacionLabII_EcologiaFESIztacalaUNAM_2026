@@ -64,22 +64,6 @@ Las primeras(20 pb) y las últimas lecturas (a partir de 410 pb) son eliminadas 
 
 **[Bolyen et al., 2019](https://www.nature.com/articles/s41587-019-0209-9)**
 
-## Ejemplo de análisis de qiime2
-
-<p align="center">  
-  <img src="Figuras/CancerDeColon2.png? raw=true" alt="shell" width="800" height="600">
-</p>
-
-<p align="center">  
-  <img src="Figuras/CancerDeColon.svg? raw=true" alt="shell" width="1000" height="600">
-</p>
-
-<p align="center">  
-  <img src="Figuras/CancerDeColon3.png? raw=true" alt="shell" width="1000" height="600">
-</p>
-
-**[Sukjung Choi et al., 2021](https://link.springer.com/article/10.1186/s12967-021-03154-0)**
-
 ## ¿Cómo se almacena la información en qiime2?
 
 El algoritmo de qiime proporciona dos tipos de datos **qza** y **qzv**. **[QIIME 2 View](https://view.qiime2.org/)** permite visualizar archivos **qza** y **qzv** directamente en un navegador.
@@ -114,3 +98,19 @@ En el tutorial de qiime2 podemos ver las características de estos **[archivos](
 <p align="center">  
   <img src="Figuras/TecnicasBacterias.svg? raw=true" alt="shell" width="1000" height="600">
 </p>
+
+## Ejemplo de análisis de qiime2
+
+<p align="center">  
+  <img src="Figuras/CancerDeColon2.png? raw=true" alt="shell" width="800" height="600">
+</p>
+
+<p align="center">  
+  <img src="Figuras/CancerDeColon.svg? raw=true" alt="shell" width="1000" height="600">
+</p>
+
+<p align="center">  
+  <img src="Figuras/CancerDeColon3.png? raw=true" alt="shell" width="1000" height="600">
+</p>
+
+**[Sukjung Choi et al., 2021](https://link.springer.com/article/10.1186/s12967-021-03154-0)**
