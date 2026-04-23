@@ -123,9 +123,26 @@ El referencial de todo el sistema de archivo de una máquina es el caracter **�
 
 => 3. **[Fedora](http://fedoraproject.org/es/)**
 
-=> 4. **[Biolinux](http://environmentalomics.org/bio-linux/)**
-
 2. Puedes instalar **[MobaXterm](https://mobaxterm.mobatek.net/download.html)**, que proporciona una terminal para Windows con un servidor de ambiente gráfico X11, un cliente SSH para establecer sesiones remotas seguras con un servidor, diversas herramientas de red y más. 
+
+## Otras opciones
+
+=> 1. Usar la terminal en entorno de Windows 10. Acceder a la terminal y comunicarnos con el servidor.
+
+=> 2. Usar Rstudio, en la pestaña tools, seleccionar terminal. Acceder y comunicarnos con el servidor. (Opción más práctica del curso).
+
+Usaremos el servidor del lab13 de la UBIMED de la FES Iztacala. $${\color{red}NOTA \space IMPORTANTE: \space no \space acceder \space después \space del \space curso}$$
+
+
+El servidor es una máquina con 8 núcleos y 16G de RAM.
+
+Esta máquina cuenta con los programas que se usarán en el curso.
+
+## Tipos de Shell
+
+
+
+
 
 
 
