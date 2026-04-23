@@ -80,7 +80,7 @@ Existen varios Shell disponibles (lista no exhaustiva):
 * Z shell (zsh) 
 
 <p align="center">  
-  <img src="Figuras/shell.png? raw=true" alt="shell" width="1000" height="600">
+  <img src="Figuras/shell.png? raw=true" alt="shell" width="1000" height="400">
 </p>
 
 ## Las responsabilidades de shell
@@ -123,14 +123,15 @@ El referencial de todo el sistema de archivo de una máquina es el caracter **�
 
 => 3. **[Fedora](http://fedoraproject.org/es/)**
 
+
 <p align="center">  
-  <img src="Figuras/DistribucionesLinux.png? raw=true" alt="shell" width="1000" height="600">
+  <img src="Figuras/DistribucionesLinux.png? raw=true" alt="shell" width="600" height="600">
 </p>
 
 2. Puedes instalar **[MobaXterm](https://mobaxterm.mobatek.net/download.html)**, que proporciona una terminal para Windows con un servidor de ambiente gráfico X11, un cliente SSH para establecer sesiones remotas seguras con un servidor, diversas herramientas de red y más. 
 
 <p align="center">  
-  <img src="Figuras/MobaxTermn.png? raw=true" alt="shell" width="1000" height="600">
+  <img src="Figuras/MobaxTermn.png? raw=true" alt="shell" width="800" height="800">
 </p>
 
 ## Otras opciones
