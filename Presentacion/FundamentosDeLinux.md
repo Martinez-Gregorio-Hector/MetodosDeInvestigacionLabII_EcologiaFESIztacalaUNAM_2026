@@ -140,7 +140,29 @@ Esta máquina cuenta con los programas que se usarán en el curso.
 
 ## Tipos de Shell
 
+<p align="center">  
+  <img src="Figuras/LocalRemota.jpg? raw=true" alt="shell" width="1000" height="600">
+</p>
 
+## Conexión remota
+
+**ssh user@host**
+
+ssh lab13@132.248.216.138
+
+ssh hectormartinez@132.248.216.138
+
+ssh felipevaca@132.248.216.138
+
+ssh claraestela@132.248.216.138
+
+ssh emiliocordoba@132.248.216.138
+
+Vamos a acceder al servidor con la siguiente dirección ip
+
+```
+ssh lab13@132.248.216.138
+```
 
 
 
