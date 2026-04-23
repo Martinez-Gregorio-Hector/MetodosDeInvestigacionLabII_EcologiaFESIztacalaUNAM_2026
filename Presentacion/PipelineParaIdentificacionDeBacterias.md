@@ -70,20 +70,20 @@ El algoritmo de qiime proporciona dos tipos de datos **qza** y **qzv**. **[QIIME
 
 **qza** son los archivos de datos procesados que se usan como entrada en los siguientes pasos
   
-- demux.qza → Secuencias importadas
-- table.qza → Tabla de abundancia (ASVs/OTUs)
-- rep-seqs.qza → Secuencias representativas
-- taxonomy.qza → Clasificación taxonómica
-- rooted-tree.qza → Árbol filogenético
+- **demux.qza** → Secuencias importadas
+- **table.qza** → Tabla de abundancia (ASVs/OTUs)
+- **rep-seqs.qza** → Secuencias representativas
+- **taxonomy.qza** → Clasificación taxonómica
+- **rooted-tree.qza** → Árbol filogenético
 
   
 **qzv** son archivos para visualizar resultados
 
-- demux.qzv → Calidad de secuencias
-- table.qzv → Resumen de tabla
-- taxonomy.qzv → Resultados taxonómicos
-- alpha-rarefaction.qzv → Curvas de rarefacción
-- barplot.qzv → Gráficos de abundancia taxonómica
+- **demux.qzv** → Calidad de secuencias
+- **table.qzv** → Resumen de tabla
+- **taxonomy.qzv** → Resultados taxonómicos
+- **alpha-rarefaction.qzv** → Curvas de rarefacción
+- **barplot.qzv** → Gráficos de abundancia taxonómica
 
 En el tutorial de qiime2 podemos ver las características de estos **[archivos](https://docs.qiime2.org/2023.7/tutorials/pd-mice/)**
 
@@ -102,6 +102,11 @@ En el tutorial de qiime2 podemos ver las características de estos **[archivos](
 <p align="center">  
   <img src="Figuras/IlluminaOxford.jpg? raw=true" alt="shell" width="800" height="600">
 </p>
+
+## 3.1 Qiime2 - Importaciión de datos
+
+
+
 
 ## Ejemplo de análisis de qiime2
 
