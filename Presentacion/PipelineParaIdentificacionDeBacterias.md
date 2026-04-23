@@ -17,11 +17,11 @@ En esta sección describiremos el algoritmos y pipelines que se usarán para la 
   <img src="Figuras/PipelineBioinformatico.svg? raw=true" alt="shell" width="1000" height="600">
 </p>
 
-1. Evaluación de la calidad del llamado de bases: **(fastQC)[https://www.bioinformatics.babraham.ac.uk/projects/fastqc/]** y **(Multiqc)[https://github.com/MultiQC/MultiQC]**
+1. Evaluación de la calidad del llamado de bases: **[fastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)** y **[Multiqc](https://github.com/MultiQC/MultiQC)**
 
-2. Ensamble de lecturas pareadas: **(PEAR)[https://cme.h-its.org/exelixis/web/software/pear/doc.html]**
+2. Ensamble de lecturas pareadas: **[PEAR](https://cme.h-its.org/exelixis/web/software/pear/doc.html)**
 
-3. Identificación taxonómica: **(QIIME2)[https://qiime2.org/]**
+3. Identificación taxonómica: **[QIIME2](https://qiime2.org/)**
 
 
 
