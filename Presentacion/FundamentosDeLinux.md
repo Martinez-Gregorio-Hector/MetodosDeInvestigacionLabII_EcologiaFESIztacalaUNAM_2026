@@ -37,9 +37,27 @@ Breve historia de los **[SO](https://techsnap.tv/operating-systems/a-brief-histo
   <img src="Figuras/LinuxVsWindows.png? raw=true" alt="shell" width="1000" height="600">
 </p>
 
+## Hardware y software
 
+Hardware: Conjunto de elementos físicos o materiales que constituyen una computadora.
 
+Software: Programas para realizar determinadas tareas
 
+<p align="center">  
+  <img src="Figuras/HardwareSoftware.jpg? raw=true" alt="shell" width="1000" height="600">
+</p>
+
+## Kernel
+
+El **[kernel](https://linuxsimply.com/what-is-kernel/)** es el componente de software encargado de controlar la computadora (hardware).
+
+Controla el acceso a cada recurso (memoria, CPU, disco duro, tarjeta de vídeo).
+
+Ordena el acceso a la(s) CPU(s) de los programas.
+
+<p align="center">  
+  <img src="Figuras/Kernel.png? raw=true" alt="shell" width="500" height="600">
+</p>
 
 
 
