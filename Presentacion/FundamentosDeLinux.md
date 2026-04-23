@@ -115,12 +115,13 @@ El referencial de todo el sistema de archivo de una máquina es el caracter **�
 
 ## Tengo una PC que corre windows, ¿cómo puedo correr Linux en mi máquina? 
 
-1. Puedes instalar Linux en una nueva partición (Lo más recomendable). descargas gratuitas de distribuciones desde: 
+1. Puedes instalar Linux en una nueva partición (Lo más recomendable). descargas gratuitas de distribuciones desde:
+2.  
 => 1. **[Ubuntu 22.04.1 LTS](https://ubuntu.com/download/desktop)**
 
 => 2. **[Centos](https://www.centos.org/download/)**
 
-=> 3. **[Fedora](http://fedoraproject.org/es/get-fedora)**
+=> 3. **[Fedora](http://fedoraproject.org/es/)**
 
 => 4. **[Biolinux](http://environmentalomics.org/bio-linux/)**
 
