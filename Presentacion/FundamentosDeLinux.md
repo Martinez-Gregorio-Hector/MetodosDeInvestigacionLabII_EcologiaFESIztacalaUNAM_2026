@@ -203,7 +203,18 @@ command [-flag(s)] [-option(s)] [value] [argument(s)]
 
 * **[intro2linux](https://vinuesa.github.io/intro2linux/index.html)**
 
-## Introducción a línea de comandos
+## comando **cd**
+
+el comando **cd** (change directory) se usa para mover la sesión de shell a otro directorio del sistema de archivos de Linux. La sintaxis del comando cd es bastante simple: **cd destino**. El comando **cd** puede tener un solo parámetro, destino, que especifica el nombre del directorio al que se desea acceder. Si no se especifica un destino en el comando cd, lo llevará a su directorio personal.
+
+```
+cd
+cd /home/lab13/Documents/Ecologia2026
+```
+
+El parámetro de destino se puede expresar mediante dos métodos diferentes. Un método utiliza una **ruta absoluta** o una **ruta relativa** al directorio.
+
+
 
 Vamos a trabajar en el directorio de Ecologia2026, si todavía no estás en la carpeta puedes utilizar la siguiente ruta para que puedas llegar a la carpeta
 
