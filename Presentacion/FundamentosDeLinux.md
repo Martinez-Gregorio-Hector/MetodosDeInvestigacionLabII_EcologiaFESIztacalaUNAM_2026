@@ -189,7 +189,7 @@ command [-flag(s)] [-option(s)] [value] [argument(s)]
 ```
 
 <p align="center">  
-  <img src="Figuras/bash-cheat-sheet.webp? raw=true" alt="shell" width="1000" height="600">
+  <img src="Figuras/bash-cheat-sheet.webp? raw=true" alt="shell" width="800" height="600">
 </p>
 
 
@@ -203,7 +203,7 @@ command [-flag(s)] [-option(s)] [value] [argument(s)]
 
 * **[intro2linux](https://vinuesa.github.io/intro2linux/index.html)**
 
-## comando **cd**
+## comando cd
 
 el comando **cd** (change directory) se usa para mover la sesión de shell a otro directorio del sistema de archivos de Linux. La sintaxis del comando cd es bastante simple: **cd destino**. El comando **cd** puede tener un solo parámetro, destino, que especifica el nombre del directorio al que se desea acceder. Si no se especifica un destino en el comando cd, lo llevará a su directorio personal.
 
@@ -214,13 +214,67 @@ cd /home/lab13/Documents/Ecologia2026
 
 El parámetro de destino se puede expresar mediante dos métodos diferentes. Un método utiliza una **ruta absoluta** o una **ruta relativa** al directorio.
 
+<p align="center">  
+  <img src="Figuras/Rutas.jpg? raw=true" alt="shell" width="600" height="600">
+</p>
 
+Supongamos que estoy en el directorio **dir_001** y quiero dirigirme a **dir_002**, se puede hacer de dos maneras, siguiento una **ruta absoluta** o una **ruta relativa**
 
-Vamos a trabajar en el directorio de Ecologia2026, si todavía no estás en la carpeta puedes utilizar la siguiente ruta para que puedas llegar a la carpeta
+```
+## Ruta absoluta
+cd /home/filogenomica/dir_002
+## Ruta relativa
+cd ../dir_002
+```
+Para nuestra actividad vamos a trabajar en el directorio de Ecologia2026, si todavía no estás en la carpeta puedes utilizar la siguiente **ruta absoluta** para que puedas llegar al directorio
 
 ```
 cd /home/lab13/Documents/Ecologia2026
 ```
+
+## comando pwd 
+
+El comando **pwd** (print work directory) muestra la ubicación del directorio actual de la sesión de shell
+
+```
+pwd
+## /home/lab13/Documents/Ecologia2026
+```
+
+## comando ls
+
+El comando **ls** en su forma más básica muestra los archivos y directorios ubicados en su directorio actual. Ten en cuenta que el comando **ls** genera la lista en orden alfabético (en filas en lugar de columnas).
+
+```
+ls
+
+## Alumnos  Equipo01  Equipo02  Equipo03  Equipo04  Equipo05
+## Equipo06  Equipo07  Equipo08  Equipo09  Equipo10
+```
+
+El comando **ls** puede combinar con opciones, para ver esas opciones se corre **ls** con **help**
+
+```
+ls --help
+
+## -a list all (lista archivo ocultos tipo .directorio o .archivo)
+## -l long format (muestra permisos y otros atributos como usuario, grupo, tamaño del archivo y fecha de modificación)
+## -t time sort (ordena por tiempo)
+## -r reverse sort
+## -R list subdirectories recursively
+## -S size sort (ordena por tamaño)
+## -h human readable (indica Kb, Mb, Gb …)
+## etc ...
+```
+Si queremos observar 
+
+
+# NOS QUEDAMOS AQUI
+
+
+
+
+Opciones de _𝑙𝑠_
 
 Antes de crear una carpeta persona, vamos a utilizar el comando **ls** para listar que archivos se encuentran dentro de la carpeta **Ecologia2026**. Recuerda que ls tiene varias opciones que puedes convinar con el comando **ls**
 
