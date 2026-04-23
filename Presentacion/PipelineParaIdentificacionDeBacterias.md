@@ -59,3 +59,8 @@ Las primeras(20 pb) y las últimas lecturas (a partir de 410 pb) son eliminadas 
 ## 3. Identificación taxonómica
 
 
+<p align="center">  
+  <img src="Figuras/CancerDeColon.svg? raw=true" alt="shell" width="1000" height="600">
+</p>
+
+**[Sukjung Choi et al., 2021](https://link.springer.com/article/10.1186/s12967-021-03154-0)**
