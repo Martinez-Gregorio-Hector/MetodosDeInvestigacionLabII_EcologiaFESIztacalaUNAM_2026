@@ -80,7 +80,7 @@ Las primeras(20 pb) y las últimas lecturas (a partir de 410 pb) son eliminadas 
 
 **[Sukjung Choi et al., 2021](https://link.springer.com/article/10.1186/s12967-021-03154-0)**
 
-## Cómo se almacena la información en qiime2
+## ¿Cómo se almacena la información en qiime2?
 
 El algoritmo de qiime proporciona dos tipos de datos **qza** y **qzv**. **[QIIME 2 View](https://view.qiime2.org/)** permite visualizar archivos **qza** y **qzv** directamente en un navegador.
 
@@ -102,3 +102,9 @@ El algoritmo de qiime proporciona dos tipos de datos **qza** y **qzv**. **[QIIME
 - barplot.qzv → Gráficos de abundancia taxonómica
 
 En el tutorial de qiime2 podemos ver las características de estos **[archivos](https://docs.qiime2.org/2023.7/tutorials/pd-mice/)**
+
+## Niveles taxonómicos
+
+<p align="center">  
+  <img src="Figuras/Taxonomic_Rank_Graph.svg? raw=true" alt="shell" width="1000" height="600">
+</p>
