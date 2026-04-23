@@ -1,4 +1,4 @@
-# Análisis bioinformático
+# Fundamentos de Linux
 
 ## Objetivo
 Desarrollar habilidades en el uso de comandos básicos del sistema operativo (SO) Linux para su aplicación en el análisis bioinformático del gen _16S rRNA_, orientado a la identificación taxonómica de bacterias de interés ecológico a partir de distintas muestras fecales.
@@ -58,6 +58,31 @@ Ordena el acceso a la(s) CPU(s) de los programas.
 <p align="center">  
   <img src="Figuras/Kernel.png? raw=true" alt="shell" width="500" height="600">
 </p>
+
+## Shell
+
+* El Shell permite interactuar con el sistema (vía el kernel).
+
+* Lee los comandos tecleados por el usuario y los ejecuta.
+  
+* El shell puede servir como base para escribir scripts (tareas más complejas).
+
+  
+Existen varios Shell disponibles (lista no exhaustiva): 
+ Bourne shell (sh) 
+ Korn shell (ksh) 
+ C shell (csh) 
+ Bash shell (bash) 
+ Z shell (zsh) 
+
+<p align="center">  
+  <img src="Figuras/shell.png? raw=true" alt="shell" width="1000" height="600">
+</p>
+
+
+
+
+
 
 
 
