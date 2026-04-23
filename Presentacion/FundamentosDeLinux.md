@@ -113,6 +113,21 @@ El referencial de todo el sistema de archivo de una máquina es el caracter **�
   <img src="Figuras/EstructuraLinux.png? raw=true" alt="shell" width="1000" height="600">
 </p>
 
+## Tengo una PC que corre windows, ¿cómo puedo correr Linux en mi máquina? 
+
+1. Puedes instalar Linux en una nueva partición (Lo más recomendable). descargas gratuitas de distribuciones desde: 
+=> 1. **[Ubuntu 22.04.1 LTS](https://ubuntu.com/download/desktop)**
+
+=> 2. **[Centos](https://www.centos.org/download/)**
+
+=> 3. **[Fedora](http://fedoraproject.org/es/get-fedora)**
+
+=> 4. **[Biolinux](http://environmentalomics.org/bio-linux/)**
+
+2. Puedes instalar **[MobaXterm](https://mobaxterm.mobatek.net/download.html)**, que proporciona una terminal para Windows con un servidor de ambiente gráfico X11, un cliente SSH para establecer sesiones remotas seguras con un servidor, diversas herramientas de red y más. 
+
+
+
 
 
 
