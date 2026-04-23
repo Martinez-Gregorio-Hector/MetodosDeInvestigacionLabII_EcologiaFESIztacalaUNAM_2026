@@ -100,7 +100,7 @@ En el tutorial de qiime2 podemos ver las características de estos **[archivos](
 </p>
 
 <p align="center">  
-  <img src="Figuras/Illumina_Oxford.svg? raw=true" alt="shell" width="800" height="600">
+  <img src="Figuras/IlluminaOxford.jpg? raw=true" alt="shell" width="800" height="600">
 </p>
 
 ## Ejemplo de análisis de qiime2
