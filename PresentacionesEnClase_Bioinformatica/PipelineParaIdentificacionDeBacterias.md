@@ -129,10 +129,16 @@ sample-id	absolute-filepath
   <img src="Figuras/Denoising.png? raw=true" alt="shell" width="800" height="600">
 </p>
 
-**b) Alpha rarefaction**
+**c) Alpha rarefaction**
 
 <p align="center">  
   <img src="Figuras/AlphaRarefaction.png? raw=true" alt="shell" width="800" height="600">
+</p>
+
+**d) Taxa Barplot**
+
+<p align="center">  
+  <img src="Figuras/TaxaBarplot.png? raw=true" alt="shell" width="800" height="600">
 </p>
 
 
