@@ -1,9 +1,12 @@
 # Métodos de Investigación en Laboratorio II
 
-Este repositorio forma parte de la asignatura de **Métodos de Investigación en Laboratorio II** de la Licenciatura en Ecología de la Facultad de Estudios Superiores Iztacala de la Universidad Nacional Autónoma de México.
+Este repositorio forma parte de la asignatura de **Métodos de Investigación en Laboratorio II** de la **Licenciatura en Ecología** de la Facultad de Estudios Superiores Iztacala de la Universidad Nacional Autónoma de México.
 
+El objetivo del curso es proporcionar herramientas de biología molecular e informática para resolver problemas ecológicos. 
 
-El curso se divide en dos componentes principales:
+Los objetivos particulares del curso es i) la descripción de las principales técnicas utilizadas en biología molecular, ii) la comprensión de los fundamentos de las técnicas básicas de biología molecular, iii) el uso de herramientas y algoritmos bioinformáticos para el análisis de datos de secuenciación de siguiente generación, y iv) la integración de las técnicas de biología molecular y herrramientas bioinformáticas para plantear y resolver preguntas ecológicas.
+
+Por lo cual el curso tiene dos componentes principales:
 
 **i) Componente experimental**
 
