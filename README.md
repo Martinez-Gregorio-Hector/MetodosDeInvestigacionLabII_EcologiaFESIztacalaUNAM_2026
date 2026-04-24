@@ -1,6 +1,6 @@
 # Métodos de Investigación en Laboratorio II
 
-Este repositorio forma parte de la asignatura de **Métodos de Investigación en Laboratorio II** de la **[Licenciatura en Ecología](https://ecologia.iztacala.unam.mx/)** de la **[FES Iztacala, UNAM ](https://www.iztacala.unam.mx/)**
+Este repositorio forma parte de la asignatura de **Métodos de Investigación en Laboratorio II** de la **[Licenciatura en Ecología](https://ecologia.iztacala.unam.mx/)** de la **[FES Iztacala, UNAM ](https://www.iztacala.unam.mx/)**.
 
 El objetivo del curso es proporcionar herramientas de biología molecular y bioinformática para resolver problemas ecológicos. 
 
