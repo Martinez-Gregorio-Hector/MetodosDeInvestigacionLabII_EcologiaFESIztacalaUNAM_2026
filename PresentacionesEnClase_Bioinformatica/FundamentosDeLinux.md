@@ -153,6 +153,7 @@ Esta máquina cuenta con los programas que se usarán en el curso.
   <img src="Figuras/LocalRemota.jpg? raw=true" alt="shell" width="1000" height="600">
 </p>
 
+## Shell
 <p align="center">  
   <img src="Figuras/shell2.jpg? raw=true" alt="shell" width="1000" height="600">
 </p>
