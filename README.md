@@ -23,12 +23,12 @@ Ligas de interés para aprender: i) **[bash](https://vinuesa.github.io/intro2lin
 
 
 <p align="center">  
-  <img src="Figuras_Fotos/FotoDePortada/TrabajoDeLaboratorio.jpg? raw=true" alt="shell" width="1000" height="500">
+  <img src="FotoDePortada/TrabajoDeLaboratorio.jpg? raw=true" alt="shell" width="1000" height="500">
 </p>
 
 
 <p align="center">  
-  <img src="Figuras_Fotos/FotoDePortada/Logos.jpg? raw=true" alt="shell" width="1000" height="700">
+  <img src="FotoDePortada/Logos.jpg? raw=true" alt="shell" width="1000" height="700">
 </p>
 
 
