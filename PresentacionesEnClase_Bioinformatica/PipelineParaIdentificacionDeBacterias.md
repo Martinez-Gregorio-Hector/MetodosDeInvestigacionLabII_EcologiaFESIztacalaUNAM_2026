@@ -125,7 +125,9 @@ sample-id	absolute-filepath
 
 **b) Denosing
 
-Ver **[figura](https://view.qiime2.org/visualization/?src=https://docs.qiime2.org/2023.9/data/tutorials/pd-mice/dada2_stats.qzv)**
+<p align="center">  
+  <img src="Figuras/Denoising.png? raw=true" alt="shell" width="800" height="600">
+</p>
 
 
 
