@@ -27,7 +27,7 @@ Ligas de interés para aprender: i) **[bash](https://vinuesa.github.io/intro2lin
 
 **[Dr. Héctor Martínez Gregorio](https://scholar.google.com/citations?user=c0hp8RoAAAAJ&hl=es)**
 
-**[Dra. Clara Estela Díaz Velásques)(https://labnalsalud-fes.iztacala.unam.mx/index.html)**
+**[Dra. Clara Estela Díaz Velásques](https://labnalsalud-fes.iztacala.unam.mx/index.html)**
 
 **[Dr. Felipe Vaca Paniagua](https://scholar.google.com/citations?hl=es&user=v3sfJdQAAAAJ&view_op=list_works&sortby=pubdate)**
 
