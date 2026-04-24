@@ -22,6 +22,18 @@ En esta sección, los estudiantes analizan los datos generados durante el compon
 Ligas de interés para aprender: i) **[bash](https://vinuesa.github.io/intro2linux/index.html#expresiones-regulares---una-breve-introducci%C3%B3n)** y ii) **[r](https://r4ds.had.co.nz/index.html)**.
 
 
+**Profesores del curso:**
+
+**[Dr. Héctor Martínez Gregorio](https://scholar.google.com/citations?user=c0hp8RoAAAAJ&hl=es)**
+Dra. Clara Estela Díaz Velásques
+**[Dr. Felipe Vaca Paniagua](https://scholar.google.com/citations?hl=es&user=v3sfJdQAAAAJ&view_op=list_works&sortby=pubdate)**
+M. en C. Fernanda Largo Fernández
+
+Profesora invitada
+
+**[Dra. Tania Garrido Garduño](https://scholar.google.com/citations?user=cuLiEKoAAAAJ&hl=es)**
+
+
 <p align="center">  
   <img src="FotoDePortada/TrabajoDeLaboratorio.jpg? raw=true" alt="shell" width="1000" height="500">
 </p>
