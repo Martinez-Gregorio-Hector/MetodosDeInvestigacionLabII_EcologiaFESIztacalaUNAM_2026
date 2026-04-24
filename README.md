@@ -6,7 +6,7 @@ El objetivo del curso es proporcionar herramientas de biología molecular y bioi
 
 Los objetivos particulares del curso giran en cuatro ejes principales i) la descripción de las principales técnicas utilizadas en biología molecular, ii) la comprensión de los fundamentos de las técnicas básicas de biología molecular, iii) el uso de herramientas y algoritmos bioinformáticos para el análisis de datos de secuenciación masiva, y iv) la integración de las técnicas de biología molecular y herrramientas bioinformáticas para plantear y resolver preguntas ecológicas.
 
-Por lo cual el curso tiene dos componentes principales:
+Por lo cual, el curso tiene dos componentes principales:
 
 **i) Componente experimental**
 
