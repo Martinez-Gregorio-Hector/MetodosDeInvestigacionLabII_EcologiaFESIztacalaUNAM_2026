@@ -103,8 +103,29 @@ En el tutorial de qiime2 podemos ver las características de estos **[archivos](
   <img src="Figuras/IlluminaOxford.jpg? raw=true" alt="shell" width="800" height="600">
 </p>
 
-## 3.1 Qiime2 - Importaciión de datos
+## 3.1 Qiime2 
 
+**a) Importación de datos**
+
+
+Se tiene que generar un archivo “manifest.tsv” (Un archivo con dos columnas: **sample-id** (nombre de la muestra) y **absolute-ﬁlepath** (la ruta donde estan los archivos fastq).
+
+```
+sample-id	absolute-filepath
+12802.UB6-0001.assembled.fastq	/home/lab13/Documents/DraEcheagaray/ensamblados/UB6-0001.assembled.fastq
+12802.UB6-0002.assembled.fastq	/home/lab13/Documents/DraEcheagaray/ensamblados/UB6-0002.assembled.fastq
+12802.UB6-0003.assembled.fastq	/home/lab13/Documents/DraEcheagaray/ensamblados/UB6-0003.assembled.fastq
+12802.UB6-0004.assembled.fastq	/home/lab13/Documents/DraEcheagaray/ensamblados/UB6-0004.assembled.fastq
+12802.UB6-0005.assembled.fastq	/home/lab13/Documents/DraEcheagaray/ensamblados/UB6-0005.assembled.fastq
+12802.UB6-0006.assembled.fastq	/home/lab13/Documents/DraEcheagaray/ensamblados/UB6-0006.assembled.fastq
+12802.UB6-0007.assembled.fastq	/home/lab13/Documents/DraEcheagaray/ensamblados/UB6-0007.assembled.fastq
+12802.UB6-0008.assembled.fastq	/home/lab13/Documents/DraEcheagaray/ensamblados/UB6-0008.assembled.fastq
+12802.UB6-0009.assembled.fastq	/home/lab13/Documents/DraEcheagaray/ensamblados/UB6-0009.assembled.fastq
+```
+
+**b) Denosing
+
+Ver **[figura](https://view.qiime2.org/visualization/?src=https://docs.qiime2.org/2023.9/data/tutorials/pd-mice/dada2_stats.qzv)**
 
 
 
