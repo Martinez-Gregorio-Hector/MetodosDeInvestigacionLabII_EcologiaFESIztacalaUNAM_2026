@@ -123,12 +123,17 @@ sample-id	absolute-filepath
 12802.UB6-0009.assembled.fastq	/home/lab13/Documents/DraEcheagaray/ensamblados/UB6-0009.assembled.fastq
 ```
 
-**b) Denosing
+**b) Denosing**
 
 <p align="center">  
   <img src="Figuras/Denoising.png? raw=true" alt="shell" width="800" height="600">
 </p>
 
+**b) Alpha rarefaction**
+
+<p align="center">  
+  <img src="Figuras/AlphaRarefaction.png? raw=true" alt="shell" width="800" height="600">
+</p>
 
 
 ## Ejemplo de análisis de qiime2
