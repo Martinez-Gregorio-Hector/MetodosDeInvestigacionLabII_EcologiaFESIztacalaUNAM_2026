@@ -22,9 +22,6 @@ En esta sección, los estudiantes analizan los datos generados durante el compon
 Ligas de interés para aprender: i) **[bash](https://vinuesa.github.io/intro2linux/index.html#expresiones-regulares---una-breve-introducci%C3%B3n)** y ii) **[r](https://r4ds.had.co.nz/index.html)**.
 
 
-Este curso es impartido por profesores del Laboratorio Nacional en Salud y el laboratorio 13 de la UBI
-
-
 <p align="center">  
   <img src="Figuras_Fotos/FotoDePortada/TrabajoDeLaboratorio.jpg? raw=true" alt="shell" width="1000" height="500">
 </p>
