@@ -19,7 +19,7 @@ En la siguiente liga se encuentra el **[manual-de-trabajo-de-laboratorio](https:
 
 En esta sección, los estudiantes analizan los datos generados durante el componente experimental. Para ello, aprenden herramientas de análisis computacional y lenguajes de programación utilizados en bioinformática, como bash, aplicados al procesamiento y análisis de datos de secuenciación masiva del gel **_16S rRNA_**.
 
-Ligas de interés para aprender para: **[bash](https://vinuesa.github.io/intro2linux/index.html#expresiones-regulares---una-breve-introducci%C3%B3n)** y **[r](https://r4ds.had.co.nz/index.html)**.
+Ligas de interés para aprender: i) **[bash](https://vinuesa.github.io/intro2linux/index.html#expresiones-regulares---una-breve-introducci%C3%B3n)** y ii) **[r](https://r4ds.had.co.nz/index.html)**.
 
 
 <p align="center">  
