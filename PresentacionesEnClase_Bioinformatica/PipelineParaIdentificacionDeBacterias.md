@@ -140,20 +140,3 @@ sample-id	absolute-filepath
 <p align="center">  
   <img src="Figuras/TaxaBarplot.png? raw=true" alt="shell" width="800" height="600">
 </p>
-
-
-## Ejemplo de análisis de qiime2
-
-<p align="center">  
-  <img src="Figuras/CancerDeColon2.png? raw=true" alt="shell" width="800" height="600">
-</p>
-
-<p align="center">  
-  <img src="Figuras/CancerDeColon.svg? raw=true" alt="shell" width="1000" height="600">
-</p>
-
-<p align="center">  
-  <img src="Figuras/CancerDeColon3.png? raw=true" alt="shell" width="1000" height="600">
-</p>
-
-**[Sukjung Choi et al., 2021](https://link.springer.com/article/10.1186/s12967-021-03154-0)**
