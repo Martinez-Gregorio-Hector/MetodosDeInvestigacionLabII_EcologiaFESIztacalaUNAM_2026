@@ -201,25 +201,47 @@ conda deactivate
 
 ## 2. Ensamblaje de lecturas
 
+Crear un directorio donde se almacenaran los archivos ensamblados
 
-# Crear un directorio donde se almacenaran los archivos ensamblados
+```
 mkdir ensamblaje
-# Hacer un script para correr el ensamblaje de las lecturas
-vim ensamblaje.sh
-# El archivo generado correr con
-bash ensamblaje.sh
+```
 
+Hacer un script para correr el ensamblaje de las lecturas con el editor de vim
+
+```
+vim ensamblaje.sh
+```
+
+Copiar el siguiente código para hacer el ensamble de las lecturas
+
+```
 #!/bin/bash
 
-fastq=($(ls raw_data_fastq/*.gz))
+fastq=($(ls raw_data/*.gz))
 tLen=${#fastq[@]}
 for (( i=0; i<${tLen}; i=i+2));
 do
 x=${fastq[$i]##*/}
-echo pear -f ${fastq[$i]} -r ${fastq[$i+1]} -o ensamblaje/${x%_L*} -j 1 -q 30
+pear -f ${fastq[$i]} -r ${fastq[$i+1]} -o ensamblaje/${x%_L*} -j 2 -q 20
 done
 wait
 echo done
+```
+
+Dar permiso a nuestro script y posteriormente realizar la ejecición
+
+```
+# Darle permiso
+sudo chmod u+x ensamblaje.sh
+
+# Ejecutar el script
+bash ensamblaje.sh
+```
+
+
+
+
 ##########################################################
 # VI. Guardar y distribuir las lecturas ensambladas
 mkdir ensamblados
