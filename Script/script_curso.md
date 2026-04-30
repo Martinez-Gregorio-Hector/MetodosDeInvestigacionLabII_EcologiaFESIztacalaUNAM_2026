@@ -92,6 +92,15 @@ conda activate fastqc_Miriam
 
 ```
 
+Para ver que está instalado fastQC y MultiQC, corran el siguiente comando
+
+```
+# Para FastQC
+fastqc --help
+
+# Para MultiQC
+multiqc --help
+```
 
 
 
