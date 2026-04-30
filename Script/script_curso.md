@@ -412,11 +412,7 @@ nohup sh qiime2.sh > qiime2.out&
 Para monitorear nuestros script podemos usar los siguientes comandos
 
 ```
-# 
-htop
-
-# Ejecutar el script en segundo plano
-nohup sh qiime2.sh > qiime2.out&
+tail -f qiime2.out
 ```
 
 
