@@ -310,19 +310,87 @@ conda deactivate
 
 ## 3. QIIME2
 
-Antes de correr QIIME2 vamos hacer un carpeta donde almacenaremos
+Antes de correr QIIME2 vamos hacer un carpeta donde almacenaremos nuestros datos: i) manifest.tsv y ii) sample-metadata.txt
 
+```
+# Hacer una carpeta
 mkdir data
-# MANIFIES FILE
-# 1. Generamos un archivo con dos columnas
+
+# i) Manifest file, generamos un archivo con dos columnas y posteriormente llenar el archivo con la información correcta
+
 echo -e "sample-id\tabsolute-filepath" > data/manifest.tsv
-# 2. Hacer el archivo de manifiesto con  unloop
-for f in `ls ensamblados/*fastq`; do n=`basename $f`; echo -e "12802.${n%.fastq.gz}\t$PWD/$f"; done >> data/manifest.tsv
-# METADATA FILE
-# 1. Generamos un archivo con tres columnas
+
+for f in `ls ensamblados/*fastq`; do n=`basename $f`; echo -e "${n%.fastq.gz}\t$PWD/$f"; done >> data/manifest.tsv
+
+# Vemos el contenido del archivo manifest
+
+less data/manifest.tsv
+
+# sample-id       absolute-filepath
+# MBC1_S1.assembled.fastq /home/lab13/Documents/Ecologia2026/Equipo11/ensamblados/MBC1_S1.assembled.fastq
+# MBC2_S2.assembled.fastq /home/lab13/Documents/Ecologia2026/Equipo11/ensamblados/MBC2_S2.assembled.fastq
+# MBC3_S3.assembled.fastq /home/lab13/Documents/Ecologia2026/Equipo11/ensamblados/MBC3_S3.assembled.fastq
+
+# ii) metadata file
+
 echo -e "sample-id\trun_prefix\tCurso" > data/sample-metadata.txt
-# 2. Hacer el archivo de manifiesto con un loop
-for f in `ls ensamblados/*fastq`; do n=`basename $f`; echo -e "12802.${n%.fastq.gz}\t${n%.fastq.gz}\tEcologia2025"; done >> data/sample-metadata.txt
+
+for f in `ls ensamblados/*fastq`; do n=`basename $f`; echo -e "${n%.fastq.gz}\t${n%.fastq.gz}\tEcologia2026"; done >> data/sample-metadata.txt
+
+# Vemos el contenido  de sample-metadata.txt
+
+less data/sample-metadata.txt
+
+# sample-id       run_prefix      Curso
+# MBC1_S1.assembled.fastq MBC1_S1.assembled.fastq Ecologia2026
+# MBC2_S2.assembled.fastq MBC2_S2.assembled.fastq Ecologia2026
+# MBC3_S3.assembled.fastq MBC3_S3.assembled.fastq Ecologia2026
+```
+
+Para correr QIIME2 vamos hacer un scrip con vim
+
+```
+#!/bin/bash
+
+start=`date +%s`
+
+mkdir -p qiime2/qzv qiime2/qza
+
+# Activar conda
+conda activate /home/lab13/anaconda3/envs/qiime2-amplicon-2023.9
+
+# Importar datos
+qiime tools import \
+--input-path data/manifest.tsv \
+--type 'SampleData[SequencesWithQuality]' \
+--input-format SingleEndFastqManifestPhred33V2 \
+--output-path qiime2/qza/Fastqs.qza
+wait
+# 
+qiime demux summarize \
+--i-data qiime2/qza/Fastqs.qza \
+--o-visualization qiime2/qzv/se-demux.qzv
+wait
+# Denoising
+qiime dada2 denoise-single \
+--i-demultiplexed-seqs qiime2/qza/Fastqs.qza \
+--p-trim-left 20 \
+--p-trunc-len 410 \
+--p-n-threads 1 \
+--o-denoising-stats qiime2/qza/stats-dada2.qza \
+--o-representative-sequences qiime2/qza/seqs-dada2.qza \
+--o-table qiime2/qza/table-dada2.qza
+wait
+# Visualizar
+qiime feature-table tabulate-seqs \
+--i-data qiime2/qza/seqs-dada2.qza \
+--o-visualization qiime2/qzv/rep-seqs-dada2.qzv
+wait
+
+
+```
+
+
 ##########################################################
 # Hacer un script para correr qiime2
 vim qiime2_equipoXX.sh
@@ -366,6 +434,10 @@ qiime feature-table tabulate-seqs \
 --i-data qiime2/qza/seqs-dada2.qza \
 --o-visualization qiime2/qzv/rep-seqs-dada2.qzv
 wait
+
+NOS QUEDAMOS AQUI
+
+
 # Para ver la profundidad maxima de los datos
 qiime feature-table summarize \
 --i-table qiime2/qza/table-dada2.qza \
