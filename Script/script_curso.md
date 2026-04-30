@@ -26,9 +26,29 @@ ls - lh
 
 Cambiar al directorio que vamos a trabajar
 
+```
 cd Ecologia01
 cd Ecologia02
+cd Ecologia03
 cd EcologiaXX
+```
+
+Hacer un directorio donde vamos a almacenar los archivos crudos
+
+```
+mkdir raw_data
+```
+
+Copiar los archivos que vamos a usar para hacer los análisis en la carpeta raw_data
+
+```
+### Ruta relativa
+cp ../raw_data/Sample1* raw_data/
+### Ruta absoluta
+cp /home/lab13/Documents/Ecologia2026/raw_data/Sample1* raw_data/
+```
+
+
 ##########################################################
 # III. Obtener los datos que vamos a analizar
 
