@@ -199,7 +199,7 @@ Una vez que se terminó de usar el ambiente de conda hay que desactivarlo y usar
 conda deactivate
 ```
 
-## 2. Ensamblaje de lecturas
+## 2a. Ensamblaje de lecturas
 
 Crear un directorio donde se almacenaran los archivos ensamblados
 
@@ -239,29 +239,78 @@ sudo chmod u+x ensamblaje.sh
 bash ensamblaje.sh
 ```
 
+Una vez que se termina de ejecutar el script, usar el comando ls para ver los archivos que se generaron del programa de pear
+
+```
+ls -lh ensamblaje
+
+# -rw-r--r--. 1 lab13 lab13 42M Apr 30 09:55 MBC1_S1.assembled.fastq
+# -rw-r--r--. 1 lab13 lab13   0 Apr 30 09:54 MBC1_S1.discarded.fastq
+# -rw-r--r--. 1 lab13 lab13 42K Apr 30 09:55 MBC1_S1.unassembled.forward.fastq
+# -rw-r--r--. 1 lab13 lab13 14K Apr 30 09:55 MBC1_S1.unassembled.reverse.fastq
+# -rw-r--r--. 1 lab13 lab13 50M Apr 30 09:56 MBC2_S2.assembled.fastq
+# -rw-r--r--. 1 lab13 lab13   0 Apr 30 09:55 MBC2_S2.discarded.fastq
+# -rw-r--r--. 1 lab13 lab13 61K Apr 30 09:56 MBC2_S2.unassembled.forward.fastq
+# -rw-r--r--. 1 lab13 lab13 18K Apr 30 09:56 MBC2_S2.unassembled.reverse.fastq
+```
 
 
+El siguiente paso es hacer una carpeta para guardar sólo las lecturas ensambladas 
 
-##########################################################
-# VI. Guardar y distribuir las lecturas ensambladas
+```
+# Hacer directorio
 mkdir ensamblados
+
+# Mover las lecturas ensambladas en la carpeta creada
 mv ensamblaje/*assembled.fastq ensamblados
 
+# Ver el contenido de la carpeta ensablados
 
+ls -lh ensamblados/
 
+# total 137M
+# -rw-r--r--. 1 lab13 lab13 42M Apr 30 09:55 MBC1_S1.assembled.fastq
+# -rw-r--r--. 1 lab13 lab13 50M Apr 30 09:56 MBC2_S2.assembled.fastq
+# -rw-r--r--. 1 lab13 lab13 46M Apr 30 09:57 MBC3_S3.assembled.fastq
+```
 
-# VII. Evaluación de la calidad
-fastqc ensamblados/*
-multiqc ensamblados/* .
-mv multiqc_report_1.html multiqc_report_after.html
-mkdir fastqc_zip_after_resultados fastqc_html_after_resultados
-mv ensamblados/*zip fastqc_zip_after_resultados
-mv ensamblados/*html fastqc_html_after_resultados
+## 2b. Evaluación de la calidad después del ensamble
 
-scp -r lab13@132.248.216.138:/home/lab13/Documents/Ecologia2025/Ecologia100/multiqc_report_after.html .
+Vamos a seguir el mismas instrucciones que en el paso 1
 
-##########################################################
-# VIII. QIIME2 - HACER LA METADATA
+```
+# Activamos el ambiente de conda
+conda activate fastqc_Miriam
+
+# Crear una carpeta donde almacenaremos el análisis de calidad
+mkdir QC_DespuesDelEnsamble
+
+# Correr FastQC
+fastqc ensamblados/* -o QC_DespuesDelEnsamble/
+
+# Ver los archivos que se generaron 
+ls -lh QC_DespuesDelEnsamble/
+
+# Realizar el análisis de MultiQc
+multiqc QC_DespuesDelEnsamble/ -o QC_DespuesDelEnsamble/
+
+# Ver el reporte final de multiqc
+ls -lh QC_DespuesDelEnsamble
+
+```
+
+Descar de archivos con mobaxterm
+
+Posteriormente desactivamos el ambiente de conda con el siguiente comando
+
+```
+conda deactivate
+
+```
+
+## 3. QIIME2
+
+Antes de correr QIIME2 vamos hacer un carpeta donde almacenaremos
 
 mkdir data
 # MANIFIES FILE
