@@ -396,6 +396,25 @@ qiime feature-table tabulate-seqs \
 --i-data qiime2/qza/seqs-dada2.qza \
 --o-visualization qiime2/qzv/rep-seqs-dada2.qzv
 
+# Para ver la profundidad maxima de los  datos
+qiime feature-table summarize \
+--i-table qiime2/qza/table-dada2.qza \
+--m-sample-metadata-file data/sample-metadata.txt \
+--o-visualization qiime2/qzv/table-dada2.qzv
+
+# Visualización de la limpieza de los datos
+qiime metadata tabulate \
+--m-input-file qiime2/qza/stats-dada2.qza \
+--o-visualization qiime2/qzv/denoising-stats.qzv
+
+# Filogenia
+qiime phylogeny align-to-tree-mafft-fasttree \
+--i-sequences qiime2/qza/seqs-dada2.qza \
+--o-alignment qiime2/qza/aligned-rep-seqs.qza \
+--o-masked-alignment qiime2/qza/masked-aligned-rep-seqs.qza \
+--o-tree qiime2/qza/unrooted-tree.qza \
+--o-rooted-tree qiime2/qza/rooted-tree.qza
+
 end=`date +%s`
 runtime=$((end-start))
 echo 'run time = ' $runtime'(sec)'
@@ -420,106 +439,7 @@ Para monitorear nuestros script podemos usar los siguientes comandos
 tail -f qiime2.out
 ```
 
-
-##########################################################
-
-##########################################################
+Bajamos los archivos **qzv** usando mobaxterm
 
 
-# Activar conda
-source activate qiime2-amplicon-2023.9
-# Importar datos
-qiime tools import \
---input-path data/manifest.tsv \
---type 'SampleData[SequencesWithQuality]' \
---input-format SingleEndFastqManifestPhred33V2 \
---output-path qiime2/qza/Fastqs.qza
-wait
-# 
-qiime demux summarize \
---i-data qiime2/qza/Fastqs.qza \
---o-visualization qiime2/qzv/se-demux.qzv
-wait
-# Denoising
-qiime dada2 denoise-single \
---i-demultiplexed-seqs qiime2/qza/Fastqs.qza \
---p-trim-left 20 \
---p-trunc-len 410 \
---p-n-threads 1 \
---o-denoising-stats qiime2/qza/stats-dada2.qza \
---o-representative-sequences qiime2/qza/seqs-dada2.qza \
---o-table qiime2/qza/table-dada2.qza
-wait
-# Visualizar
-qiime feature-table tabulate-seqs \
---i-data qiime2/qza/seqs-dada2.qza \
---o-visualization qiime2/qzv/rep-seqs-dada2.qzv
-wait
-
-NOS QUEDAMOS AQUI
-
-
-# Para ver la profundidad maxima de los datos
-qiime feature-table summarize \
---i-table qiime2/qza/table-dada2.qza \
---m-sample-metadata-file data/sample-metadata.txt \
---o-visualization qiime2/qzv/table-dada2.qzv
-wait
-qiime metadata tabulate \
---m-input-file qiime2/qza/stats-dada2.qza \
---o-visualization qiime2/qzv/denoising-stats.qzv
-wait
-# Filogenia
-qiime phylogeny align-to-tree-mafft-fasttree \
---i-sequences qiime2/qza/seqs-dada2.qza \
---o-alignment qiime2/qza/aligned-rep-seqs.qza \
---o-masked-alignment qiime2/qza/masked-aligned-rep-seqs.qza \
---o-tree qiime2/qza/unrooted-tree.qza \
---o-rooted-tree qiime2/qza/rooted-tree.qza
-wait
-# Clasificacion taxonomica
-# Generar un archivo temporal
-mkdir tmp
-export TMPDIR=tmp
-wait
-#
-silva138=/home/lab13/Documents/Ecologia2025/Reference/silva-138-99-nb-classifier.qza
-
-qiime feature-classifier classify-sklearn \
---i-classifier $silva138 \
---i-reads qiime2/qza/seqs-dada2.qza \
---o-classification qiime2/qza/taxonomy.qza
-wait
-#
-qiime metadata tabulate \
---m-input-file qiime2/qza/taxonomy.qza \
---m-input-file qiime2/qza/seqs-dada2.qza \
---o-visualization qiime2/qzv/taxonomy.qzv
-wait
-# rarefaction
-qiime diversity alpha-rarefaction \
-  --i-table qiime2/qza/table-dada2.qza \
-  --i-phylogeny qiime2/qza/rooted-tree.qza \
-  --p-max-depth 21778 \
-  --m-metadata-file data/sample-metadata.txt \
-  --o-visualization qiime2/qzv/alpha-rarefaction.qzv
-wait
-qiime taxa barplot \
-  --i-table qiime2/qza/table-dada2.qza \
-  --i-taxonomy qiime2/qza/taxonomy.qza \
-  --m-metadata-file data/sample-metadata.txt \
-  --o-visualization qiime2/qzv/taxa-bar-plots.qzv
-wait
-
-end=`date +%s`
-runtime=$((end-start))
-echo 'run time = ' $runtime'(sec)'
-
-echo done .....
-
-
-####
-tail - f qiime2_equipoXX.out
-
-scp -r lab13@132.248.216.138:/home/lab13/Documents/Ecologia2024/Equipo01/qiime2/qzv .
 
