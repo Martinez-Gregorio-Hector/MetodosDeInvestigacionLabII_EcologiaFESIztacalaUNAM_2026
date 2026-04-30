@@ -347,7 +347,12 @@ less data/sample-metadata.txt
 # MBC3_S3.assembled.fastq MBC3_S3.assembled.fastq Ecologia2026
 ```
 
-Para correr QIIME2 vamos hacer un scrip con vim
+
+Hacer un script para correr QIIME2 con el editor de vim
+
+```
+vim qiime2.sh
+```
 
 ```
 #!/bin/bash
@@ -365,12 +370,12 @@ qiime tools import \
 --type 'SampleData[SequencesWithQuality]' \
 --input-format SingleEndFastqManifestPhred33V2 \
 --output-path qiime2/qza/Fastqs.qza
-wait
-# 
+
+# Resumen de la importación de los datos
 qiime demux summarize \
 --i-data qiime2/qza/Fastqs.qza \
 --o-visualization qiime2/qzv/se-demux.qzv
-wait
+
 # Denoising
 qiime dada2 denoise-single \
 --i-demultiplexed-seqs qiime2/qza/Fastqs.qza \
@@ -380,14 +385,38 @@ qiime dada2 denoise-single \
 --o-denoising-stats qiime2/qza/stats-dada2.qza \
 --o-representative-sequences qiime2/qza/seqs-dada2.qza \
 --o-table qiime2/qza/table-dada2.qza
-wait
-# Visualizar
+
+# Visualización del proceso de denoising
 qiime feature-table tabulate-seqs \
 --i-data qiime2/qza/seqs-dada2.qza \
 --o-visualization qiime2/qzv/rep-seqs-dada2.qzv
-wait
 
+end=`date +%s`
+runtime=$((end-start))
+echo 'run time = ' $runtime'(sec)'
 
+echo done .....
+
+```
+
+Darle permiso a nuestro scipt
+
+```
+# Darle permiso
+sudo chmod u+x qiime2.sh
+
+# Ejecutar el script en segundo plano
+nohup sh qiime2.sh > qiime2.out&
+```
+
+Para monitorear nuestros script podemos usar los siguientes comandos
+
+```
+# 
+htop
+
+# Ejecutar el script en segundo plano
+nohup sh qiime2.sh > qiime2.out&
 ```
 
 
