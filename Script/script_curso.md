@@ -426,12 +426,6 @@ tail -f qiime2.out
 ##########################################################
 
 
-#!/bin/bash
-
-start=`date +%s`
-
-mkdir -p qiime2/qzv qiime2/qza
-
 # Activar conda
 source activate qiime2-amplicon-2023.9
 # Importar datos
