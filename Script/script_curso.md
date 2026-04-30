@@ -415,12 +415,22 @@ qiime phylogeny align-to-tree-mafft-fasttree \
 --o-tree qiime2/qza/unrooted-tree.qza \
 --o-rooted-tree qiime2/qza/rooted-tree.qza
 
-
 mkdir tmp
-
 export TMPDIR=tmp
 
+silva138=/home/lab13/Reference/Referencia_silva_138/silva-138-99-nb-classifier.qza
 
+# Taxonomia
+qiime feature-classifier classify-sklearn \
+--i-classifier $silva138 \
+--i-reads qiime2/qza/seqs-dada2.qza \
+--o-classification qiime2/qza/taxonomy.qza
+
+# Taxonomia para visualización
+qiime metadata tabulate \
+--m-input-file qiime2/qza/taxonomy.qza \
+--m-input-file qiime2/qza/seqs-dada2.qza \
+--o-visualization qiime2/qzv/taxonomy.qzv
 
 
 end=`date +%s`
