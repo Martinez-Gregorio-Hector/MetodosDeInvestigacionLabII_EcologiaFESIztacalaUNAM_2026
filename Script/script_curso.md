@@ -95,14 +95,107 @@ conda activate fastqc_Miriam
 Para ver que está instalado fastQC y MultiQC, corran el siguiente comando
 
 ```
-# Para FastQC
+##### Para FastQC
 fastqc --help
+#            FastQC - A high throughput sequence QC analysis tool
+#
+# SYNOPSIS
 
-# Para MultiQC
+#	fastqc seqfile1 seqfile2 .. seqfileN
+#
+#    fastqc [-o output dir] [--(no)extract] [-f fastq|bam|sam]
+#           [-c contaminant file] seqfile1 .. seqfileN
+
+
+##### Para MultiQC
 multiqc --help
+
+#  /// MultiQC 🔍 v1.33
+#  Usage: multiqc [OPTIONS] [ANALYSIS DIRECTORY]
+
+#  MultiQC aggregates results from bioinformatics analyses across many samples into a single report.
+# It searches a given directory for analysis logs and compiles an HTML report. It's a general use tool,
+# perfect for summarising the output from numerous bioinformatics tools.
+# To run, supply with one or more directory to scan for analysis results. For example, to run in the current
+# working directory, use 'multiqc .'
 ```
 
+Vamos a crear un directorio donde vamos a guardar la evaluación de la calidad del llamado de bases antes del ensamblado y posteriormente correr fastqc y multiqc
 
+```
+##### Crear la carpeta 
+mkdir QC_AntesDelEnsamble
+
+##### Correr FastQC
+fastqc raw_data/* -o QC_AntesDelEnsamble/
+# application/gzip
+# application/gzip
+# application/gzip
+# application/gzip
+# application/gzip
+# application/gzip
+# Started analysis of MBC1_S1_L001_R1_001.fastq.gz
+# Approx 5% complete for MBC1_S1_L001_R1_001.fastq.gz
+# Approx 10% complete for MBC1_S1_L001_R1_001.fastq.gz
+# Approx 15% complete for MBC1_S1_L001_R1_001.fastq.gz
+#Approx 20% complete for MBC1_S1_L001_R1_001.fastq.gz
+
+##### Ver los archivos que se generaron 
+ls -lh QC_AntesDelEnsamble/
+# total 11M
+# -rw-r--r--. 1 lab13 lab13  950K Apr 30 00:08 MBC1_S1_L001_R1_001_fastqc.html
+# -rw-r--r--. 1 lab13 lab13  824K Apr 30 00:08 MBC1_S1_L001_R1_001_fastqc.zip
+# -rw-r--r--. 1 lab13 lab13 1019K Apr 30 00:08 MBC1_S1_L001_R2_001_fastqc.html
+# -rw-r--r--. 1 lab13 lab13  948K Apr 30 00:08 MBC1_S1_L001_R2_001_fastqc.zip
+# -rw-r--r--. 1 lab13 lab13  938K Apr 30 00:08 MBC2_S2_L001_R1_001_fastqc.html
+# -rw-r--r--. 1 lab13 lab13  799K Apr 30 00:08 MBC2_S2_L001_R1_001_fastqc.zip
+# -rw-r--r--. 1 lab13 lab13 1022K Apr 30 00:08 MBC2_S2_L001_R2_001_fastqc.html
+# -rw-r--r--. 1 lab13 lab13  944K Apr 30 00:08 MBC2_S2_L001_R2_001_fastqc.zip
+# -rw-r--r--. 1 lab13 lab13  936K Apr 30 00:08 MBC3_S3_L001_R1_001_fastqc.html
+# -rw-r--r--. 1 lab13 lab13  791K Apr 30 00:08 MBC3_S3_L001_R1_001_fastqc.zip
+# -rw-r--r--. 1 lab13 lab13 1016K Apr 30 00:08 MBC3_S3_L001_R2_001_fastqc.html
+# -rw-r--r--. 1 lab13 lab13  937K Apr 30 00:08 MBC3_S3_L001_R2_001_fastqc.zip
+
+# Correr MultiQC
+multiqc QC_AntesDelEnsamble/ -o QC_AntesDelEnsamble/
+
+# /// MultiQC 🔍 v1.33
+
+#     version_check | MultiQC Version v1.34 now available!
+#       file_search | Search path: /home/lab13/Documents/Ecologia2026/Equipo11/QC_AntesDelEnsamble
+#         searching | ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 12/12
+#            fastqc | Found 6 reports
+#     write_results | Data        : QC_AntesDelEnsamble/multiqc_data
+#     write_results | Report      : QC_AntesDelEnsamble/multiqc_report.html
+#           multiqc | MultiQC complete
+
+# Después del multiqc
+
+ls -lh QC_AntesDelEnsamble/
+# -rw-r--r--. 1 lab13 lab13  950K Apr 30 00:08 MBC1_S1_L001_R1_001_fastqc.html
+# -rw-r--r--. 1 lab13 lab13  824K Apr 30 00:08 MBC1_S1_L001_R1_001_fastqc.zip
+# -rw-r--r--. 1 lab13 lab13 1019K Apr 30 00:08 MBC1_S1_L001_R2_001_fastqc.html
+# -rw-r--r--. 1 lab13 lab13  948K Apr 30 00:08 MBC1_S1_L001_R2_001_fastqc.zip
+# -rw-r--r--. 1 lab13 lab13  938K Apr 30 00:08 MBC2_S2_L001_R1_001_fastqc.html
+# -rw-r--r--. 1 lab13 lab13  799K Apr 30 00:08 MBC2_S2_L001_R1_001_fastqc.zip
+# -rw-r--r--. 1 lab13 lab13 1022K Apr 30 00:08 MBC2_S2_L001_R2_001_fastqc.html
+# -rw-r--r--. 1 lab13 lab13  944K Apr 30 00:08 MBC2_S2_L001_R2_001_fastqc.zip
+# -rw-r--r--. 1 lab13 lab13  936K Apr 30 00:08 MBC3_S3_L001_R1_001_fastqc.html
+# -rw-r--r--. 1 lab13 lab13  791K Apr 30 00:08 MBC3_S3_L001_R1_001_fastqc.zip
+# -rw-r--r--. 1 lab13 lab13 1016K Apr 30 00:08 MBC3_S3_L001_R2_001_fastqc.html
+# -rw-r--r--. 1 lab13 lab13  937K Apr 30 00:08 MBC3_S3_L001_R2_001_fastqc.zip
+# drwxr-xr-x. 2 lab13 lab13  4.0K Apr 30 00:11 multiqc_data
+# -rw-r--r--. 1 lab13 lab13  2.4M Apr 30 00:11 multiqc_report.html
+```
+
+Descar de archivos con **[mobaxterm](https://mobaxterm.mobatek.net/)**
+
+```
+# Con mobaxter hay que proporcionarle la dirección ip del servidor, la contraseña y la carpeta donde se quiere almacenar la información
+# Con línea de comandos usar los siguientes pasos
+
+
+```
 
 ##########################################################
 # III. Obtener los datos que vamos a analizar
