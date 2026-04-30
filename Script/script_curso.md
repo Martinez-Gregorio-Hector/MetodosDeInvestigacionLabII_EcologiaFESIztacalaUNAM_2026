@@ -48,6 +48,52 @@ cp ../raw_data/Sample1* raw_data/
 cp /home/lab13/Documents/Ecologia2026/raw_data/Sample1* raw_data/
 ```
 
+Para comprobar si copiamos los archivos en la carpeta de **raw_data**, podemos usar el comando ls desde nuestro directorio de trabajo
+
+```
+ls -lh raw_data/
+
+# -rwxr-xr-x. 1 lab13 lab13 11M Apr 29 23:44 MBC1_S1_L001_R1_001.fastq.gz
+# -rwxr-xr-x. 1 lab13 lab13 12M Apr 29 23:44 MBC1_S1_L001_R2_001.fastq.gz
+# -rwxr-xr-x. 1 lab13 lab13 13M Apr 29 23:44 MBC2_S2_L001_R1_001.fastq.gz
+# -rwxr-xr-x. 1 lab13 lab13 15M Apr 29 23:44 MBC2_S2_L001_R2_001.fastq.gz
+# -rwxr-xr-x. 1 lab13 lab13 12M Apr 29 23:44 MBC3_S3_L001_R1_001.fastq.gz
+# -rwxr-xr-x. 1 lab13 lab13 14M Apr 29 23:44 MBC3_S3_L001_R2_001.fastq.gz
+```
+
+## Análisis de calidad
+
+De acuerdo con nuestro pipeline bioinformático, el primer paso para el análisis de nuestros es la evaluación de la calidad con **[fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)** y **[multiqc](https://github.com/MultiQC/MultiQC)**. Para hacer esta actividad vamos a activar un ambiente en python. Para listar que ambientes hay en python usar el siguiente comando
+
+```
+conda env list
+
+# conda environments:
+#
+# * -> active
+# + -> frozen
+#                         /home/lab13/anaconda3
+#                         /home/lab13/anaconda3/envs/qiime2-amplicon-2023.9
+# base                 *   /home/lab13/miniconda3
+# fastqc_Miriam            /home/lab13/miniconda3/envs/fastqc_Miriam
+# ipyrad_envArely          /home/lab13/miniconda3/envs/ipyrad_envArely
+# ipyrad_envNestor         /home/lab13/miniconda3/envs/ipyrad_envNestor
+# ipyrad_envPicazo         /home/lab13/miniconda3/envs/ipyrad_envPicazo
+```
+
+Activamos el ambiente hecha en python **fastqc_Miriam** usando el siguiente comando
+
+```
+conda activate fastqc_Miriam
+
+#### # Van a observar que del usuario base se a activar al ambiente especificado
+# (base) [lab13@host-132 Equipo11]$ conda activate fastqc_Miriam
+# (fastqc_Miriam) [lab13@host-132 Equipo11]$
+
+```
+
+
+
 
 ##########################################################
 # III. Obtener los datos que vamos a analizar
