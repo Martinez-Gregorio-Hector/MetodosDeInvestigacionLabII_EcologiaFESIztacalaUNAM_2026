@@ -415,6 +415,14 @@ qiime phylogeny align-to-tree-mafft-fasttree \
 --o-tree qiime2/qza/unrooted-tree.qza \
 --o-rooted-tree qiime2/qza/rooted-tree.qza
 
+
+mkdir tmp
+
+export TMPDIR=tmp
+
+
+
+
 end=`date +%s`
 runtime=$((end-start))
 echo 'run time = ' $runtime'(sec)'
