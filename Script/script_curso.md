@@ -354,6 +354,8 @@ Hacer un script para correr QIIME2 con el editor de vim
 vim qiime2.sh
 ```
 
+Dentro del script copiar estos comandos
+
 ```
 #!/bin/bash
 
@@ -361,8 +363,11 @@ start=`date +%s`
 
 mkdir -p qiime2/qzv qiime2/qza
 
-# Activar conda
-conda activate /home/lab13/anaconda3/envs/qiime2-amplicon-2023.9
+# Inicializar conda
+source /home/lab13/anaconda3/etc/profile.d/conda.sh
+
+# Activar entorno
+conda activate qiime2-amplicon-2023.9
 
 # Importar datos
 qiime tools import \
@@ -371,7 +376,7 @@ qiime tools import \
 --input-format SingleEndFastqManifestPhred33V2 \
 --output-path qiime2/qza/Fastqs.qza
 
-# Resumen de la importación de los datos
+# Resumen
 qiime demux summarize \
 --i-data qiime2/qza/Fastqs.qza \
 --o-visualization qiime2/qzv/se-demux.qzv
@@ -386,7 +391,7 @@ qiime dada2 denoise-single \
 --o-representative-sequences qiime2/qza/seqs-dada2.qza \
 --o-table qiime2/qza/table-dada2.qza
 
-# Visualización del proceso de denoising
+# Visualización
 qiime feature-table tabulate-seqs \
 --i-data qiime2/qza/seqs-dada2.qza \
 --o-visualization qiime2/qzv/rep-seqs-dada2.qzv
@@ -395,7 +400,7 @@ end=`date +%s`
 runtime=$((end-start))
 echo 'run time = ' $runtime'(sec)'
 
-echo done .....
+echo done ......
 
 ```
 
