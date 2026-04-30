@@ -422,10 +422,7 @@ tail -f qiime2.out
 
 
 ##########################################################
-# Hacer un script para correr qiime2
-vim qiime2_equipoXX.sh
-# Correr en un segundo plano
-nohup bash qiime2_equipoXX.sh > qiime2_equipoXX.out&
+
 ##########################################################
 
 
