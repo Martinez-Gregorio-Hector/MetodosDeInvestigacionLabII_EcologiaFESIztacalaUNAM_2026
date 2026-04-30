@@ -61,7 +61,7 @@ ls -lh raw_data/
 # -rwxr-xr-x. 1 lab13 lab13 14M Apr 29 23:44 MBC3_S3_L001_R2_001.fastq.gz
 ```
 
-## Análisis de calidad
+## 1. Análisis de calidad
 
 De acuerdo con nuestro pipeline bioinformático, el primer paso para el análisis de nuestros es la evaluación de la calidad con **[fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)** y **[multiqc](https://github.com/MultiQC/MultiQC)**. Para hacer esta actividad vamos a activar un ambiente en python. Para listar que ambientes hay en python usar el siguiente comando
 
@@ -190,42 +190,17 @@ ls -lh QC_AntesDelEnsamble/
 
 Descar de archivos con **[mobaxterm](https://mobaxterm.mobatek.net/)**
 
+
+Con mobaxter hay que proporcionarle la dirección ip del servidor, la contraseña y la carpeta donde se quiere almacenar la información.
+
+Una vez que se terminó de usar el ambiente de conda hay que desactivarlo y usaremos el siguiente comando.
+
 ```
-# Con mobaxter hay que proporcionarle la dirección ip del servidor, la contraseña y la carpeta donde se quiere almacenar la información
-# Con línea de comandos usar los siguientes pasos
-
-
+conda deactivate
 ```
 
-##########################################################
-# III. Obtener los datos que vamos a analizar
+## 2. Ensamblaje de lecturas
 
-cd Ecologia01
-mkdir raw_data_fastq
-# Escoger las muestras que ustedes prepararon
-cp ../raw_data/I16-00XXXXR* raw_data_fastq/
-cp ../raw_data/I16-00XXXXR* raw_data_fastq/
-# Hacer un listado de los archivos que hemos seleccionado
-ls -lh raw_data_fastq
-##########################################################
-# IV. Analisis de la calidad
-
-# Establecer el entorno en formato unicode 
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-# Correr fastqc y multiqc
-fastqc raw_data_fastq/*
-multiqc raw_data_fastq/* .
-mv multiqc_report.html multiqc_report_before.html
-scp -r lab13@132.248.216.138:/home/lab13/Documents/Ecologia2025/EcologiaXX/multiqc_report_before.html .
-# Crear carpetas y mover archivos html y zip
-mkdir fastqc_zip_resultados fastqc_html_resultados
-# listar para ver si se crearon los archivo
-mv raw_data_fastq/*html fastqc_html_resultados
-mv raw_data_fastq/*zip fastqc_zip_resultados
-
-##########################################################
-# V. Ensamblaje de lecturas
 
 # Crear un directorio donde se almacenaran los archivos ensamblados
 mkdir ensamblaje
@@ -249,6 +224,10 @@ echo done
 # VI. Guardar y distribuir las lecturas ensambladas
 mkdir ensamblados
 mv ensamblaje/*assembled.fastq ensamblados
+
+
+
+
 # VII. Evaluación de la calidad
 fastqc ensamblados/*
 multiqc ensamblados/* .
