@@ -475,4 +475,23 @@ tail -f qiime2.out
 Bajamos los archivos **qzv** usando mobaxterm
 
 
+```
+#!/bin/bash
 
+for dir in /home/lab13/Documents/Ecologia2026/Equipo1*/; do
+    echo "Procesando $dir"
+
+    (cd "$dir" && bash qiime2.sh > run.log 2>&1) || {
+        echo "Error en $dir"
+        exit 1
+    }
+
+    echo "Finalizado $dir"
+done
+
+echo "Todo terminado"
+```
+
+```
+nohup bash run_all.sh > master.log 2>&1 &
+```
