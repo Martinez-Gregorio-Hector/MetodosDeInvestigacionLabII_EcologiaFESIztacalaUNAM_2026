@@ -433,6 +433,21 @@ qiime metadata tabulate \
 --o-visualization qiime2/qzv/taxonomy.qzv
 
 
+# rarefaction
+qiime diversity alpha-rarefaction \
+  --i-table qiime2/qza/table-dada2.qza \
+  --i-phylogeny qiime2/qza/rooted-tree.qza \
+  --p-max-depth 21778 \
+  --m-metadata-file data/sample-metadata.txt \
+  --o-visualization qiime2/qzv/alpha-rarefaction.qzv
+
+# Barra de clasificación taxonómica
+qiime taxa barplot \
+  --i-table qiime2/qza/table-dada2.qza \
+  --i-taxonomy qiime2/qza/taxonomy.qza \
+  --m-metadata-file data/sample-metadata.txt \
+  --o-visualization qiime2/qzv/taxa-bar-plots.qzv
+
 end=`date +%s`
 runtime=$((end-start))
 echo 'run time = ' $runtime'(sec)'
