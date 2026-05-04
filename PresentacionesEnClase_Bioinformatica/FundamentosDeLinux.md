@@ -288,17 +288,8 @@ ls --help
 ## -h human readable (indica Kb, Mb, Gb …)
 ## etc ...
 ```
-Si queremos observar 
 
-
-# NOS QUEDAMOS AQUI
-
-
-
-
-Opciones de _𝑙𝑠_
-
-Antes de crear una carpeta persona, vamos a utilizar el comando **ls** para listar que archivos se encuentran dentro de la carpeta **Ecologia2026**. Recuerda que ls tiene varias opciones que puedes convinar con el comando **ls**
+En los listados básicos, el comando **ls** no genera mucha información sobre cada archivo. Para obtener información adicional, otro parámetro popular es **-l**. El parámetro **-l** genera un formato de listado largo, que proporciona más información sobre cada archivo del directorio.
 
 ```
 ls -lh
