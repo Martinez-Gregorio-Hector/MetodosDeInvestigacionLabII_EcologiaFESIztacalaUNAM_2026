@@ -307,5 +307,16 @@ ls -lh
 ## drwxr-xr-x. 2 lab13 lab13 6 Apr 22 22:16 Equipo10
 ```
 
+## comando mkdir
+
+Crear un nuevo directorio en Linux es fácil, solo use el comando **mkdir**
+
+```
+mkdir New_Dir
+ls -ld New_Dir
+
+## drwxr-xr-x. 2 lab13 lab13 6 Aug 11 07:44 New_Dir
+```
+
 
 
