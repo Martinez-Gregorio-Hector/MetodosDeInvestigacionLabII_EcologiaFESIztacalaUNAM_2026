@@ -370,3 +370,23 @@ Antes de entender y analizar los archivos de la secuenciación masiva, vamos a r
   <img src="Figuras/ASCII.png? raw=true" alt="shell" width="1000" height="600">
 </p>
 
+## Nivel de calidad Phred 
+
+<p align="center">  
+  <img src="Figuras/Phred.png? raw=true" alt="shell" width="1000" height="600">
+</p>
+
+## Diagrama de cajas y bigotes
+
+<p align="center">  
+  <img src="Figuras/BoxPlot.svg? raw=true" alt="shell" width="600" height="600">
+</p>
+
+## Revisión de resultado FastQC y multiQC
+
+**[FastQC](https://github.com/Martinez-Gregorio-Hector/MetodosDeInvestigacionLabII_EcologiaFESIztacalaUNAM_2026/tree/main/PresentacionesEnClase_Bioinformatica/FastQC_MultiQC/good_sequence_short_fastqc.html)**
+
+**[FastQC](https://github.com/Martinez-Gregorio-Hector/MetodosDeInvestigacionLabII_EcologiaFESIztacalaUNAM_2026/tree/main/PresentacionesEnClase_Bioinformatica/FastQC_MultiQC/bad_sequence_fastqc.html)**
+
+**[MultiQC](https://github.com/Martinez-Gregorio-Hector/MetodosDeInvestigacionLabII_EcologiaFESIztacalaUNAM_2026/tree/main/PresentacionesEnClase_Bioinformatica/FastQC_MultiQC/multiqc_report_despues.html)**
+
