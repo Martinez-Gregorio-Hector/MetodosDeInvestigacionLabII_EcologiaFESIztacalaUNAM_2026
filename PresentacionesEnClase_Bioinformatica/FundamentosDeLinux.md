@@ -307,9 +307,30 @@ ls -lh
 ## drwxr-xr-x. 2 lab13 lab13 6 Apr 22 22:16 Equipo10
 ```
 
+Vamos a entrar en la carpeta de **Alumnos**. Recuerden para entrar a la carpeta utilizamos el comando **cd**
+
+```
+cd Alumnos
+```
+
+
 ## comando mkdir
 
-Crear un nuevo directorio en Linux es fácil, solo use el comando **mkdir**
+Dentro de la carpeta Alumnos vamos a crear un directorio con nuestro nombre con el comando **mkdir**, por ejemplo, mi nombre es Hector Martinez, voy a crear un directorio con el nombre de HectorMartinez.
+
+Algunas recomendaciones para nombrar directorio o archivos:
+
+* Nombra todos tus archivos en minúsculas.
+* En lugar de un espacio, usa un guion bajo (_) o un guion corto (–).
+* Utiliza formatos de archivo consistentes. Usa jpg o jpg.
+* Solo utiliza caracteres alfanuméricos, puntos, guiones bajos y guiones; no uses símbolos como % y $.
+* Los nombres de los archivos deben ser cortos y descriptivos.
+
+```
+mkdir HectorMartinez
+```
+
+
 
 ```
 mkdir New_Dir
