@@ -1787,85 +1787,8 @@ CCCCCGGGGGGGGGGGGGGGGGGEGGGGGGGGGGGGGGGGEGGGGGGGGGGFGGGGGGGGGGGGGGGGGGGGGGGGGGGG
 [Checar código ascii y calidad](https://learn.gencore.bio.nyu.edu/ngs-file-formats/quality-scores/)
 
 
-# El estilo C para comandos
-
-## El lenguaje C para comandos
-
-El lenguaje C para comandos tiene un método específico para especificar una variable, una condición que debe permanecer verdadera para que las iteraciones continúen y un método para modificar la variable en cada iteración. Cuando la condición especificada se vuelve falsa, el bucle for se detiene. La ecuación de la condición se define mediante símbolos matemáticos estándar. Por ejemplo, considere el siguiente código en lenguaje C:
-
-```
-for (i = 0; i < 10; i++)
-{
-printf("The next number is %d\n", i);
-}
-```
-
-Este código genera un bucle de iteración simple, donde la variable i se utiliza como contador. La primera sección asigna un valor predeterminado a la variable. La sección central define la condición bajo la cual el bucle iterará. Cuando la condición definida se vuelve falsa, el bucle for detiene las iteraciones. La última sección define el proceso de iteración. Tras cada iteración, se ejecuta la expresión definida en la última sección. En este ejemplo, la variable i se incrementa en uno después de cada iteración.
-
-El shell bash también admite una versión del bucle for similar al bucle for de C, aunque presenta algunas diferencias sutiles, incluyendo un par de aspectos que pueden confundir a los programadores de scripts de shell. Este es el formato básico del bucle for de bash de C:
-
-```
-for (( variable assignment ; condition ; iteration process ))
-```
-
-El formato del bucle for en C puede resultar confuso para los programadores de scripts de shell bash, ya que utiliza referencias de variables propias de C en lugar de las de shell. Así es como se ve un comando for en C:
-
-```
-for (( a = 1; a < 10; a++ ))
-```
-
-Tenga en cuenta que hay un par de cosas que no siguen el shell bash estándar para el método:
-
-■ La asignación del valor de la variable puede contener espacios.
-
-■ La variable en la condición no está precedida por un signo de dólar.
-
-■ La ecuación para el proceso de iteración no utiliza el formato del comando **expr**.
-
-Los desarrolladores de shell crearon este formato para asemejarse más al estilo C del comando for. Si bien es ideal para programadores de C, puede desconcertar incluso a los programadores de shell más expertos. Tenga cuidado al usar el bucle for estilo C en sus scripts.
-
-Aquí hay un ejemplo del uso del estilo C del comando for en un programa de shell bash:
-
-```
-#!/bin/bash
-# testing the C-style for loop
-for (( i=1; i <= 10; i++ ))
-do
-echo "The next number is $i"
-done
-```
-
-El bucle **for** itera los comandos utilizando la variable definida en él (la letra i en este ejemplo). En cada iteración, la variable $i contiene el valor asignado en el bucle for. Después de cada iteración, se aplica el proceso de iteración del bucle a la variable, lo que, en este ejemplo, la incrementa en uno.
-
-## Usando multiples variables 
-
-El comando for, en estilo C, también permite usar múltiples variables para la iteración. El bucle maneja cada variable por separado, lo que permite definir un proceso de iteración diferente para cada una. Aunque se pueden usar múltiples variables, solo se puede definir una condición en el bucle for:
-
-```
-#!/bin/bash
-# testing the C-style for loop
-for (( a=1, b=10; a <= 10; a++, b-- ))
-do
-echo "$a - $b"
-done
-```
-
-Las variables a y b se inicializan con valores diferentes, y se definen distintos procesos de iteración. Mientras el bucle aumenta la variable a, disminuye la variable b en cada iteración.
 
 
-## Ejercicio2
-
-Revista este manual de [fastqc](https://olvtools.com/en/documents/fastqc), [multiqc](https://github.com/MultiQC/MultiQC), [pear](https://github.com/tseemann/PEAR)
-
-1. Los archivos que van a analizar se encuenta en el siguiente directorio **/home/lab13/Documents/Ecologia_AnalisisGenomico/HectorMartinez/FASTQ**
-2. Crea una carpeta que se llame **metagenoma** y dentro de la carpeta realice los análisis
-3. Dentro de la carpeta **metagenoma** haz una carpeta que se llame **fastqc_analisis**
-4. Realice el análisis de fastqc sin mover el archivo de la carpeta original y guardelo en **fastqc_analisis**
-5. Dentro de la carpeta **metagenoma** haz una segunda carpeta que se llame multiqc_analisis
-6. Realice el análisis de multiqc y guardelo  y guardelo en **multiqc_analisis**
-7. Dentro de la carpeta **metagenoma** haz una carpeta que se llame **ensamblados**
-8. Realice el análisis de ensamblado con PEAR y guardelo en **ensamblados**
-9. REALIZAR LA INTERPRETACIÓN
 
 ```
 #!/bin/bash
