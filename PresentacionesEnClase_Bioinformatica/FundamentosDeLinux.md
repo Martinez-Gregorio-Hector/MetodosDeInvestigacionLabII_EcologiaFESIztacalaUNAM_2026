@@ -339,6 +339,831 @@ ls -ld New_Dir
 ## drwxr-xr-x. 2 lab13 lab13 6 Aug 11 07:44 New_Dir
 ```
 
+
+#################################
+
+ls
+
+## Ecologia_AnalisisGenomico  MAGH  Memo  miguel  miguel2  miRNA  respaldo_docker_automethyc
+```
+Tenga en cuenta que el comando ls genera la lista en orden alfabético (en columnas en lugar de filas).
+
+Opciones de *_𝑙𝑠*_
+
+```
+-a list all (lista archivo ocultos tipo .directorio o .archivo)
+-l long format (muestra permisos y otros atributos como usuario, grupo, tamaño del archivo y fecha de modificación)
+-t time sort (ordena por tiempo)
+-r reverse sort
+-R list subdirectories recursively
+-S size sort (ordena por tamaño)
+-h human readable (indica Kb, Mb, Gb …)
+```
+
+Para mostrar archivos ocultos junto con los archivos y directorios normales, use el parámetro -a. A continuación, se muestra un ejemplo del uso del parámetro -a con el comando ls.
+
+```
+ls -a
+
+## . .. Ecologia_AnalisisGenomico  MAGH  Memo  miguel  miguel2  miRNA  respaldo_docker_automethyc
+```
+
+En los listados básicos, el comando ls no genera mucha información sobre cada archivo. Para obtener información adicional, otro parámetro popular es -l. El parámetro -l genera un formato de listado largo, que proporciona más información sobre cada archivo del directorio.
+
+```
+ls -lh
+
+## drwxr-xr-x.  2 lab13 lab13    6 Aug 10 20:36 Ecologia_AnalisisGenomico
+## drwxrwxrwx.  6 lab13 lab13   97 Jul 29 18:03 MAGH
+## drwxrwxrwx.  3 lab13 lab13   19 Jul  1 11:43 Memo
+## drwxrwxrwx. 29 lab13 lab13 4.0K Jul 19 14:20 miguel
+## drwxr-xr-x.  6 lab13 lab13   91 Jul 20 17:49 miguel2
+## drwxrwxrwx.  3 lab13 lab13 8.0K Jun 27 20:29 miRNA
+## drwxr-xr-x.  2 lab13 lab13   35 Jul 23 16:11 respaldo_docker_automethyc
+```
+
+El comando ls lista por defecto todos los archivos de directorios visibles. A veces, esto puede resultar excesivo, sobre todo cuando solo busca información sobre unos pocos archivos.
+
+Afortunadamente, el comando ls también permite definir un filtro en la línea de comandos. Este filtro determina qué archivos o directorios debe mostrar en la salida.
+
+```
+ls
+
+## my_scrapt  my_scrept  my_script  my_scropt  my_scrupt
+
+ls -l my_script
+
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_script
+```
+
+El comando ls también reconoce caracteres comodín estándar y los utiliza para encontrar patrones dentro del filtro:
+■ Un signo de interrogación (?) para representar un carácter
+■ Un asterisco (*) para representar cualquier número de caracteres
+
+```
+ls -lh my_scr?pt
+
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scrapt
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scrept
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_script
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scropt
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scrupt
+
+ls -lh my*
+
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scrapt
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scrept
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_script
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scropt
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scrupt
+```
+
+El asterisco busca tres archivos diferentes, comenzando con el nombre "my". Al igual que con el signo de interrogación, puede colocar los asteriscos en cualquier parte del filtro:
+
+```
+ls -lh my_s*t
+
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scrapt
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scrept
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_script
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scropt
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scrupt
+
+```
+
+El uso del asterisco y el signo de interrogación en el filtro se denomina "globbing" de archivos. El "globbing" de archivos consiste en procesar la coincidencia de patrones mediante comodines. Los comodines se denominan oficialmente comodines de metacaracteres. Se pueden usar más comodines de metacaracteres para el "globbing" de archivos que solo el asterisco y el signo de interrogación. También se pueden usar corchetes.
+
+```
+ls -l my_scr[ai]pt
+
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scrapt
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_script
+
+ls -l my_scr[a-i]pt
+
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scrapt
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scrept
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_script
+
+```
+
+También puedes especificar qué no debe incluirse en la coincidencia de patrones utilizando el signo de exclamación (!):
+
+```
+ls -l my_scr[!i]pt
+
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scrapt
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scrept
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scropt
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_scrupt
+
+```
+## Manejo de archivos
+
+De vez en cuando, es necesario crear un archivo vacío. Por ejemplo, a veces las aplicaciones esperan que exista un archivo de registro antes de poder escribir en él. En estas situaciones, se puede usar el comando *`touch`* para crear fácilmente un archivo vacío:
+
+```
+touch test_one
+ls -l test_one
+
+## --rw-r--r--. 1 lab13 lab13 0 Aug 11 00:51 test_one
+
+```
+## Copiando archivos
+
+Copiar archivos y directorios de una ubicación a otra en el sistema de archivos es una práctica común para los administradores de sistemas. El comando *_cp_* proporciona esta función.
+
+En su forma más básica, el comando cp utiliza dos parámetros: el objeto de origen y el objeto de destino: *_cp fuente destino_*  
+
+```
+cp test_one test_two
+ls -lh test*
+
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:51 test_one
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 07:26 test_two
+
+```
+
+El parámetro -R es una potente opción del comando cp. Permite copiar recursivamente el contenido de un directorio completo con un solo comando: *_cp -R Scripts/ Mod_Scripts_*
+
+## Renombrando archivos
+
+En Linux, renombrar archivos se llama mover archivos. El comando *_mv_* permite mover archivos y directorios a otra ubicación o a un nuevo nombre:
+
+```
+ls -lh f?ll
+
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 07:33 fall
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 07:33 fell
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 07:33 fill
+
+mv fall fzll
+ls -lh f?ll
+
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 07:33 fell
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 07:33 fill
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 07:33 fzll
+
+```
+
+## Eliminando archivos
+
+Lo más probable es que en algún momento quieras poder eliminar archivos existentes. Ya sea para limpiar un sistema de archivos o para eliminar un paquete de software, siempre tienes la oportunidad de eliminar archivos.
+
+En Linux, eliminar se llama remover. El comando para eliminar archivos en la shell bash es *_rm*_. La forma básica del comando _*rm_* es simple:
+
+
+```
+rm fzll 
+
+ls -lh f?ll 
+
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 07:33 fell
+## -rw-r--r--. 1 lab13 lab13 0 Aug 11 07:33 fill
+
+rm f?ll 
+```
+
+## Administración de directorios
+
+Crear un nuevo directorio en Linux es fácil: solo use el comando *_mkdir*_
+
+```
+mkdir New_Dir
+ls -ld New_Dir
+
+## drwxr-xr-x. 2 lab13 lab13 6 Aug 11 07:44 New_Dir
+```
+El sistema crea un nuevo directorio llamado *_New_Dir*_. Observe que en la lista larga del nuevo directorio, su registro comienza con una d. Esto indica que *_New_Dir*_ no es un archivo, sino un directorio.
+
+Puede crear directorios y subdirectorios en bloque si es necesario. Sin embargo, si intenta hacerlo solo con el comando mkdir, recibirá el siguiente mensaje de error.
+
+```
+mkdir New_Dir/Sub_Dir/Under_Dir
+## mkdir: cannot create directory ‘New_Dir/Sub_Dir/Under_Dir’: No such file or directory
+```
+
+Para crear varios directorios y subdirectorios al mismo tiempo, debe agregar el parámetro *_-p*_:
+
+```
+mkdir -p New_Dir/Sub_Dir/Under_Dir
+
+ls -R New_Dir
+
+## New_Dir:
+## Sub_Dir
+
+## New_Dir/Sub_Dir:
+## Under_Dir
+
+## New_Dir/Sub_Dir/Under_Dir:
+
+```
+La opción -p del comando mkdir crea los directorios principales que faltan según sea necesario. Un directorio principal es un directorio que contiene otros directorios en el nivel inferior del árbol de directorios.
+
+## Visualización del archivo
+
+Si tiene un archivo de texto grande, quizás quiera ver su contenido. Linux cuenta con tres comandos diferentes que pueden ayudarle
+
+El comando *_cat*_ es una herramienta útil para mostrar todos los datos dentro de un archivo de texto
+
+```
+cat SraAccList.txt 
+
+## SRR31854929
+## SRR31854928
+## SRR31854929
+
+```
+
+Con _*cat*_ solo observamos el contenido del archivo de texto. Sin embargo, el comando cat tiene algunos parámetros que puede ayudar. El parámetro -n numera todas las líneas automáticamente:
+
+```
+cat -n SraAccList.txt 
+
+##     1	SRR31854929
+##     2	SRR31854928
+##     3	SRR31854929
+
+```
+Esta función será útil al examinar scripts. Si solo desea numerar las líneas que contienen texto, el parámetro -b es ideal.
+
+Por último, si no desea que aparezcan caracteres de tabulación, utilice el parámetro -T,.
+
+```
+## Examina MAGH_alineamiento.sh
+
+cat MAGH_alineamiento.sh
+cat -n MAGH_alineamiento.sh
+cat -b MAGH_alineamiento.sh
+cat -T MAGH_alineamiento.sh
+```
+
+## Una alternative de _*cat*_ es _*more*_, _*less*_, _*tail*_, _*head*_
+
+Con _*head*_ y _*tail*_ puedes especificar con -n para ver cuantas líneas quieres ver en tu terminal
+
+```
+head -n 8 MAGH_alineamiento.sh 
+
+## #!/bin/bash
+## 
+## ###############
+## #Directorios
+## ###############
+## ref="/home/lab13/Reference/Reference/Human-Hg19/ucsc.hg19.fasta"
+## 
+## #Aliniamiento bwa
+
+tail -n 8 MAGH_alineamiento.sh
+
+##
+## #Para hacer el call
+## for file in *.segmetrics.cns; do
+## id=${file%"segmetrics.cns"}
+## call="${id}.segmetrics.call.cns"
+## 
+## cnvkit.py call $file -o $call
+## done
+
+```
+
+## Trabajando con archivos de datos
+
+Cuando se tiene una gran cantidad de datos, gestionar la información y hacerla útil puede ser difícil. Linux ofrece varias herramientas de línea de comandos para facilitar la gestión de grandes cantidades de datos. Esta sección abarca los comandos básicos que todo administrador de sistemas, así como cualquier usuario habitual de Linux, debería saber usar para simplificar su trabajo.
+
+## Ordenar datos
+
+El comando _*sort*_ es una función popular que resulta útil al trabajar con grandes cantidades de datos. Su función es ordenar los datos. De forma predeterminada, el comando sort ordena las líneas de datos de un archivo de texto utilizando las reglas de ordenación estándar del idioma que especifique como predeterminado para la sesión. Antes de usar _*sort*_ vamos a descargar una datos en el repositorio con el comando _*wget*_
+
+-u da una salida no redundante, es decir, una sola instancia de elementos repetidos
+-n hace ordenamiento numérico
+-d hace ordenamiento tipo diccionario
+-r da la salida en orden inverso
+-k<#> ordena la salida por la columna número #
+idiomas frecuentes
+sort -u
+sort -dk2
+sort -nrk2
+
+```
+# Descargamos el archivo que vamos a usar para mnuestro ejercicio
+
+wget https://raw.githubusercontent.com/Martinez-Gregorio-Hector/AnalisisGenomico-EcologiaFESIztacala/refs/heads/main/Unidad1/Datos/flights.csv
+# Después de descargar inspecciona el documento con los comandos que aprendiste durante la clase
+
+# Ejecutar el comando sort para ordenar los datos, que observas?
+sort flights.csv
+```
+
+Antes de continuar con nuestra clase vamos a ver unos datos esciales con _*|*_, _*wc*_, _*>*_, _*cut*_
+
+```
+# wc sirve para contar cuantas líneas tiene nuestro archivo, ejecutar el siguiente comando y decir cuantas líneas el archivo
+wc -l flights.csv
+# En el comando anterior con sort ordenaste solo la primera línea, que comando usarías para ordenar la columna 10 (dest)
+sort -t',' -k10,10 flights.csv | head
+```
+
+Vamos a seguir trabajando con sort
+
+```
+# descargue el archivo con el que vamos a trabajar
+wget https://raw.githubusercontent.com/Martinez-Gregorio-Hector/AnalisisGenomico-EcologiaFESIztacala/refs/heads/main/Unidad1/Datos/file1.txt
+# Ordenar los datos
+sort file1.txt
+# Que cosa es lo que observas después de ejecutar el comando anterior?
+```
+
+Si esperaba que los números se ordenaran numéricamente, se llevó una decepción. Por defecto, el comando sort interpreta los números como caracteres y realiza una ordenación estándar por caracteres, lo que genera un resultado que podría no ser el deseado. Para solucionar este problema, utilice el parámetro _*-n*_, que indica al comando sort que reconozca los números como números en lugar de caracteres y los ordene según sus valores numéricos:
+
+```
+sort -n file1.txt
+```
+
+Ejecute el siguiente comando.
+
+```
+# descargue el archivo con el que vamos a trabajar
+wget https://raw.githubusercontent.com/Martinez-Gregorio-Hector/AnalisisGenomico-EcologiaFESIztacala/refs/heads/main/Unidad1/Datos/file2.txt
+```
+
+Si usas el parámetro -M, el comando sort reconoce la nomenclatura de tres caracteres del mes y ordena correctamente
+
+```
+sort -M file2.txt 
+```
+
+Vamos a seguir practicando para ordenar los datos
+
+```
+# Descarga el siguiente dato
+wget https://raw.githubusercontent.com/Martinez-Gregorio-Hector/AnalisisGenomico-EcologiaFESIztacala/refs/heads/main/Unidad1/Datos/file3.txt
+# Inspeccionar el archivo
+head file3.txt
+# Quiero ordenar la fila 3, cómo lo hago?
+```
+
+Antes de ordenar, debemos que usar algunos parámetros como -k y -t que son útiles al ordenar datos que usan campos, como el archivo file3.txt. 
+
+Use el parámetro -t para especificar el carácter separador de campo y el parámetro -k para especificar el campo por el que ordenar.
+
+```
+sort -t ':' -k 3 -n file3.txt
+
+root:x:0:0:root:/root:/bin/bash 
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+halt:x:7:0:halt:/sbin:/sbin/halt
+mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
+news:x:9:13:news:/etc/news:
+uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin
+operator:x:11:0:operator:/root:/sbin/nologin
+games:x:12:100:games:/usr/games:/sbin/nologin
+gopher:x:13:30:gopher:/var/gopher:/sbin/nologin
+ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
+```
+
+## _*𝑢𝑛𝑖𝑞*_reporta u omite líneas repetidas
+
+_*𝑢𝑛𝑖𝑞*_ tiene también una gama de opciones que controlan cómo contar las instancias, pero la opción _*−𝑐*_ es posiblemente la más usada en pipelines, donde se usa al final para generar estadísticas de resumen.
+
+-c cuenta las instancias únicas, añadiendo la cuenta al inicio de las líneas repetidas
+-d imprime sólo líneas duplicadas
+-D imprime todas la líneas duplicadas
+-f N ignora duplicados en los primeros N campos del archivo
+-i ignora mayúsculas y minúsculas en el cómputo de líneas iguales
+-u imprime sólo líneas únicas
+
+```
+# El comando nl sirve para numerar las líneas de un archivo de texto
+echo -e "Pseudo\nSteno\nEsch\nSteno\nKleb\nSalmo\nKleb\nKleb" | sort | uniq -c | nl
+```
+
+## Búsqueda de datos
+
+A menudo, en un archivo grande, es necesario buscar una línea de datos específica en algún lugar del archivo. En lugar de recorrerlo manualmente, puede dejar que el comando grep busque automáticamente. El formato de línea de comandos para el comando _*grep*_ es:
+
+```
+grep [options] pattern [file]
+```
+Control de sintaxis del patrón. 
+
+-E hace uso de expresiones regulares extendidas grep -E
+‘^XXX|YYY|zzz$’ FILE
+-P hace uso de expresiones regulares compatiblesc on Perl (PCREs).
+
+
+```
+# Descargar el dato que vamos a usar
+wget wget https://raw.githubusercontent.com/Martinez-Gregorio-Hector/AnalisisGenomico-EcologiaFESIztacala/refs/heads/main/Unidad1/Datos/mini_tabla.tsv
+
+# visualizar el archivo descargado
+cat mini_tabla.tsv
+
+#assembly_accession	organism_name	seq_rel_date	asm_name	submitter
+GCF_004343645.1	Klebsiella grimontii	2019/03/11	ASM434364v1	Aarhus University
+GCF_901563825.1	Klebsiella grimontii	2019/05/29	SB3355_SG266_Ko4	Institut Pasteur
+GCF_003086675.1	Stenotrophomonas sp. ZAC14D2_NAIMI4_7	2018/05/03	ASM308667v1	CCG-UNAM
+GCF_003086855.1	Stenotrophomonas sp. YAU14A_MKIMI4_1	2018/05/03	ASM308685v1	CCG-UNAM
+GCF_000534095.1	Klebsiella aerogenes UCI 47	2014/02/03	Ente_aero_UCI_47_V1	Broad Institute
+GCF_000006765.1	Pseudomonas aeruginosa PAO1	2006/07/07	ASM676v1	PathoGenesis Corporation
+GCF_000017205.1	Pseudomonas aeruginosa PA7	2007/07/05	ASM1720v1	J. Craig Venter Institute
+GCF_000072485.1	Stenotrophomonas maltophilia K279a	2008/06/10	ASM7248v1	Wellcome Trust Sanger Institute
+GCF_000284595.1	Stenotrophomonas maltophilia D457	2012/04/11	ASM28459v1	University of Valencia
+```
+Vamos a buscar en el archivo las filas que contengan la palabra UNAM y Valencia
+
+```
+grep -E 'UNAM$|Valencia$' mini_tabla.tsv
+
+## GCF_003086675.1	Stenotrophomonas sp. ZAC14D2_NAIMI4_7	2018/05/03	ASM308667v1	CCG-UNAM
+## GCF_003086855.1	Stenotrophomonas sp. YAU14A_MKIMI4_1	2018/05/03	ASM308685v1	CCG-UNAM
+## GCF_000284595.1	Stenotrophomonas maltophilia D457	2012/04/11	ASM28459v1	University of Valencia
+```
+
+Otras opciones de busqueda con grep
+
+-f FILE obtiene los patrones (uno por línea) del archivo FILE
+-i ignora mayúsculas y minúsculas
+-v invierte el match o coincidencia, es decir, imprime las líneas que NO contienen al ‘patrón’
+-w usa el ‘patrón’ como palabra completa
+
+```
+ grep 'Institute$' mini_tabla.tsv  
+
+## GCF_000534095.1	Klebsiella aerogenes UCI 47	2014/02/03	Ente_aero_UCI_47_V1	Broad Institute
+## GCF_000017205.1	Pseudomonas aeruginosa PA7	2007/07/05	ASM1720v1	J. Craig Venter Institute
+## GCF_000072485.1	Stenotrophomonas maltophilia K279a	2008/06/10	ASM7248v1	Wellcome Trust Sanger Institute
+
+grep 'Institute$' mini_tabla.tsv | grep -iv 'pseudo'
+
+## GCF_000534095.1	Klebsiella aerogenes UCI 47	2014/02/03	Ente_aero_UCI_47_V1	Broad Institute
+## GCF_000072485.1	Stenotrophomonas maltophilia K279a	2008/06/10	ASM7248v1	Wellcome Trust Sanger Institute
+```
+
+## cut corta las líneas por delimitadores de campo (-d) imprimiendo sólo los campos (-f) deseados
+
+Si trabajamos con tablas, después de extraer las líneas que no interesan usando _*𝑔𝑟𝑒𝑝*_, frecuentemente querremos concentrarnos en algunos campos de la tabla. Para ello la herramienta ideal es _*𝑐𝑢𝑡*_, que corta campos de líneas de texto/tablas por elimitadores de campo específicos (TAB por defecto), extrayendo los campos indicados (-f), como muestra el siguiente ejemplo genérico
+
+```
+grep ‘patrón’ ARCHIVO.tsv | cut -f 1,3-5
+```
+
+Opciones con cut 
+* -d DELIMITADOR_DE_CAMPO, que por defeto es el tabulador (). Para cambiarlo a un espacio usamos cut -d’ ’
+* -f NUM,NUM-NUM indica los números de campo a extraer, separados por comas (1,3) o indicando rangos de campos (3-5)
+
+```
+grep ‘patrón’ ARCHIVO.tsv | cut -f 1,3-5
+```
+
+Vamos a buscar Institute en el archivo mini_tabla.tsv y seleccionar la columna 1,2,5
+```
+grep 'Institute$' mini_tabla.tsv | cut -f1-2,5
+# De manera adicional podemos guardar esos datos en un nuevo archivo
+grep 'Institute$' mini_tabla.tsv | cut -f1-2,5 > mini3_tabla.tsv
+# Vamos a visualizar el archivo mini3_tabla.tsv
+cat mini3_tabla.tsv
+```
+
+# Ejemplos de herramientas de filtrado de texto: pipelines con grep, cut, sort, uniq, wc en acción
+
+Veamos ahora los comandos más usados en tuberías de filtrado de texto en acción, haciendo uso de sólo algunas de las opciones más frecuentes listados en la sección anterior.
+
+* ¿cuántas líneas tiene el archivo assembly_summary.txt.gz?
+
+```
+## Vamos a descargar el archivo
+wget https://github.com/Martinez-Gregorio-Hector/AnalisisGenomico-EcologiaFESIztacala/blob/main/Unidad1/Datos/assembly_summary.txt.gz
+
+# ¿cuántas líneas tiene el archivo assembly_summary.txt.gz?
+zcat assembly_summary.txt.gz | wc
+zcat assembly_summary.txt.gz | wc -l
+
+## 161297 3788695 48497020
+## 161297
+
+161297 → número de líneas del archivo.
+
+3788695 → número de palabras totales.
+
+48497020 → número de bytes (tamaño del archivo en texto sin comprimir).
+```
+
+* la columna assembly_level (#12) indica el estado del ensamble. ¿Cuáles son los niveles de la variable categórica assembly_level (valores únicos de la misma?
+
+```
+# la columna assembly_level (#12) indica el estado del ensamble. ¿Cuáles son los niveles de la variable categórica assembly_level (valores únicos de la misma?
+zcat assembly_summary.txt.gz | grep -v "^#" | cut -f 12 | sort -u
+
+## Chromosome
+## Complete Genome
+## Contig
+## Scaffold
+```
+
+* ¿cuántos genomas hay por nivel de la variable categórica assembly_level?
+
+```
+# ¿cuántos genomas hay por nivel de la variable categórica assembly_level?
+#  noten que en este ejemplo usamos tail -n +2 para evitar la primera línea
+zcat assembly_summary.txt.gz | tail -n +2 | cut -f 12 | sort | uniq -c
+
+##   1 assembly_level
+##   2018 Chromosome
+##   13983 Complete Genome
+##   82755 Contig
+##   62539 Scaffold
+```
+
+* genera una estadística del número de genomas por especie (columna # 8), y muestra sólo las 10 especies con más genomas secuenciados!
+
+```
+# genera una estadística del número de genomas por especie (columna # 8), y muestra sólo las 10 especies con más genomas secuenciados!
+zcat assembly_summary.txt.gz | grep -v "^#" | cut -f8 | sort | uniq -c | sort -nrk1 | head -10
+```
+
+# Ejercicio 
+
+### 1. ¿Cuántos genomas completos hay del género Acinetobacter?
+### 2. filtra y cuenta las lineas que contienen Acinetobacter o Stenotrophomonas
+### 3. Cuenta los genomas de Acinetobacter, Pseudomonas y Klebsiella (por género) y presenta una lista ordenada por número decreciente de genomas
+
+
+```
+# ¿Cuántos genomas completos hay del género Acinetobacter?
+zcat assembly_summary.txt.gz | grep Acinetobacter | grep Complete | wc -l
+# filtra y cuenta las lineas que contienen Acinetobacter o Stenotrophomonas
+zgrep -E 'Acinetobacter|Stenotrophomonas' assembly_summary.txt.gz | wc -l
+# Cuenta los genomas de Acinetobacter, Pseudomonas y Klebsiella (por género) y presenta una lista ordenada por número decreciente de genomas
+zgrep -E 'Acinetobacter|Pseudomonas|Klebsiella' assembly_summary.txt.gz | cut -f 8 | cut -d' ' -f1 |sort -d | uniq -c |sort -nrk1
+```
+
+# Uso de variables
+
+El shell bash utiliza una función llamada variables de entorno para almacenar información sobre la sesión del shell y el entorno de trabajo (de ahí el nombre de variables de entorno). Esta función también permite almacenar datos en memoria a los que cualquier programa o script que se ejecute desde el shell puede acceder fácilmente. Es una forma práctica de almacenar datos persistentes necesarios.
+
+Existen dos tipos de variables de entorno en el shell bash:
+
+* Variables globales
+
+* Variables locales
+
+Para ver las variables de entorno globales, utilice el comando _*env*_ o _*printenv*_
+
+```
+env | head -n 7
+
+## TERM_PROGRAM=Apple_Terminal
+## SHELL=/bin/zsh
+## TERM=xterm-256color
+## TMPDIR=/var/folders/lz/_pw1ngjd2b5gs47g9x2sy6pr0000gn/T/
+## TERM_PROGRAM_VERSION=453
+## TERM_SESSION_ID=04F1D001-5AF4-4EB5-9F0E-7A5CFF702EF7
+## USER=magh
+
+echo $USER
+
+## magh
+```
+## Variables locales
+
+
+Tras iniciar una shell bash (o generar un script de shell), se pueden crear variables locales definidas por el usuario, visibles en el proceso de shell. Se puede asignar un valor numérico o de cadena a una variable de entorno, asignándola a un valor con el signo igual:
+
+```
+my_variable=Hello 
+echo $my_variable
+```
+
+Ejercicio 
+```
+Establece una variable: dias
+Establece una variable: invitado
+
+Imprime esta frase que diga
+Mariana se reporto hace 10 dias
+
+```
+
+# Permisos
+
+## Usuario, grupo y resto del mundo (User, Group, Others …) y permisos 
+
+En sistemas UNIX y GNU/Linux cada archivo y directorio tiene unos permisos determinados de 
+
+*lectura=𝑟
+
+*escritura=𝑤
+
+*ejecución=𝑥
+
+para el usuario, grupo y resto del mundo, asignados en ese orden (UGO). Un archivo regular, escrito por el usuario tiene los siguientes permisos por defecto, como muestra el comando 𝑙𝑠−𝑙
+
+```
+ls -l | grep odp
+-rw-r--r-- 1 vinuesa vinuesa 2993606 sep 30 10:52 intro_biocomputo_Linux_LCG.odp
+
+```
+
+Veamos lo que quiere decir. Para ello necesitamos separar la cadena de caracteres en los siguientes componentes
+
+```
+   U   G   O       usuario grupo
+1  2   3   4  5    6       7
+-|rw-|r--|r-- 1 vinuesa vinuesa
+
+donde:
+
+1. la posición 1 (-) indica que se trata de un archivo regular. Un directorio se indica con "d" y una liga simbólica con "l"
+2. El grupo 2,3 y 4 de caraceres indican el "modo" del archivo (permisos) para el usuario (U), grupo (G) y otros (resto del mundo O), 
+   separados por "|" para facilitar su visualización.
+   En este caso el usuario tiene permisos de lectura (r) y escritura (w) sobre el archivo que no es ejecutable (-)
+   El grupo y el resto del mundo sólo pueden leer el archivo, pero no modificarlo.
+```
+
+## Tabla de atributos de los permisos
+
+La siguiente tabla resume los atributos que tienen los permisos 𝑟, 𝑤, 𝑥 sobre archivos regulares y directorios:
+
+```
+| Atributo | Archivos                                       | Directorios                                  |
+|:--------:|------------------------------------------------|----------------------------------------------|
+| r        | abrir y leer                                   | listar contenidos si tiene +x                |
+| w        | editar pero no renombrar/borrar (atributo dir) | permite generar archivos en dir, si tiene +x |
+| x        | permite ejecutra archivo (programa) si +r      | permite entrar al directorio                 |
+```
+
+## chmod - cambiar el modo (permisos) de un archivo o directorio
+
+Hay dos maneras de hacerlo:
+
+### 1 Usando notación simbólica para U|G|O y todos (a)
+
+
+```
+| Símbolo | Significado                                |
+|:-------:|--------------------------------------------|
+| u       | usuario, el dueño del archivo o directorio |
+| g       | dueño del gruop                            |
+| o       | otros (resto del mundo)                    |
+| a       | todos (all); combinación de u,g,o          |
+
+```
+
+Ejemplos: 𝑐ℎ𝑚𝑜𝑑 𝑛𝑜𝑡𝑎𝑐𝑖ó𝑛 𝑎𝑟𝑐ℎ𝑖𝑣𝑜|𝑑𝑖𝑟
+
+```
+|  Notación  | Significado                                |
+|:----------:|--------------------------------------------|
+| u+x        | da permiso de ejecución a usuario          |
+| u-x        | revoca permiso de ejecución a usuario      |
+| o-r        | otros (resto del mundo) no puede leer      |
+| +x         | equivale a a+x                             |
+| o-rw       | quitar a otros permisos de rw              |
+| u+x,go=-rx | asignar +x a U, revocar a O permisos de rx |
+```
+
+𝑐ℎ𝑚𝑜𝑑 𝑎+𝑟𝑥 𝑠𝑐𝑟𝑖𝑝𝑡.𝑠ℎ hace el archivo script.sh leíble y ejecutable para todos
+
+
+### 2 Usando representación octal
+
+Los sistemas de numeración 𝑜𝑐𝑡𝑎𝑙 (base 8) y su primo el ℎ𝑒𝑥𝑎𝑑𝑒𝑐𝑖𝑚𝑎𝑙 (base 16) se usan frecuentemente para expresar números en computadoras.
+
+Los humanos usamos el sistama 𝑑𝑒𝑐𝑖𝑚𝑎𝑙 ya que (la mayoría) tenemos 10 dedos. Las computadoras en cambio “nacieron con un solo dedo”, por lo que cuentan usando el sistema 𝑏𝑖𝑛𝑎𝑟𝑖𝑜 (base 2) usando sólo 1s y 0s. Por tanto en binario, contamos así: 0,1, 10,11, 100,101, 110,111 …
+
+En 𝑜𝑐𝑡𝑎𝑙, contamos así: 0,1,2,3,4,5,6,7, 10,11,12,13,14,15,16,17, 20,21 …
+
+Usando una cadena de tres dígitos octales, podemos de manera muy conveniente definir el modo de un archivo para U|G|O acorde a la siguiente tabla
+
+```
+| octal | binario | modo del archivo |
+|:-----:|---------|------------------|
+| 0     | 000     | —                |
+| 1     | 001     | –x               |
+| 2     | 010     | -w-              |
+| 3     | 011     | -wx              |
+| 4     | 100     | r–               |
+| 5     | 101     | r-x              |
+| 6     | 110     | rw-              |
+| 7     | 111     | rwx              |
+```
+
+De modo que combinando los octales
+
+READ = 4
+
+WRITE = 2
+
+EXECUTE = 1
+
+con las posiciones U|G|O, define los modos:
+
+```
+| USER  | GROUP | OTHERS | MODE |
+|-------|-------|--------|------|
+| r w x | r w x | r w x  | UGO  |
+| 4 2 0 | 0 0 0 | 0 0 0  | 600  |
+| 4 2 1 | 4 0 1 | 4 0 1  | 755  |
+```
+
+Ejercicio, como interpreto estos permisos?
+
+```
+𝑐ℎ𝑚𝑜𝑑 755 𝑠𝑐𝑟𝑖𝑝𝑡.𝑠ℎ
+𝑐ℎ𝑚𝑜𝑑 700 𝑠𝑐𝑟𝑖𝑝𝑡.𝑠ℎ
+𝑐ℎ𝑚𝑜𝑑 644 𝑠𝑐𝑟𝑖𝑝𝑡.𝑠ℎ
+```
+## Editor de script
+
+* [Visual Studio Code](https://code.visualstudio.com/)
+* [Atom](https://atom-editor.cc/)
+
+
+## Edición de archivos con el editor de flujo sed (stream editor)
+
+**sed** (stream editor) es un editor de flujo, una potente herramienta de tratamiento de texto para el sistema operativo UNIX que acepta como entrada un archivo, lo lee y modifica línea a línea de acuerdo a un script, mostrando el resultado por salida estándar (normalmente en pantalla, a menos que se realice una redirección). Sed permite manipular flujos de datos, como por ejemplo cortar líneas, buscar y reemplazar texto (con soporte de expresiones regulares ), entre otras cosas.
+
+La sintaxis general de la orden **sed** es:
+
+```
+sed [-n] [-e'script'] [-f archivo] archivo1 archivo2 ...
+
+# donde
+
+-n indica que se suprima la salida estándar.
+-e indica que se ejecute el script que viene a continuación. Si no se emplea la opción -f se puede omitir -e.
+-f indica que las órdenes se tomarán de un archivo
+
+```
+
+## Ejemplos de uso básico de sed: sustituciones s///
+
+Sustituciones **s///** de palabras **s/esto/aquello/** o caracteres en archivos de texto.
+
+* cambia espacios sencillos por guiones bajos
+
+```
+## Bajar el archivo que vamos a ejecutar
+wget https://raw.githubusercontent.com/vinuesa/intro2linux/refs/heads/master/data/linux_basic_commands.tab
+
+head -1 linux_basic_commands.tab                 # usamos head -1 para ver la primera línea, que modificaremos con sed
+## IEEE Std** 1003.1-2008 utilities Name 	Category 	Description 	First appeared
+head -1 linux_basic_commands.tab | sed 's/ /_/'  # se sustituye sólo la primera instancia de espacio en blanco!
+## IEEE_Std 1003.1-2008 utilities Name 	Category 	Description 	First appeared
+head -1 linux_basic_commands.tab | sed 's/ /_/g' # ahora globalmente
+## IEEE_Std_1003.1-2008_utilities_Name_	Category_	Description_	First_appeared
+```
+
+## Ejemplos de uso básico de sed: cambio de fuente: y///
+
+* Cambia todas las minúsculas a mayúsculas de archivo:
+
+```
+head -1 linux_basic_commands.tab | sed 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'
+## IEEE STD 1003.1-2008 UTILITIES NAME 	CATEGORY 	DESCRIPTION 	FIRST APPEARED
+```
+
+* Podemos combinar diversas acciones de sustitución, separándolas así: s///; s///
+
+```
+head -1 linux_basic_commands.tab | sed 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/; s/ /_/g'
+## IEEE_STD_1003.1-2008_UTILITIES_NAME_	CATEGORY_	DESCRIPTION_	FIRST_APPEARED
+```
+
+Otro ejemplo, descargar el archivo tomates.fasta y cambiar "Solanum lycopersicum" por "jitomate"
+
+```
+## Descargar el archivo
+wget https://raw.githubusercontent.com/AliciaMstt/BioinfinvRepro/refs/heads/master/Unidad1/Prac_Uni1/Tomates/tomates.fasta
+
+head tomates.fasta
+
+sed 's/Solanum lycopersicum/jitomate/' tomates.fasta
+```
+
+#################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Editor de texto vim
 
 El editor **vi** fue el editor original utilizado en sistemas Unix. Utilizaba el modo gráfico de consola para emular una ventana de edición de texto, lo que permitía ver las líneas de un archivo, navegar por él e insertar, editar y reemplazar texto.
