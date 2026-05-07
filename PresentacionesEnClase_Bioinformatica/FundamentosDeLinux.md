@@ -339,6 +339,1007 @@ ls -ld New_Dir
 ## drwxr-xr-x. 2 lab13 lab13 6 Aug 11 07:44 New_Dir
 ```
 
+# Editor de texto vim
+
+El editor **vi** fue el editor original utilizado en sistemas Unix. Utilizaba el modo gráfico de consola para emular una ventana de edición de texto, lo que permitía ver las líneas de un archivo, navegar por él e insertar, editar y reemplazar texto.
+
+Aunque posiblemente fuera el editor más complejo del mundo, ofrece numerosas funciones que lo han convertido en un elemento básico para los administradores de Unix durante décadas.
+
+Cuando el Proyecto GNU adaptó el editor **vi** al mundo del código abierto, decidió realizar algunas mejoras. Dado que ya no se parecía al editor **vi** original disponible en Unix, los desarrolladores también lo renombraron como **vi** mejorado o **vim**.
+
+## Explorando vim basico
+
+El editor **vim** trabaja con datos en un búfer de memoria. Para iniciarlo, simplemente escriba el comando **vim** (o vi si hay un alias o un archivo vinculado) y el nombre del archivo que desea editar:
+
+```
+vim test1.sh
+```
+
+Si inicia **vim** sin un nombre de archivo, o si el archivo no existe, vim abre un nuevo búfer para su edición. Si especifica un archivo existente en la línea de comandos, **vim** lee todo el contenido del archivo en un búfer, donde está listo para su edición.
+
+El editor vim tiene dos modos de funcionamiento:
+
+■ Modo normal
+
+■ Modo de inserción
+
+Al abrir un archivo por primera vez (o crear uno nuevo) para editarlo, el editor **vim** entra en modo normal. En modo normal, el editor **vim** interpreta las pulsaciones de teclas como comandos (más información más adelante). 
+
+En el modo de inserción, **vim** inserta cada tecla que pulsas en la posición actual del cursor en el búfer. Para entrar en el modo de inserción, pulsa la tecla **i**. Para salir del modo de inserción y volver al modo normal, pulsa la tecla **escape**.
+
+Dentro del modo de línea de comandos -inserición- hay varios comandos para guardar el búfer en el archivo y salir de vim:
+
+■ q para salir si no se han realizado cambios en los datos del búfer
+
+■ q! Para salir y descartar cualquier cambio realizado en los datos del búfer.
+
+■ w nombre_archivo para guardar el archivo con un nombre diferente.
+
+■ wq para guardar los datos del búfer en el archivo y salir.
+
+```
+## Después de que hayas hecho un script, para salir presione **scape** y después **:wq**
+
+Scrpt
+
+
+:wq
+```
+
+[Tutorial para principantes vim](https://www.freecodecamp.org/espanol/news/como-usar-vim-tutorial-para-principiantes/)
+
+# Editor de texto nano
+
+Aunque **vim** es un editor muy complejo con muchas funciones potentes, **nano** es un editor muy sencillo. Para quienes necesitan un editor de texto en modo consola sencillo y fácil de usar, **nano** es la herramienta ideal. También es un excelente editor de texto para jóvenes que se inician en la línea de comandos de Linux.
+
+El editor de texto **nano** es un clon del editor Pico de Unix. Aunque Pico también es un editor de texto ligero y sencillo, no tiene licencia GPL. El editor de texto nano no solo tiene licencia GPL, sino que también forma parte del proyecto GNU.
+
+El editor de texto nano viene instalado por defecto en la mayoría de las distribuciones de Linux. Todo en el editor de texto nano es sencillo. Para abrir un archivo en la línea de comandos con nano:
+
+```
+nano test2.sh
+```
+
+Una vez que se termine de redactar el script o los comandos que se utilicen para cierta actividad o análisis se tiene que guardar. Observe que en la parte inferior de la ventana del editor nano se muestran varios comandos con una breve descripción. Estos comandos son los comandos de control nano. El símbolo de intercalación (^) representa la tecla Ctrl. Por lo tanto, ^X representa la secuencia de teclado Ctrl+X. Para salir ejecutamos estas secuencias.
+
+
+<p align="center">  
+  <img src="https://github.com/Martinez-Gregorio-Hector/AnalisisGenomico-EcologiaFESIztacala/blob/main/Unidad1/Figuras/nano1.png? raw=true" alt="shell" >
+</p>
+
+Posteriormente, nos va a salir otro menú y guardamos los cambios con la letra **Y**  para guardar el script o documentación que acabamos de realizar.
+
+<p align="center">  
+  <img src="https://github.com/Martinez-Gregorio-Hector/AnalisisGenomico-EcologiaFESIztacala/blob/main/Unidad1/Figuras/nano2.png? raw=true" alt="shell" >
+</p>
+
+# bash scripting básico
+
+## Usando comandos múltiples
+
+Hasta ahora has visto cómo usar la interfaz de línea de comandos (CLI) del shell para introducir comandos y ver sus resultados. La clave de los scripts de shell reside en la capacidad de introducir múltiples comandos y procesar los resultados de cada uno, incluso pudiendo pasar los resultados de un comando a otro. El shell permite encadenar comandos en un solo paso.
+
+Si quieres ejecutar dos comandos a la vez, puedes introducirlos en la misma línea del prompt, separados com un **punto y coma**
+
+```
+date ; who 
+```
+
+Este sencillo script usa solo dos comandos de shell bash. El comando "date" se ejecuta primero, mostrando la fecha y hora actuales, seguido del comando "who", que muestra quién está conectado al sistema. Con esta técnica, puedes encadenar tantos comandos como desees, hasta el límite máximo de 255 caracteres de la línea de comandos.
+
+Esta técnica es adecuada para scripts pequeños, pero tiene una desventaja importante: debes ingresar el comando completo en el símbolo del sistema cada vez que quieras ejecutarlo. En lugar de tener que ingresar manualmente los comandos en una línea de comandos, puedes combinarlos en un simple archivo de texto. Cuando necesites ejecutar los comandos, simplemente ejecuta el archivo de texto.
+
+## Creando un bash scripting
+
+Para colocar comandos de shell en un archivo de texto, primero debe usar un **editor de texto** para crear un archivo y luego ingresar los comandos.
+
+Al crear un archivo de script de shell, debe especificar el shell que está usando en la primera línea del archivo. El formato es el siguiente:
+
+```
+#!/bin/bash
+```
+
+En una línea de shell scripting, el signo de almohadilla (#) se usa como línea de comentario. El shell no procesa una línea de comentario en un shell scripting. Sin embargo, la primera línea de un archivo de shell scripting es un caso especial, y el signo de almohadilla seguido del signo de exclamación le indica al shell en qué shell ejecutar el script. Haz un shell scripting usando la siguiente información, puedes guardarlo en una sesión que se llama **test3.sh** y **cambia el permiso del archivo creado: chmod u+x test3**
+
+```
+#!/bin/bash
+
+# Este script muestra la fecha y la fecha de inicio de sesión.
+
+date
+who
+```
+
+## Visualización de imágenes
+
+La mayoría de los comandos de shell generan su propia salida, que se muestra en el monitor de la consola donde se ejecuta el script. Sin embargo, a menudo querrá agregar sus propios mensajes de texto para que el usuario del script sepa qué sucede dentro del script. Puede hacerlo con el comando echo. El comando echo puede mostrar una cadena de texto simple si agrega la cadena después del comando:
+
+```
+echo This is a test
+## This is a test
+
+```
+
+Tenga en cuenta que, por defecto, no es necesario usar comillas para delimitar la cadena que se muestra. Sin embargo, esto puede resultar complicado si se usan comillas dentro de la cadena:
+
+```
+echo Let's see if this'll work
+## Lets see if thisll work
+
+```
+
+El comando **echo** utiliza comillas dobles o simples para delimitar cadenas de texto. Si las usa dentro de la cadena, debe usar un tipo de comillas dentro del texto y el otro para delimitar la cadena:
+
+```
+echo "This is a test to see if you're paying attention"
+## This is a test to see if you're paying attention
+
+echo 'Rich says "scripting is easy".'
+## Rich says "scripting is easy".
+
+```
+
+Puede agregar declaraciones de **echo** en cualquier lugar de sus scripts de shell donde necesite mostrar información adicional:
+
+Crea un archivo que se llame **test4.sh** y ejecuta el siguiente comando
+
+```
+#!/bin/bash
+
+# This script displays the date and who's logged on
+
+echo The time and date are:
+date
+
+echo "Let's see who's logged into the system:"
+who
+```
+
+Eso está bien, pero ¿qué pasa si quieres repetir una cadena de texto en la misma línea que la salida de un comando? Puedes usar el parámetro **-n** de la sentencia **echo** para ello. Simplemente cambia la primera línea de la sentencia echo por lo siguiente:
+
+```
+#!/bin/bash
+
+# This script displays the date and who's logged on
+
+echo -n "The time and date are: "
+date
+
+echo "Let's see who's logged into the system:"
+who
+```
+
+## Variables
+
+Además de las variables de entorno, un script de shell permite configurar y usar variables propias dentro del script. Configurar variables permite almacenar datos temporalmente y usarlos en todo el script, lo que lo hace más similar a un programa real.
+
+Las variables de usuario pueden ser cualquier cadena de texto de hasta 20 letras, dígitos o un guion bajo. Las variables de usuario distinguen entre mayúsculas y minúsculas, por lo que la variable **Var1** es diferente de la variable **var1**. Esta pequeña regla suele causar problemas a los programadores de scripts principiantes.
+
+Los valores se asignan a las variables de usuario mediante el signo igual. No se permiten espacios entre la variable, el signo igual y el valor (otro problema para principiantes). A continuación, se muestran algunos ejemplos de asignación de valores a variables de usuario:
+
+```
+var1=10
+var2=-57
+var3=testing
+var4="still more testing"
+```
+
+El script de shell determina automáticamente el tipo de dato utilizado para el valor de la variable. Las variables definidas dentro del script de shell mantienen sus valores durante toda su vida útil, pero se eliminan al finalizar.
+
+Al igual que las variables de sistema, las variables de usuario pueden referenciarse mediante el símbolo de dólar:
+
+Crear un shell scripting **test5.sh**
+
+```
+#!/bin/bash
+
+# testing variables
+
+days=10
+guest="Katie"
+echo "$guest checked in $days days ago"
+
+days=5
+guest="Jessica"
+echo "$guest checked in $days days ago"
+```
+
+Cada vez que se hace referencia a la variable, se genera el valor que tiene asignado. Es importante recordar que al hacer referencia al valor de una variable se usa el símbolo de dólar, pero al hacer referencia a la variable para asignarle un valor, no se usa el símbolo de dólar. Aquí hay un ejemplo de lo que quiero decir:
+
+Crear un shell scripting **test6.sh**
+
+```
+#!/bin/bash
+
+# assigning a variable value to another variable
+
+value1=10
+value2=$value1
+
+echo The resulting value is $value2
+```
+
+Si olvida el signo de dólar que pasaría
+
+```
+#!/bin/bash
+
+# assigning a variable value to another variable
+
+value1=10
+value2=value1
+
+echo The resulting value is $value2
+```
+
+Sin el signo de dólar, el shell interpreta el nombre de la variable como una cadena de texto normal, lo cual probablemente no sea lo que usted deseaba.
+
+## Comando de sustitución
+
+Una de las características más útiles de shell scripting es la capacidad de extraer información de la salida de un comando y asignarla a una variable. Después de asignar la salida a una variable, puede usar ese valor en cualquier parte del script. Esto resulta útil al procesar datos en sus scripts.
+
+Hay dos maneras de asignar la salida de un comando a una variable:
+
+■ El carácter de comillas invertidas (`)
+
+■ El formato $()
+
+Tenga cuidado con el carácter de comillas invertidas; no es la comilla simple que se usa habitualmente para las cadenas. Dado que no se usa muy a menudo fuera de los scripts de shell, es posible que ni siquiera sepa dónde encontrarlo en su teclado. Debería familiarizarse con él, ya que es un componente crucial de muchos shell scripting. Consejo: En un teclado estadounidense, suele estar en la misma tecla que la tilde (~).
+
+La sustitución de comandos permite asignar la salida de un comando de shell a una variable. Aunque parezca insignificante, es un componente fundamental en la programación de scripts.
+
+Debe rodear todo el comando de la línea de comandos con dos comillas invertidas:
+
+
+```
+testing='date'
+```
+
+o usa el formato $()
+
+```
+testing=$(date)
+```
+
+El shell ejecuta el comando dentro de los caracteres de sustitución de comandos y asigna la salida a la variable "testing". Observe que no hay espacios entre el signo igual de asignación y el carácter de sustitución de comandos. A continuación, se muestra un ejemplo de creación de una variable utilizando la salida de un comando de shell normal:. Crear un shell scripting **test7.sh**
+
+```
+#!/bin/bash
+
+testing=$(date)
+
+echo "The date and time are: " $testing
+```
+
+## Redireccionando input y output
+
+A veces, es necesario guardar la salida de un comando en lugar de simplemente mostrarla en el monitor. El shell bash ofrece varios operadores que permiten redirigir la salida de un comando a una ubicación alternativa (como un archivo). La redirección se puede usar tanto para la entrada como para la salida, redirigiendo un archivo a un comando para la entrada. Esta sección describe cómo usar la redirección en los scripts de shell.
+
+### redireccionando output
+
+El tipo más básico de redirección consiste en enviar la salida de un comando a un archivo. El shell bash utiliza el símbolo mayor que (**>**) para ello:
+
+```
+command > outputfile
+```
+
+Todo lo que aparecería en el monitor a partir del comando se almacena en el archivo de salida especificado:
+
+```
+who > test8
+```
+
+
+A veces, en lugar de sobrescribir el contenido del archivo, puede que necesite añadir la salida de un comando a un archivo existente; por ejemplo, si está creando un archivo de registro para documentar una acción en el sistema. En este caso, puede usar el símbolo de mayor que (>>) para añadir datos:
+
+```
+who >> test8
+```
+
+## Redireccionando input
+
+La redirección de entrada es lo opuesto a la redirección de salida. En lugar de tomar la salida de un comando y redirigirla a un archivo, la redirección de entrada toma el contenido de un archivo y lo redirige a un comando.
+
+El símbolo de redirección de entrada es el símbolo menor que (<):
+
+```
+command < inputfile
+```
+
+A continuación se muestra un ejemplo del uso de la redirección de entrada con el comando wc:
+
+
+```
+wc < test8
+```
+
+# Comando estructurado
+
+En los scripts de shell presentados anteriormente el shell procesaba cada comando individual en el orden en que aparecía. Esto funciona bien para operaciones secuenciales, donde se desea que todos los comandos se procesen en el orden correcto. Sin embargo, no todos los programas funcionan así.
+
+Muchos programas requieren algún tipo de control de flujo lógico entre los comandos del script. Existe una clase de comando completa que permite al script omitir comandos ejecutados según las condiciones probadas. Estos comandos generalmente se conocen como comandos estructurados.
+
+Los comandos estructurados permiten alterar el flujo de operaciones de un programa. Hay bastantes comandos estructurados disponibles en el shell bash, así que los analizaremos individualmente. Analizaremos las sentencias **if-then** y **case**.
+
+## Trabajando con if-then
+
+
+El tipo más básico de comando estructurado es la instrucción if-then. Esta instrucción tiene el siguiente formato:
+
+```
+if command
+then
+commands
+fi
+```
+
+Si usa sentencias if-then en otros lenguajes de programación, este formato puede resultar algo confuso. En otros lenguajes, el objeto después de la sentencia if es una ecuación que se evalúa para obtener un valor VERDADERO o FALSO. Así no funciona la sentencia if del shell bash.
+
+La sentencia **if** del shell bash ejecuta el comando definido en la línea **if**. Si el estado de salida del comando (es cero (el comando se completó correctamente), se ejecutan los comandos listados en la sección **then**. Si el estado de salida del comando es cualquier otro, los comandos `then` no se ejecutan y el shell bash pasa al siguiente comando del script. La sentencia **fi** define el final de la sentencia **if-then**.
+
+
+He aquí un ejemplo sencillo para demostrar este concepto:. Genera un script que diga **test9.sh**.
+
+```
+#!/bin/bash
+# testing the if statement
+
+if pwd
+then
+echo "It worked"
+fi
+```
+
+Este script usa el comando pwd en la línea if. Si el comando se completa correctamente, la instrucción echo debería mostrar la cadena de texto.
+
+El shell ejecutó el comando pwd indicado en la línea if. Dado que el estado de salida era cero, también ejecutó la sentencia echo indicada en la sección then.
+
+Otro ejemplo:
+
+```
+#!/bin/bash
+# testing a bad command
+
+if IamNotaCommand
+then
+echo "It worked"
+fi
+echo "We are outside the if statement"
+```
+
+En este ejemplo, usamos deliberadamente un comando, IamNotaCommand, que no funciona en la línea de la sentencia if. Al ser un comando incorrecto, genera un estado de salida distinto de cero y la shell bash omite la sentencia echo en la sección then. Observe también que el mensaje de error generado al ejecutar el comando en la sentencia if sigue apareciendo en la salida del script. Puede que en ocasiones no desee que aparezca una sentencia de error.
+
+
+```
+NOTA: Es posible que vea una forma alternativa de la sentencia if-then en algunos scripts:
+
+if command; then
+commands
+fi
+
+Al colocar un punto y coma al final del comando a evaluar, puede incluir la sentencia then en la misma línea, lo que se asemeja más a cómo se manejan las sentencias if-then en otros lenguajes de programación.
+```
+
+
+## Explorando if-then-else 
+
+En la sentencia if-then, solo hay una opción para determinar si un comando se ha ejecutado correctamente. Si el comando devuelve un código de estado de salida distinto de cero, la shell bash simplemente pasa al siguiente comando del script. En esta situación, sería útil poder ejecutar un conjunto alternativo de comandos. Para eso sirve la sentencia if-then-else.
+
+La sentencia if-then-else proporciona otro grupo de comandos:
+
+```
+if command
+then
+commands
+else
+commands
+fi
+
+```
+
+Cuando el comando en la línea de la sentencia if devuelve un código de salida cero, se ejecutan los comandos de la sección then, como en una sentencia if-then normal. Cuando el comando en la línea de la sentencia if devuelve un código de salida distinto de cero, el shell bash ejecuta los comandos de la sección else.
+
+```
+#!/bin/bash
+# testing the else section
+#
+testuser=NoSuchUser
+#
+
+if grep $testuser /etc/passwd
+then
+echo "The bash files for user $testuser are:"
+ls -a /home/$testuser/.b*
+echo
+else
+echo "The user $testuser does not exist on this system."
+echo
+fi
+```
+
+## Nesting ifs
+
+A veces, es necesario comprobar varias situaciones en el código del script. Para ello, se pueden anidar las sentencias if-then:
+
+Para comprobar si un nombre de inicio de sesión no está en el archivo /etc/passwd y si aún existe un directorio para ese usuario, utilice una sentencia if-then anidada. En este caso, la sentencia if-then anidada se encuentra dentro del bloque de código else de la sentencia if-then-else principal:
+
+```
+#!/bin/bash
+# Testing nested ifs
+#
+testuser=NoSuchUser
+#
+if grep $testuser /etc/passwd
+then
+echo "The user $testuser exists on this system."
+else
+echo "The user $testuser does not exist on this system."
+if ls -d /home/$testuser/
+then
+echo "However, $testuser has a directory."
+fi
+```
+
+El script detecta correctamente que, aunque el nombre de usuario se ha eliminado del archivo /etc/passwd, el directorio del usuario sigue en el sistema. El problema de usar este tipo de sentencias if-then anidadas en un script es que el código puede resultar difícil de leer y el flujo lógico se vuelve difícil de seguir.
+
+## condiciones:
+
+■ Comparaciones numéricas
+
+■ Comparaciones de cadenas (string)
+
+■ Comparaciones de archivos
+
+
+## Usando comparaciones númericos
+
+El método de evaluación de pruebas más común consiste en comparar dos valores numéricos. En la siguiente tabla se muestra la lista de parámetros de condición utilizados para probar dos valores.
+
+| Comparison        | Description                                         |
+|-------------------|-----------------------------------------------------|
+|     n1 -eq n2     |     Checks if n1 is equal to n2                     |
+|     n1 -ge n2     |     Checks if n1 is greater than or equal to n2     |
+|     n1 -gt n2     |     Checks if n1 is greater than n2                 |
+|     n1 -le n2     |     Checks if n1 is less than or equal to n2        |
+|     n1 -lt n2     |     Checks if n1 is less than n2                    |
+|     n1 -ne n2     |     Checks if n1 is not equal to n2                 |
+
+
+Las condiciones de prueba numéricas se pueden usar para evaluar tanto números como variables. A continuación, se muestra un ejemplo:
+
+```
+#!/bin/bash
+# Using numeric test evaluations
+#
+value1=10
+value2=11
+#
+if [ $value1 -gt 5 ]
+then
+echo "The test value $value1 is greater than 5"
+fi
+#
+if [ $value1 -eq $value2 ]
+then
+echo "The values are equal"
+else
+echo "The values are different"
+fi
+```
+
+Existe una limitación en las condiciones numéricas de prueba con respecto a los valores de punto flotante:
+
+```
+#!/bin/bash
+# Using floating point numbers in test evaluations
+#
+value1=5.555
+#
+echo "The test value is $value1"
+#
+if [ $value1 -gt 5 ]
+then
+echo "The test value $value1 is greater than 5"
+fi
+```
+
+Este ejemplo usa un valor de punto flotante, almacenado en la variable value1. A continuación, evalúa el valor. Obviamente, algo salió mal.
+
+Recuerda que los únicos números que la shell bash puede manejar son enteros. Esto funciona perfectamente si solo necesitas mostrar el resultado mediante una sentencia echo. Sin embargo, esto no funciona en funciones numéricas, como nuestra condición de prueba numérica. En resumen, no se pueden usar valores de punto flotante para las condiciones de prueba.
+
+## Usando comparaciones con cadenas (string)
+
+Las condiciones de prueba también permiten realizar comparaciones con valores de cadena. Realizar comparaciones con cadenas puede ser complicado. La siguiente tabla muestra las funciones de comparación que se pueden usar para evaluar dos valores de cadena.
+
+| Comparison           | Description                                           |
+|----------------------|-------------------------------------------------------|
+|     str1 = str2      |     Checks if str1 is the same as string str2         |
+|     str1 != str2     |     Checks if str1 is not the same as str2            |
+|     str1 < str2      |     Checks if str1 is less than str2                  |
+|     str1 > str2      |     Checks if str1 is greater than str2               |
+|     -n str1          |     Checks if str1 has a length greater than zero     |
+|     -z str1          |     Checks if str1 has a length of zero               |
+
+
+Las siguientes secciones describen las diferentes comparaciones de cadenas disponibles.
+
+### Análisis de la igualdad de cadenas
+
+Las condiciones de igualdad y desigualdad se explican por sí solas en el caso de las cadenas. Es bastante fácil saber cuándo dos valores de cadena son iguales o no:
+
+```
+#!/bin/bash
+# testing string equality
+testuser=rich
+#
+if [ $USER = $testuser ]
+then
+echo "Welcome $testuser"
+fi
+```
+
+Además, el uso de la comparación de cadenas no iguales le permite determinar si dos cadenas tienen el mismo valor o no:
+
+```
+#!/bin/bash
+# testing string equality
+testuser=baduser
+#
+if [ $USER != $testuser ]
+then
+echo "This is not $testuser"
+else
+echo "Welcome $testuser"
+fi
+```
+
+### Observando el orden de las cadenas
+
+Intentar determinar si una cadena es mayor o menor que otra es donde las cosas se complican. Dos problemas suelen afectar a los programadores de shell al intentar usar las funciones de mayor o menor que en las condiciones de prueba:
+
+■ Los símbolos de mayor o menor que deben escaparse, o el shell los usa como símbolos de redirección, con los valores de las cadenas como nombres de archivo.
+
+■ El orden de mayor o menor que no es el mismo que el usado con el comando sort.
+
+El primer elemento puede causar un problema grave que a menudo pasa desapercibido al programar scripts. Aquí hay un ejemplo de lo que a veces les sucede a los programadores de scripts de shell principiantes:
+
+```
+#!/bin/bash
+# mis-using string comparisons
+#
+val1=baseball
+val2=hockey
+#
+if [ $val1 > $val2 ]
+then
+echo "$val1 is greater than $val2"
+else
+echo "$val1 is less than $val2"
+fi
+```
+
+Al usar el símbolo "mayor que" en el script, no se generan errores, pero los resultados son erróneos. El script interpretó el símbolo "mayor que" como una redirección de salida. Por lo tanto, creó un archivo llamado "hockey". Dado que la redirección se completó correctamente, la condición de prueba devuelve un código de estado de salida cero, lo que la instrucción "if" evalúa como si todo se hubiera completado correctamente.
+
+Para solucionar este problema, debes escapar correctamente el símbolo mayor que:
+
+```
+#!/bin/bash
+# mis-using string comparisons
+#
+val1=baseball
+val2=hockey
+#
+if [ $val1 \> $val2 ]
+then
+echo "$val1 is greater than $val2"
+else
+echo "$val1 is less than $val2"
+fi
+```
+
+Esa respuesta se ajusta más a lo que cabría esperar de la comparación de cadenas.
+
+El segundo problema es un poco más sutil, y puede que ni siquiera lo detecte a menos que trabaje con mayúsculas y minúsculas. El comando **sort** maneja las mayúsculas de forma opuesta a como las consideran las condiciones de prueba:
+
+### Uso de comparaciones de archivos
+
+La última categoría de comparaciones de prueba es posiblemente la más potente y utilizada en scripts de shell. Esta categoría permite comprobar el estado de archivos y directorios en el sistema de archivos de Linux. Tabla de comparasiones
+
+| Comparison              | Description                                                                           |
+|-------------------------|---------------------------------------------------------------------------------------|
+|     -d file             |     Checks if file exists and is a directory                                          |
+|      -e file            |     Checks if file exists                                                             |
+|     -f file             |     Checks if file exists and is a file                                               |
+|     -r file             |     Checks if file exists and is readable                                             |
+|     -s file             |     Checks if file exists and is not empty                                            |
+|     -w file             |     Checks if file exists and is writable                                             |
+|     -x file             |     Checks if file exists and is executable                                           |
+|     -O file             |     Checks if file exists and is owned by the current user                            |
+|     -G file             |     Checks if file exists and the default group is the same as the current   user     |
+|     file1 -nt file2     |     Checks if file1 is newer than file2                                               |
+|     file1 -ot file2     |     Checks if file1 is older than file2                                               |
+
+
+Estas condiciones permiten comprobar los archivos del sistema de archivos en scripts de shell. Se utilizan a menudo en scripts que acceden a archivos. Dado su uso tan frecuente, analicemos cada una individualmente.
+
+#### Comprobación de directorios
+
+La prueba -d comprueba si un directorio específico existe en el sistema. Esto suele ser recomendable si se intenta escribir un archivo en un directorio o antes de intentar cambiar la ubicación de un directorio:
+
+```
+#!/bin/bash
+# Look before you leap
+#
+jump_directory=/home/lab13/Documents/Ecologia_AnalisisGenomico/JuanVelasquez
+#
+if [ -d $jump_directory ]
+then
+echo "The $jump_directory directory exists"
+cd $jump_directory
+ls
+else
+echo "The $jump_directory directory does not exist"
+fi
+```
+
+La condición de prueba -d comprueba si el directorio de la variable jump_directory existe. De ser así, procede a usar el comando cd para cambiar al directorio actual y realiza un listado de directorios. De no ser así, el script emite un mensaje de advertencia y sale del script.
+
+## Ejercicio
+
+1. Usa el comando que acabamos de usar y checa si en tu carpeta personal existe la carpeta de ecologia2026_1, si no existe crearlo y que te imprima que directorio existe
+
+## Considerando las pruebas compuestas
+
+La sentencia if-then permite usar lógica booleana para combinar pruebas. Se pueden usar estos dos operadores booleanos:
+
+■ [ condición1 ] && [ condición2 ] 
+
+■ [ condición1 ] || [ condición2 ]
+
+La primera operación booleana utiliza el operador booleano AND para combinar dos condiciones. Ambas condiciones deben cumplirse para que se ejecute la sección then.
+
+La segunda operación booleana utiliza el operador booleano OR para combinar dos condiciones. Si cualquiera de las condiciones se evalúa como VERDADERA, se ejecuta la sección "then". 
+
+A continuación, se muestra el uso del operador booleano AND:
+
+```
+#!/bin/bash
+# testing compound comparisons
+#
+if [ -d $HOME ] && [ -w $HOME/testing ]
+then
+echo "The file exists and you can write to it"
+else
+echo "I cannot write to the file"
+fi
+```
+
+# Ejercicio
+
+Revisa el siguiente manual [bwa](https://github.com/lh3/bwa) y realiza el alineamiento de estos archivos: **GF01** y **GF02** ubicada en la siguiente dirección: **/home/lab13/Documents/MAGH/Cahuantzi_Preneoplasias/PruebaEcologia**. Para esto vas a utilizar el genoma de referencia: **ucsc.hg19.fasta** que se encuentre en la siguiente dirección **/home/lab13/Reference/ref**.
+
+* Haz una carpeta con el nombre de practica1. 
+
+* Realiza dentro de ella un bash scripting
+
+* Guarda el archivo **fasta** y **fastq.gz** en una variable
+
+* Genera una carpeta que se llame **alingned** y guarda los archivos generados del alineamiento
+
+# Comando for
+
+Iterar una serie de comandos es una práctica común en programación. A menudo, es necesario repetir un conjunto de comandos hasta que se cumpla una condición específica, como procesar todos los archivos de un directorio, todos los usuarios de un sistema o todas las líneas de un archivo de texto.
+
+La shell bash proporciona el comando for para crear un bucle que itera sobre una serie de valores. Cada iteración ejecuta un conjunto definido de comandos utilizando uno de los valores de la serie. Este es el formato básico del comando for de la shell bash:
+
+```
+for var in list
+do
+commands
+done
+```
+La serie de valores utilizados en las iteraciones se proporciona en el parámetro de lista. Puede especificar los valores de la lista de varias maneras.
+
+En cada iteración, la variable **var** contiene el valor actual de la lista. La primera iteración utiliza el primer elemento de la lista, la segunda, el segundo, y así sucesivamente hasta que se hayan utilizado todos los elementos de la lista.
+Los comandos introducidos entre las sentencias **do** y **done** pueden ser uno o más comandos estándar de la shell bash. Dentro de los comandos, la variable $var contiene el valor actual del elemento de la lista para la iteración.
+
+## Leyendo valores en una lista
+
+El uso más básico del comando **for** es iterar a través de una lista de valores definidos dentro del propio comando for:
+
+```
+#!/bin/bash
+
+for test in Alabama Alaska Arizona Arkansas California Colorado
+do 
+echo The next state is $test
+done
+
+```
+
+Cada vez que el comando for itera la lista de valores proporcionados, asigna a la variable $test el siguiente valor de la lista. La variable $test puede usarse como cualquier otra variable de script dentro de las sentencias del comando for. Tras la última iteración, la variable $test sigue siendo válida durante el resto del script de shell. Conserva el valor de la última iteración (a menos que se modifique).
+
+```
+#!/bin/bash
+
+for test in Alabama Alaska Arizona Arkansas California Colorado
+do
+echo "The next state is $test"
+done
+echo "The last state we visited was $test"
+test=Connecticut
+echo "Wait, now we're visiting $test"
+```
+
+La variable $test conservó su valor y nos permitió cambiarlo y usarlo fuera del bucle del comando for, como lo haría cualquier otra variable.
+
+Ejemplo con variables
+
+```
+#!/bin/bash
+
+maullido=miau
+
+for i in gato gatito gatón
+do
+echo El $i hace $maullido
+done
+
+```
+
+## Leyendo valores complejos en una lista 
+
+Las cosas no siempre son tan fáciles como parecen con el bucle for. A veces, se encuentran datos que causan problemas. Aquí hay un ejemplo clásico de lo que puede causar problemas a los programadores de scripts de shell:
+
+```
+#!/bin/bash
+
+# another example of how not to use the for command
+
+for test in I don't know if this'll work
+do
+echo "word:$test"
+done
+```
+
+¡Ay, qué lástima! El shell vio las comillas simples dentro de los valores de la lista e intentó usarlas para definir un único valor de datos, y lo estropeó todo.
+
+Tienes dos maneras de resolver este problema:
+
+■ Usa el carácter de escape (la barra invertida) para escapar de las comillas simples.
+
+■ Usa comillas dobles para definir los valores que las contienen.
+
+```
+#!/bin/bash
+
+# another example of how not to use the for command
+
+for test in I don\'t know if "this'll" work
+do
+echo "word:$test"
+done
+```
+
+En el primer valor del problema, añadiste la barra invertida para escapar las comillas simples en el valor "don't". En el segundo valor del problema, encerraste el valor "this'll" entre comillas dobles. Ambos métodos funcionaron correctamente para distinguir el valor.
+
+Otro problema que puedes encontrar son los valores de varias palabras. Recuerda que el bucle "for" asume que cada valor está separado por un espacio. Si tienes valores de datos que contienen espacios, te encontrarás con otro problema:
+
+```
+#!/bin/bash
+
+# another example of how not to use the for command
+
+for test in Nevada New Hampshire New Mexico New York North Carolina
+do
+echo "Now going to $test"
+done
+```
+
+Vaya, eso no es exactamente lo que queríamos. El comando for separa cada valor de la lista con un espacio. Si hay espacios en los valores de datos individuales, debes escribirlos entre comillas dobles:
+
+```
+#!/bin/bash
+
+# another example of how not to use the for command
+
+for test in Nevada "New Hampshire" "New Mexico" "New York" "North Carolina"
+do
+echo "Now going to $test"
+done
+```
+
+Ahora el comando "for" puede distinguir correctamente entre los diferentes valores. Además, tenga en cuenta que al usar comillas dobles alrededor de un valor, el shell no las incluye como parte del valor.
+
+## Leyendo una lista de una variable 
+
+Lo que suele ocurrir en un script de shell es que se acumula una lista de valores almacenados en una variable y luego es necesario iterarla. También se puede hacer esto con el comando for:
+
+```
+#!/bin/bash
+
+# using a variable to hold the list
+
+list="Alabama Alaska Arizona Arkansas Colorado"
+list=$list" Connecticut"
+
+for state in $list
+do
+echo "Have you ever visited $state?"
+done
+```
+
+La variable **$list** contiene la lista de texto estándar de valores que se usarán en las iteraciones. Observe que el código también utiliza otra sentencia de asignación para añadir (o concatenar) un elemento a la lista existente en la variable **$list**. Este es un método común para añadir texto al final de una cadena de texto existente almacenada en una variable.
+
+## Ejercicio1
+
+Revisa este [manual de fastp](https://github.com/OpenGene/fastp) y establezca el ejercicio de [fastp1](https://sxh1136.quarto.pub/amrflows-metagenomic-data-analysis-course/9.%20For-loops.html) y [fastp2](https://sxh1136.quarto.pub/amrflows-metagenomic-data-analysis-course/9.5.%20Paired-End-Data.html)
+
+* Haz una carpeta con el nombre de practica2
+
+* Copia los archivos que están en la dirección **fastq.gz** que están en esta dirección /home/lab13/Documents/MAGH/Cahuantzi_Preneoplasias/PruebaEcologia
+
+* Crea un bash scripting
+
+* Genera un bucle for para procesar los archivos
+
+* Haz la interpretación de los resultados 
+
+## Explicación de los archivos fastqz
+
+Esta información se puede encontrar [aqui](https://brouwern.github.io/lbrb/introducingFASTA.html). 
+
+En bioinformática, el formato FASTA es un formato de texto para representar secuencias de nucleótidos o de aminoácidos (proteínas). En este formato, los nucleótidos o aminoácidos se representan mediante códigos de una sola letra. Este formato permite que los nombres de las secuencias y los comentarios precedan a las secuencias.
+
+La simplicidad del formato FASTA facilita la manipulación y el análisis de secuencias mediante herramientas de procesamiento de texto y lenguajes de programación como R y Python.
+
+La primera línea de un archivo FASTA comienza con el símbolo ">" (mayor que) y contiene información resumida sobre la secuencia, a menudo comenzando con un número de acceso único y seguido de información como el nombre del gen, el tipo de secuencia y el organismo del que proviene.
+
+En la siguiente línea se encuentra la secuencia en una cadena estándar de una sola letra. Cualquier carácter que no sea válido se ignora (incluidos espacios, tabulaciones, asteriscos, etc.).
+
+### FASTA
+
+```
+## >gi|186681228|ref|YP_001864424.1| phycoerythrobilin:ferredoxin oxidoreductase
+## MNSERSDVTLYQPFLDYAIAYMRSRLDLEPYPIPTGFESNSAVVGKGKNQEEVVTTSYAFQTAKLRQIRA
+## AHVQGGNSLQVLNFVIFPHLNYDLPFFGADLVTLPGGHLIALDMQPLFRDDSAYQAKYTEPILPIFHAHQ
+## QHLSWGGDFPEEAQPFFSPAFLWTRPQETAVVETQVFAAFKDYLKAYLDFVEQAEAVTDSQNLVAIKQAQ
+## LRYLRYRAEKDPARGMFKRFYGAEWTEEYIHGFLFDLERKLTVVK
+```
+### FASTQ
+
+El formato FASTQ es un formato de texto que permite almacenar una secuencia biológica (generalmente una secuencia de nucleótidos) y sus correspondientes puntuaciones de calidad. Tanto la letra de la secuencia como la puntuación de calidad se codifican con un solo carácter ASCII para mayor brevedad.
+
+Se desarrolló originalmente en el Wellcome Trust Sanger Institute para agrupar una secuencia con formato FASTA y sus datos de calidad, pero recientemente se ha convertido en el estándar de facto para almacenar los resultados de instrumentos de secuenciación de alto rendimiento, como el Analizador Genómico Illumina.
+
+Un archivo FASTQ normalmente utiliza cuatro líneas por secuencia.
+
+■ La línea 1 comienza con el carácter @ y va seguida de un identificador de secuencia y una descripción opcional (como una línea de título FASTA).
+
+■ La línea 2 contiene las letras de la secuencia sin procesar.
+
+■ La línea 3 comienza con el carácter + y, opcionalmente, va seguida del mismo identificador de secuencia (y cualquier descripción).
+
+■ La línea 4 codifica los valores de calidad de la secuencia en la línea 2 del archivo y debe contener el mismo número de símbolos que letras de la secuencia.
+
+
+A continuación se muestra un ejemplo del contenido de un archivo FASTQ
+
+```
+@M03468:54:000000000-JCR2C:1:1101:11196:1120 1:N:0:TGCAGCTA+NAGGCTAT
+CCTACGGGGGGCAGCAGTGAGGAATATTGGTCAATGGACGAAGGTCTGAACCAGCCAAGCCGCGTGAAGGAAGAAGGTGCTGAGCATCGTAANCTTCTTTTGTCAGGGAACAAAATCGTGGATGCGTCCGCGAGTGAGTGTACCTGAAGAAAAAGCATCGGCTAACTCCGTGCCAGCAGCCGCGGTAATACGGAGGATGCGAGCGTTATCCGGATTTATTGGGTTTAAAGGGTGCGTAGGCGGGCTGTTAA
++
+CCCCCGGGGGGGGGGGGFGGGGGGGGGEGGGGGGGGGG8FGGGGGGGGGGGGGGFFFGGGFFFG>F@FFGGGGGGGGGGGGGGGCF@CFGGG#:@BFGGGGGFGGGGGGGGGGGGFFFGGGGFGGGDE*=FEGGGGGGFGGGFGGGFFGGGGGGGGGGGGEGGGGGGFCGGGEGGGGGGGGGEGD5CCFFGF5AEGGFGFGGGGEGCGFFC;CDECFFGFG?FGDECC=FF*CG3C>?GFFFFGB;GGGG>
+@M03468:54:000000000-JCR2C:1:1101:21975:1130 1:N:0:TGCAGCTA+AAGGCTAT
+CCTACGGGTGGCAGCAGTGGGGGATATTGCACAATGGGGGGAACCCTGATGCAGCGACGCCGCGTGAGTGAAGGAGTACTTCGGTACGTAAAGCTCTATCAGCAGGGAAGAAGGGGGCGGGCTTGCCCGCCCGGACGGTACCTGACCAAGAAGCCCCGGCTAACTACGTGCCAGCAGCCGCGGTAATACGTAGGGGGCAAGCGTTATCCGGATTTACTGGGTGTAAAGGGAGCGTAGACGGCAAGGCAAGG
++
+CCCCCGGGGGGGGGGGGGGGGGGEGGGGGGGGGGGGGGGGEGGGGGGGGGGFGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGFGGGGGGGGGGGGGGGFGGGGFGGGGG@FGGGGGEGFGGFFEEDCEGEECDGGGCGGCC?FCCCFFFGG8EGG5CGFGG8CEECCCFC?FFGG5CGDE*ACFEFFFGGDGEECGFG8CECFFDD*9<FFCFGGG8E*0<CEBG*/9C5CEFC6:@;DFBD*>F*
+```
+
+[Checar código ascii y calidad](https://learn.gencore.bio.nyu.edu/ngs-file-formats/quality-scores/)
+
+
+# El estilo C para comandos
+
+## El lenguaje C para comandos
+
+El lenguaje C para comandos tiene un método específico para especificar una variable, una condición que debe permanecer verdadera para que las iteraciones continúen y un método para modificar la variable en cada iteración. Cuando la condición especificada se vuelve falsa, el bucle for se detiene. La ecuación de la condición se define mediante símbolos matemáticos estándar. Por ejemplo, considere el siguiente código en lenguaje C:
+
+```
+for (i = 0; i < 10; i++)
+{
+printf("The next number is %d\n", i);
+}
+```
+
+Este código genera un bucle de iteración simple, donde la variable i se utiliza como contador. La primera sección asigna un valor predeterminado a la variable. La sección central define la condición bajo la cual el bucle iterará. Cuando la condición definida se vuelve falsa, el bucle for detiene las iteraciones. La última sección define el proceso de iteración. Tras cada iteración, se ejecuta la expresión definida en la última sección. En este ejemplo, la variable i se incrementa en uno después de cada iteración.
+
+El shell bash también admite una versión del bucle for similar al bucle for de C, aunque presenta algunas diferencias sutiles, incluyendo un par de aspectos que pueden confundir a los programadores de scripts de shell. Este es el formato básico del bucle for de bash de C:
+
+```
+for (( variable assignment ; condition ; iteration process ))
+```
+
+El formato del bucle for en C puede resultar confuso para los programadores de scripts de shell bash, ya que utiliza referencias de variables propias de C en lugar de las de shell. Así es como se ve un comando for en C:
+
+```
+for (( a = 1; a < 10; a++ ))
+```
+
+Tenga en cuenta que hay un par de cosas que no siguen el shell bash estándar para el método:
+
+■ La asignación del valor de la variable puede contener espacios.
+
+■ La variable en la condición no está precedida por un signo de dólar.
+
+■ La ecuación para el proceso de iteración no utiliza el formato del comando **expr**.
+
+Los desarrolladores de shell crearon este formato para asemejarse más al estilo C del comando for. Si bien es ideal para programadores de C, puede desconcertar incluso a los programadores de shell más expertos. Tenga cuidado al usar el bucle for estilo C en sus scripts.
+
+Aquí hay un ejemplo del uso del estilo C del comando for en un programa de shell bash:
+
+```
+#!/bin/bash
+# testing the C-style for loop
+for (( i=1; i <= 10; i++ ))
+do
+echo "The next number is $i"
+done
+```
+
+El bucle **for** itera los comandos utilizando la variable definida en él (la letra i en este ejemplo). En cada iteración, la variable $i contiene el valor asignado en el bucle for. Después de cada iteración, se aplica el proceso de iteración del bucle a la variable, lo que, en este ejemplo, la incrementa en uno.
+
+## Usando multiples variables 
+
+El comando for, en estilo C, también permite usar múltiples variables para la iteración. El bucle maneja cada variable por separado, lo que permite definir un proceso de iteración diferente para cada una. Aunque se pueden usar múltiples variables, solo se puede definir una condición en el bucle for:
+
+```
+#!/bin/bash
+# testing the C-style for loop
+for (( a=1, b=10; a <= 10; a++, b-- ))
+do
+echo "$a - $b"
+done
+```
+
+Las variables a y b se inicializan con valores diferentes, y se definen distintos procesos de iteración. Mientras el bucle aumenta la variable a, disminuye la variable b en cada iteración.
+
+
+## Ejercicio2
+
+Revista este manual de [fastqc](https://olvtools.com/en/documents/fastqc), [multiqc](https://github.com/MultiQC/MultiQC), [pear](https://github.com/tseemann/PEAR)
+
+1. Los archivos que van a analizar se encuenta en el siguiente directorio **/home/lab13/Documents/Ecologia_AnalisisGenomico/HectorMartinez/FASTQ**
+2. Crea una carpeta que se llame **metagenoma** y dentro de la carpeta realice los análisis
+3. Dentro de la carpeta **metagenoma** haz una carpeta que se llame **fastqc_analisis**
+4. Realice el análisis de fastqc sin mover el archivo de la carpeta original y guardelo en **fastqc_analisis**
+5. Dentro de la carpeta **metagenoma** haz una segunda carpeta que se llame multiqc_analisis
+6. Realice el análisis de multiqc y guardelo  y guardelo en **multiqc_analisis**
+7. Dentro de la carpeta **metagenoma** haz una carpeta que se llame **ensamblados**
+8. Realice el análisis de ensamblado con PEAR y guardelo en **ensamblados**
+9. REALIZAR LA INTERPRETACIÓN
+
+```
+#!/bin/bash
+
+# Creamos un arreglo con los archivos fastq
+array=($(ls /home/lab13/Documents/Ecologia_AnalisisGenomico/HectorMartinez/FASTQ/*fastq.gz))
+# Guardar el tamano del arreglo
+tLen=${#array[@]}
+
+# Bucle para correr de dos en dos los datos
+# Inicia en i=0 y va aumentando de 2 en 2
+# Sirve porque los archivos FASTQ vienen en pares (R1 y R2)
+for (( i=0; i<${#array[@]}; i=i+2));
+do
+# Extraemos el nombre de los archivos
+# RGP-0001_S1_L001_R1_001.fastq.gz
+x=${array[$i]##*/}
+echo "pear -f ${array[$i]} -r ${array[$i+1]} -o ensamblajes/${x%_S*} -j 8 -q 30"
+done
+```
+
+
 # Evaluación de la calidad
 
 ## Archivos fasta o formato de Pearson
