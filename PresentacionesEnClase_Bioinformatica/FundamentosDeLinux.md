@@ -326,65 +326,27 @@ Algunas recomendaciones para nombrar directorio o archivos:
 * Solo utiliza caracteres alfanuméricos, puntos, guiones bajos y guiones; no uses símbolos como % y $.
 * Los nombres de los archivos deben ser cortos y descriptivos.
 
+  Vamos a crear los siguientes directorio
+  
 ```
+mkdir Hector Martinez
 mkdir HectorMartinez
 ```
-
-
-
-```
-mkdir New_Dir
-ls -ld New_Dir
-
-## drwxr-xr-x. 2 lab13 lab13 6 Aug 11 07:44 New_Dir
-```
-
-
-#################################
-
-ls
-
-## Ecologia_AnalisisGenomico  MAGH  Memo  miguel  miguel2  miRNA  respaldo_docker_automethyc
-```
-Tenga en cuenta que el comando ls genera la lista en orden alfabético (en columnas en lugar de filas).
-
-Opciones de *_𝑙𝑠*_
-
-```
--a list all (lista archivo ocultos tipo .directorio o .archivo)
--l long format (muestra permisos y otros atributos como usuario, grupo, tamaño del archivo y fecha de modificación)
--t time sort (ordena por tiempo)
--r reverse sort
--R list subdirectories recursively
--S size sort (ordena por tamaño)
--h human readable (indica Kb, Mb, Gb …)
-```
-
-Para mostrar archivos ocultos junto con los archivos y directorios normales, use el parámetro -a. A continuación, se muestra un ejemplo del uso del parámetro -a con el comando ls.
-
-```
-ls -a
-
-## . .. Ecologia_AnalisisGenomico  MAGH  Memo  miguel  miguel2  miRNA  respaldo_docker_automethyc
-```
-
-En los listados básicos, el comando ls no genera mucha información sobre cada archivo. Para obtener información adicional, otro parámetro popular es -l. El parámetro -l genera un formato de listado largo, que proporciona más información sobre cada archivo del directorio.
+Vamos a ver que carpetas tenermos en nuestros directorio
 
 ```
 ls -lh
 
-## drwxr-xr-x.  2 lab13 lab13    6 Aug 10 20:36 Ecologia_AnalisisGenomico
-## drwxrwxrwx.  6 lab13 lab13   97 Jul 29 18:03 MAGH
-## drwxrwxrwx.  3 lab13 lab13   19 Jul  1 11:43 Memo
-## drwxrwxrwx. 29 lab13 lab13 4.0K Jul 19 14:20 miguel
-## drwxr-xr-x.  6 lab13 lab13   91 Jul 20 17:49 miguel2
-## drwxrwxrwx.  3 lab13 lab13 8.0K Jun 27 20:29 miRNA
-## drwxr-xr-x.  2 lab13 lab13   35 Jul 23 16:11 respaldo_docker_automethyc
+## drwxr-xr-x 2 magh staff 64 may  6 23:09 Hector
+## drwxr-xr-x 2 magh staff 64 may  6 23:09 HectorMartinez
+## drwxr-xr-x 2 magh staff 64 may  6 23:09 Martinez
 ```
 
-El comando ls lista por defecto todos los archivos de directorios visibles. A veces, esto puede resultar excesivo, sobre todo cuando solo busca información sobre unos pocos archivos.
+## Comando touch
 
-Afortunadamente, el comando ls también permite definir un filtro en la línea de comandos. Este filtro determina qué archivos o directorios debe mostrar en la salida.
+El comando touch se usa para crear archivos vacíos. Vamos a crear 
+
+
 
 ```
 ls
