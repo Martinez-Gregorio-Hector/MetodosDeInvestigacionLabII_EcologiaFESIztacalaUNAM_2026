@@ -351,9 +351,22 @@ Antes de entender y analizar los archivos de la secuenciación masiva, vamos a r
 ## Características del archivo fastq
 
 <p align="center">  
-  <img src="Figuras/fastq.png? raw=true" alt="shell" width="1000" height="600">
+  <img src="Figuras/Fastq1.png? raw=true" alt="shell" width="1000" height="600">
 </p>
 
+<p align="center">  
+  <img src="Figuras/Fastq2.png? raw=true" alt="shell" width="1000" height="600">
+</p>
 
+## Encabezado del archivo fastq
 
+<p align="center">  
+  <img src="Figuras/EncabezadoFastq.png? raw=true" alt="shell" width="1000" height="600">
+</p>
+
+## Información de la calidad de las lecturas crudas
+
+<p align="center">  
+  <img src="Figuras/ASCII.png? raw=true" alt="shell" width="1000" height="600">
+</p>
 
