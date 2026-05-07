@@ -339,5 +339,21 @@ ls -ld New_Dir
 ## drwxr-xr-x. 2 lab13 lab13 6 Aug 11 07:44 New_Dir
 ```
 
+# Evaluación de la calidad
+
+## Archivos fasta o formato de Pearson
+Antes de entender y analizar los archivos de la secuenciación masiva, vamos a revisar primero el formato **[fasta o Person](https://www.bioinformatics.nl/tools/crab_fasta.html)**
+
+<p align="center">  
+  <img src="Figuras/fasta.png? raw=true" alt="shell" width="1000" height="600">
+</p>
+
+## Características del archivo fastq
+
+<p align="center">  
+  <img src="Figuras/fastq.png? raw=true" alt="shell" width="1000" height="600">
+</p>
+
+
 
 
