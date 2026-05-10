@@ -135,6 +135,8 @@ sample-id	absolute-filepath
   <img src="Figuras/AlphaRarefaction.png? raw=true" alt="shell" width="800" height="600">
 </p>
 
+[Alpha_rarefaction](https://en.wikipedia.org/wiki/Rarefaction_(ecology))
+
 **d) Taxa Barplot**
 
 <p align="center">  
