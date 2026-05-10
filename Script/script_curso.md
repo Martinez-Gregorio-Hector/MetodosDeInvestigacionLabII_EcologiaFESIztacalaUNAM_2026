@@ -155,7 +155,9 @@ ls -lh QC_AntesDelEnsamble/
 # -rw-r--r--. 1 lab13 lab13  791K Apr 30 00:08 MBC3_S3_L001_R1_001_fastqc.zip
 # -rw-r--r--. 1 lab13 lab13 1016K Apr 30 00:08 MBC3_S3_L001_R2_001_fastqc.html
 # -rw-r--r--. 1 lab13 lab13  937K Apr 30 00:08 MBC3_S3_L001_R2_001_fastqc.zip
+```
 
+```
 # Correr MultiQC
 multiqc QC_AntesDelEnsamble/ -o QC_AntesDelEnsamble/
 
