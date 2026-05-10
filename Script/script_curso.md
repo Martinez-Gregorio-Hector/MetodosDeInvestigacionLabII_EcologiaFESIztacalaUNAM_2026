@@ -333,6 +333,9 @@ less data/manifest.tsv
 # MBC2_S2.assembled.fastq /home/lab13/Documents/Ecologia2026/Equipo11/ensamblados/MBC2_S2.assembled.fastq
 # MBC3_S3.assembled.fastq /home/lab13/Documents/Ecologia2026/Equipo11/ensamblados/MBC3_S3.assembled.fastq
 
+```
+
+```
 # ii) metadata file
 
 echo -e "sample-id\trun_prefix\tCurso" > data/sample-metadata.txt
