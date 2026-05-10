@@ -63,7 +63,7 @@ ls -lh raw_data/
 
 ## 1. Análisis de calidad
 
-De acuerdo con nuestro pipeline bioinformático, el primer paso para el análisis de nuestros es la evaluación de la calidad con **[fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)** y **[multiqc](https://github.com/MultiQC/MultiQC)**. Para hacer esta actividad vamos a activar un ambiente en python. Para listar que ambientes hay en python usar el siguiente comando
+De acuerdo con nuestro pipeline bioinformático, el primer paso para el análisis de nuestros datos es la evaluación de la calidad con **[fastqc](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)** y **[multiqc](https://github.com/MultiQC/MultiQC)**. Para hacer esta actividad vamos a activar un ambiente en python. Para listar que ambientes hay en python usar el siguiente comando
 
 ```
 conda env list
