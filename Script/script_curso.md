@@ -458,7 +458,7 @@ echo done ......
 
 ```
 
-Darle permiso a nuestro scipt
+Darle permiso a nuestro script
 
 ```
 # Darle permiso
