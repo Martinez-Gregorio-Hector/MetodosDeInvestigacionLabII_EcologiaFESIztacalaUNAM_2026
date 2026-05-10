@@ -66,7 +66,7 @@ Las primeras(20 pb) y las últimas lecturas (a partir de 410 pb) son eliminadas 
 
 ## ¿Cómo se almacena la información en qiime2?
 
-El algoritmo de qiime proporciona dos tipos de datos **qza** y **qzv**. **[QIIME 2 View](https://view.qiime2.org/)** permite visualizar archivos **qza** y **qzv** directamente en un navegador.
+El algoritmo de **qiime2** proporciona dos tipos de datos **qza** y **qzv**. **[QIIME 2 View](https://view.qiime2.org/)** permite visualizar archivos **qza** y **qzv** directamente en un navegador.
 
 **qza** son los archivos de datos procesados que se usan como entrada en los siguientes pasos
   
