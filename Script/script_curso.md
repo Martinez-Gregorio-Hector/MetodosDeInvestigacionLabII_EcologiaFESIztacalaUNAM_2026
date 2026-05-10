@@ -24,7 +24,7 @@ Hacer un listado de archivos y directorios
 ls - lh
 ```
 
-Cambiar al directorio que vamos a trabajar
+Cambiaral directorio de trabajo
 
 ```
 cd Ecologia01
