@@ -371,23 +371,20 @@ ls -lh
 
 ```
 
-
-
-
 ## Comando touch
 
-El comando touch se usa para crear archivos vacíos. Vamos a crear 
-
-
+El comando touch se usa para crear archivos vacíos. Vamos a crear unos archivos vacrios con el siguiente comando 
 
 ```
-ls
+touch my_scr{a,e,i,o,u}
 
-## my_scrapt  my_scrept  my_script  my_scropt  my_scrupt
+ls -lh
 
-ls -l my_script
-
-## -rw-r--r--. 1 lab13 lab13 0 Aug 11 00:32 my_script
+## -rw-r--r--. 1 lab13 lab13 0 May 10 19:02 my_scrapt
+## -rw-r--r--. 1 lab13 lab13 0 May 10 19:02 my_scrept
+## -rw-r--r--. 1 lab13 lab13 0 May 10 19:02 my_script
+## -rw-r--r--. 1 lab13 lab13 0 May 10 19:02 my_scropt
+## -rw-r--r--. 1 lab13 lab13 0 May 10 19:02 my_scrupt
 ```
 
 El comando ls también reconoce caracteres comodín estándar y los utiliza para encontrar patrones dentro del filtro:
