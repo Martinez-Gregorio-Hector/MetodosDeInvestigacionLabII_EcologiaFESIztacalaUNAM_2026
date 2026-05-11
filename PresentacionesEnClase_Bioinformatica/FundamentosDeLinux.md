@@ -781,7 +781,7 @@ Dentro del modo de línea de comandos -inserición- hay varios comandos para gua
 ```
 ## Después de que hayas hecho un script, para salir presione **scape** y después **:wq**
 
-Scrpt
+Script
 
 
 :wq
