@@ -730,8 +730,6 @@ con las posiciones U|G|O, define los modos:
 | 4 2 1 | 4 0 1 | 4 0 1  | 755  |
 ```
 
-Ejercicio, como interpreto estos permisos?
-
 ```
 𝑐ℎ𝑚𝑜𝑑 755 𝑠𝑐𝑟𝑖𝑝𝑡.𝑠ℎ
 𝑐ℎ𝑚𝑜𝑑 700 𝑠𝑐𝑟𝑖𝑝𝑡.𝑠ℎ
