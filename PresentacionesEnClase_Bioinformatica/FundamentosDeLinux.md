@@ -581,7 +581,7 @@ Existen dos tipos de variables de entorno en el shell bash:
 
 * Variables locales
 
-Para ver las variables de entorno globales, utilice el comando _*env*_ o _*printenv*_
+Para ver las variables de entorno globales, utilice el comando **env** o **printenv**
 
 ```
 env | head -n 7
@@ -601,24 +601,14 @@ echo $USER
 ## Variables locales
 
 
-Tras iniciar una shell bash (o generar un script de shell), se pueden crear variables locales definidas por el usuario, visibles en el proceso de shell. Se puede asignar un valor numérico o de cadena a una variable de entorno, asignándola a un valor con el signo igual:
+Tras iniciar bash (o generar un script), se pueden crear variables locales definidas por el usuario, visibles en el proceso de shell. Se puede asignar un valor numérico o de cadena a una variable de entorno, asignándola a un valor con el signo igual:
 
 ```
 my_variable=Hello 
 echo $my_variable
 ```
 
-Ejercicio 
-```
-Establece una variable: dias
-Establece una variable: invitado
-
-Imprime esta frase que diga
-Mariana se reporto hace 10 dias
-
-```
-
-# Permisos
+## Permisos
 
 ## Usuario, grupo y resto del mundo (User, Group, Others …) y permisos 
 
