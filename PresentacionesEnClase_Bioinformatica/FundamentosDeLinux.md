@@ -501,7 +501,7 @@ ls -lh f?ll
 
 Lo más probable es que en algún momento quieras poder eliminar archivos existentes. Ya sea para limpiar un sistema de archivos o para eliminar un paquete de software, siempre tienes la oportunidad de eliminar archivos.
 
-En Linux, eliminar se llama remover. El comando para eliminar archivos en la shell bash es *_rm*_. La forma básica del comando _*rm_* es simple:
+En Linux, eliminar se llama remover. El comando para eliminar archivos en la shell bash es **rm**. La forma básica del comando **rm** es simple:
 
 
 ```
@@ -515,148 +515,63 @@ ls -lh f?ll
 rm f?ll 
 ```
 
-## Administración de directorios
-
-Crear un nuevo directorio en Linux es fácil: solo use el comando *_mkdir*_
-
-```
-mkdir New_Dir
-ls -ld New_Dir
-
-## drwxr-xr-x. 2 lab13 lab13 6 Aug 11 07:44 New_Dir
-```
-El sistema crea un nuevo directorio llamado *_New_Dir*_. Observe que en la lista larga del nuevo directorio, su registro comienza con una d. Esto indica que *_New_Dir*_ no es un archivo, sino un directorio.
-
-Puede crear directorios y subdirectorios en bloque si es necesario. Sin embargo, si intenta hacerlo solo con el comando mkdir, recibirá el siguiente mensaje de error.
-
-```
-mkdir New_Dir/Sub_Dir/Under_Dir
-## mkdir: cannot create directory ‘New_Dir/Sub_Dir/Under_Dir’: No such file or directory
-```
-
-Para crear varios directorios y subdirectorios al mismo tiempo, debe agregar el parámetro *_-p*_:
-
-```
-mkdir -p New_Dir/Sub_Dir/Under_Dir
-
-ls -R New_Dir
-
-## New_Dir:
-## Sub_Dir
-
-## New_Dir/Sub_Dir:
-## Under_Dir
-
-## New_Dir/Sub_Dir/Under_Dir:
-
-```
-La opción -p del comando mkdir crea los directorios principales que faltan según sea necesario. Un directorio principal es un directorio que contiene otros directorios en el nivel inferior del árbol de directorios.
-
 ## Visualización del archivo
 
 Si tiene un archivo de texto grande, quizás quiera ver su contenido. Linux cuenta con tres comandos diferentes que pueden ayudarle
 
-El comando *_cat*_ es una herramienta útil para mostrar todos los datos dentro de un archivo de texto
+El comando **cat** es una herramienta útil para mostrar todos los datos dentro de un archivo de texto
 
 ```
-cat SraAccList.txt 
+wget https://raw.githubusercontent.com/Martinez-Gregorio-Hector/AnalisisGenomico-EcologiaFESIztacala/refs/heads/main/Unidad1/Datos/flights.csv
 
-## SRR31854929
-## SRR31854928
-## SRR31854929
+##
+cat flights.csv
+
+## 2011-12-11 12:00:00,10,22,1022,1342,-3,-4,"US",1174,"CLT","N433US",0,117,912
+## 2011-12-11 12:00:00,8,48,848,1201,-3,-15,"US",1220,"CLT","N458UW",0,112,912
+## 2011-12-11 12:00:00,17,35,1735,2045,-5,-20,"US",1679,"CLT","N445US",0,113,912
+## 2011-12-11 12:00:00,6,55,655,1003,-5,-22,"US",1696,"CLT","N405US",0,109,912
+## 2011-12-11 12:00:00,12,8,1208,1527,8,5,"US",1702,"CLT","N451UW",0,122,912
+## 2011-12-11 12:00:00,7,59,759,1152,-1,-21,"US",1820,"PHL","N953UW",0,160,1325
 
 ```
 
 Con _*cat*_ solo observamos el contenido del archivo de texto. Sin embargo, el comando cat tiene algunos parámetros que puede ayudar. El parámetro -n numera todas las líneas automáticamente:
 
 ```
-cat -n SraAccList.txt 
+cat -n flights.csv
 
-##     1	SRR31854929
-##     2	SRR31854928
-##     3	SRR31854929
-
+## 227492	2011-12-06 12:00:00,13,7,1307,1600,7,0,"WN",471,"TPA","N632SW",0,98,781
+## 227493	2011-12-06 12:00:00,18,18,1818,2111,8,-9,"WN",1191,"TPA","N284WN",0,97,781
+## 227494	2011-12-06 12:00:00,20,47,2047,2334,7,4,"WN",1674,"TPA","N366SW",0,94,781
+## 227495	2011-12-06 12:00:00,9,12,912,1031,-3,-4,"WN",127,"TUL","N777QC",0,61,453
+## 227496	2011-12-06 12:00:00,6,56,656,812,-4,-13,"WN",621,"TUL","N727SW",0,64,453
+## 227497	2011-12-06 12:00:00,16,0,1600,1713,0,-12,"WN",1597,"TUL","N745SW",0,59,453
 ```
 Esta función será útil al examinar scripts. Si solo desea numerar las líneas que contienen texto, el parámetro -b es ideal.
 
-Por último, si no desea que aparezcan caracteres de tabulación, utilice el parámetro -T,.
+Por último, si no desea que aparezcan caracteres de tabulación, utilice el parámetro -T.
+
+
+
+## Una alternative de cat es more, less, tail, head
+
+Con **head** y **tail** puedes especificar con -n para ver cuantas líneas quieres ver en tu terminal
 
 ```
-## Examina MAGH_alineamiento.sh
+head -n 8 flights.csv 
 
-cat MAGH_alineamiento.sh
-cat -n MAGH_alineamiento.sh
-cat -b MAGH_alineamiento.sh
-cat -T MAGH_alineamiento.sh
+##"date","hour","minute","dep","arr","dep_delay","arr_delay","carrier","flight","dest","plane","cancelled","time","dist"
+## 2011-01-01 12:00:00,14,0,1400,1500,0,-10,"AA",428,"DFW","N576AA",0,40,224
+## 2011-01-02 12:00:00,14,1,1401,1501,1,-9,"AA",428,"DFW","N557AA",0,45,224
+## 2011-01-03 12:00:00,13,52,1352,1502,-8,-8,"AA",428,"DFW","N541AA",0,48,224
+## 2011-01-04 12:00:00,14,3,1403,1513,3,3,"AA",428,"DFW","N403AA",0,39,224
+## 2011-01-05 12:00:00,14,5,1405,1507,5,-3,"AA",428,"DFW","N492AA",0,44,224
+## 2011-01-06 12:00:00,13,59,1359,1503,-1,-7,"AA",428,"DFW","N262AA",0,45,224
+## 2011-01-07 12:00:00,13,59,1359,1509,-1,-1,"AA",428,"DFW","N493AA",0,43,224
 ```
 
-## Una alternative de _*cat*_ es _*more*_, _*less*_, _*tail*_, _*head*_
-
-Con _*head*_ y _*tail*_ puedes especificar con -n para ver cuantas líneas quieres ver en tu terminal
-
-```
-head -n 8 MAGH_alineamiento.sh 
-
-## #!/bin/bash
-## 
-## ###############
-## #Directorios
-## ###############
-## ref="/home/lab13/Reference/Reference/Human-Hg19/ucsc.hg19.fasta"
-## 
-## #Aliniamiento bwa
-
-tail -n 8 MAGH_alineamiento.sh
-
-##
-## #Para hacer el call
-## for file in *.segmetrics.cns; do
-## id=${file%"segmetrics.cns"}
-## call="${id}.segmetrics.call.cns"
-## 
-## cnvkit.py call $file -o $call
-## done
-
-```
-
-## Trabajando con archivos de datos
-
-Cuando se tiene una gran cantidad de datos, gestionar la información y hacerla útil puede ser difícil. Linux ofrece varias herramientas de línea de comandos para facilitar la gestión de grandes cantidades de datos. Esta sección abarca los comandos básicos que todo administrador de sistemas, así como cualquier usuario habitual de Linux, debería saber usar para simplificar su trabajo.
-
-
-
-wget https://raw.githubusercontent.com/Martinez-Gregorio-Hector/AnalisisGenomico-EcologiaFESIztacala/refs/heads/main/Unidad1/Datos/flights.csv
-# Después de descargar inspecciona el documento con los comandos que aprendiste durante la clase
-
-# Ejecutar el comando sort para ordenar los datos, que observas?
-sort flights.csv
-```
-
-An
-
-```
-# descargue el archivo con el que vamos a trabajar
-wget https://raw.githubusercontent.com/Martinez-Gregorio-Hector/AnalisisGenomico-EcologiaFESIztacala/refs/heads/main/Unidad1/Datos/file2.txt
-```
-
-Si usas el parámetro -M, el comando sort reconoce la nomenclatura de tres caracteres del mes y ordena correctamente
-
-```
-sort -M file2.txt 
-```
-
-Vamos a seguir practicando para ordenar los datos
-
-```
-# Descarga el siguiente dato
-wget https://raw.githubusercontent.com/Martinez-Gregorio-Hector/AnalisisGenomico-EcologiaFESIztacala/refs/heads/main/Unidad1/Datos/file3.txt
-# Inspeccionar el archivo
-head file3.txt
-
-
-
-
-# Uso de variables
+## Uso de variables
 
 El shell bash utiliza una función llamada variables de entorno para almacenar información sobre la sesión del shell y el entorno de trabajo (de ahí el nombre de variables de entorno). Esta función también permite almacenar datos en memoria a los que cualquier programa o script que se ejecute desde el shell puede acceder fácilmente. Es una forma práctica de almacenar datos persistentes necesarios.
 
