@@ -342,6 +342,38 @@ ls -lh
 ## drwxr-xr-x 2 magh staff 64 may  6 23:09 Martinez
 ```
 
+## Comando rmdir 
+
+Para eliminar directorios usamos el comando **rmdir** seguido del directorio que queremos eliminar
+
+```
+# Eliminar directorio
+rmdir Hector
+
+# Ver que directorios tenemos en nuestras carpetas
+ls -lh
+
+drwxr-xr-x. 2 lab13 lab13 6 May 10 18:50 HectorMartinez
+drwxr-xr-x. 2 lab13 lab13 6 May 10 18:49 Martinez
+```
+## Comando mv
+
+El comando **mv** se usa para dos cosas: i) mover un directorio a otro lugar y ii) renombrar archivos. La sintáxis básica de mv es la siguiente: **mv** [Directorio y/o Nombre del archivo] [Lugar del nuevo directorio y/o nombre del archivo]
+
+```
+mv Martinez MAGH
+
+##
+ls -lh
+
+## drwxr-xr-x. 2 lab13 lab13 6 May 10 18:50 HectorMartinez
+## drwxr-xr-x. 2 lab13 lab13 6 May 10 18:49 MAGH
+
+```
+
+
+
+
 ## Comando touch
 
 El comando touch se usa para crear archivos vacíos. Vamos a crear 
