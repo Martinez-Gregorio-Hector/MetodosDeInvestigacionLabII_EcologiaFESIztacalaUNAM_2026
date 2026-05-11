@@ -851,64 +851,6 @@ date
 who
 ```
 
-## Visualización de imágenes
-
-La mayoría de los comandos de shell generan su propia salida, que se muestra en el monitor de la consola donde se ejecuta el script. Sin embargo, a menudo querrá agregar sus propios mensajes de texto para que el usuario del script sepa qué sucede dentro del script. Puede hacerlo con el comando echo. El comando echo puede mostrar una cadena de texto simple si agrega la cadena después del comando:
-
-```
-echo This is a test
-## This is a test
-
-```
-
-Tenga en cuenta que, por defecto, no es necesario usar comillas para delimitar la cadena que se muestra. Sin embargo, esto puede resultar complicado si se usan comillas dentro de la cadena:
-
-```
-echo Let's see if this'll work
-## Lets see if thisll work
-
-```
-
-El comando **echo** utiliza comillas dobles o simples para delimitar cadenas de texto. Si las usa dentro de la cadena, debe usar un tipo de comillas dentro del texto y el otro para delimitar la cadena:
-
-```
-echo "This is a test to see if you're paying attention"
-## This is a test to see if you're paying attention
-
-echo 'Rich says "scripting is easy".'
-## Rich says "scripting is easy".
-
-```
-
-Puede agregar declaraciones de **echo** en cualquier lugar de sus scripts de shell donde necesite mostrar información adicional:
-
-Crea un archivo que se llame **test4.sh** y ejecuta el siguiente comando
-
-```
-#!/bin/bash
-
-# This script displays the date and who's logged on
-
-echo The time and date are:
-date
-
-echo "Let's see who's logged into the system:"
-who
-```
-
-Eso está bien, pero ¿qué pasa si quieres repetir una cadena de texto en la misma línea que la salida de un comando? Puedes usar el parámetro **-n** de la sentencia **echo** para ello. Simplemente cambia la primera línea de la sentencia echo por lo siguiente:
-
-```
-#!/bin/bash
-
-# This script displays the date and who's logged on
-
-echo -n "The time and date are: "
-date
-
-echo "Let's see who's logged into the system:"
-who
-```
 
 ## Variables
 
@@ -945,73 +887,6 @@ guest="Jessica"
 echo "$guest checked in $days days ago"
 ```
 
-Cada vez que se hace referencia a la variable, se genera el valor que tiene asignado. Es importante recordar que al hacer referencia al valor de una variable se usa el símbolo de dólar, pero al hacer referencia a la variable para asignarle un valor, no se usa el símbolo de dólar. Aquí hay un ejemplo de lo que quiero decir:
-
-Crear un shell scripting **test6.sh**
-
-```
-#!/bin/bash
-
-# assigning a variable value to another variable
-
-value1=10
-value2=$value1
-
-echo The resulting value is $value2
-```
-
-Si olvida el signo de dólar que pasaría
-
-```
-#!/bin/bash
-
-# assigning a variable value to another variable
-
-value1=10
-value2=value1
-
-echo The resulting value is $value2
-```
-
-Sin el signo de dólar, el shell interpreta el nombre de la variable como una cadena de texto normal, lo cual probablemente no sea lo que usted deseaba.
-
-## Comando de sustitución
-
-Una de las características más útiles de shell scripting es la capacidad de extraer información de la salida de un comando y asignarla a una variable. Después de asignar la salida a una variable, puede usar ese valor en cualquier parte del script. Esto resulta útil al procesar datos en sus scripts.
-
-Hay dos maneras de asignar la salida de un comando a una variable:
-
-■ El carácter de comillas invertidas (`)
-
-■ El formato $()
-
-Tenga cuidado con el carácter de comillas invertidas; no es la comilla simple que se usa habitualmente para las cadenas. Dado que no se usa muy a menudo fuera de los scripts de shell, es posible que ni siquiera sepa dónde encontrarlo en su teclado. Debería familiarizarse con él, ya que es un componente crucial de muchos shell scripting. Consejo: En un teclado estadounidense, suele estar en la misma tecla que la tilde (~).
-
-La sustitución de comandos permite asignar la salida de un comando de shell a una variable. Aunque parezca insignificante, es un componente fundamental en la programación de scripts.
-
-Debe rodear todo el comando de la línea de comandos con dos comillas invertidas:
-
-
-```
-testing='date'
-```
-
-o usa el formato $()
-
-```
-testing=$(date)
-```
-
-El shell ejecuta el comando dentro de los caracteres de sustitución de comandos y asigna la salida a la variable "testing". Observe que no hay espacios entre el signo igual de asignación y el carácter de sustitución de comandos. A continuación, se muestra un ejemplo de creación de una variable utilizando la salida de un comando de shell normal:. Crear un shell scripting **test7.sh**
-
-```
-#!/bin/bash
-
-testing=$(date)
-
-echo "The date and time are: " $testing
-```
-
 ## Redireccionando input y output
 
 A veces, es necesario guardar la salida de un comando en lugar de simplemente mostrarla en el monitor. El shell bash ofrece varios operadores que permiten redirigir la salida de un comando a una ubicación alternativa (como un archivo). La redirección se puede usar tanto para la entrada como para la salida, redirigiendo un archivo a un comando para la entrada. Esta sección describe cómo usar la redirección en los scripts de shell.
@@ -1030,37 +905,17 @@ Todo lo que aparecería en el monitor a partir del comando se almacena en el arc
 who > test8
 ```
 
-
 A veces, en lugar de sobrescribir el contenido del archivo, puede que necesite añadir la salida de un comando a un archivo existente; por ejemplo, si está creando un archivo de registro para documentar una acción en el sistema. En este caso, puede usar el símbolo de mayor que (>>) para añadir datos:
 
 ```
 who >> test8
 ```
 
-## Redireccionando input
-
-La redirección de entrada es lo opuesto a la redirección de salida. En lugar de tomar la salida de un comando y redirigirla a un archivo, la redirección de entrada toma el contenido de un archivo y lo redirige a un comando.
-
-El símbolo de redirección de entrada es el símbolo menor que (<):
-
-```
-command < inputfile
-```
-
-A continuación se muestra un ejemplo del uso de la redirección de entrada con el comando wc:
-
-
-```
-wc < test8
-```
-
-
-
 ## Comando for
 
 Iterar una serie de comandos es una práctica común en programación. A menudo, es necesario repetir un conjunto de comandos hasta que se cumpla una condición específica, como procesar todos los archivos de un directorio, todos los usuarios de un sistema o todas las líneas de un archivo de texto.
 
-La shell bash proporciona el comando for para crear un bucle que itera sobre una serie de valores. Cada iteración ejecuta un conjunto definido de comandos utilizando uno de los valores de la serie. Este es el formato básico del comando for de la shell bash:
+La shell  proporciona el comando for para crear un bucle que itera sobre una serie de valores. Cada iteración ejecuta un conjunto definido de comandos utilizando uno de los valores de la serie. Este es el formato básico del comando for de la shell bash:
 
 ```
 for var in list
@@ -1116,104 +971,6 @@ echo El $i hace $maullido
 done
 
 ```
-
-## Leyendo valores complejos en una lista 
-
-Las cosas no siempre son tan fáciles como parecen con el bucle for. A veces, se encuentran datos que causan problemas. Aquí hay un ejemplo clásico de lo que puede causar problemas a los programadores de scripts de shell:
-
-```
-#!/bin/bash
-
-# another example of how not to use the for command
-
-for test in I don't know if this'll work
-do
-echo "word:$test"
-done
-```
-
-¡Ay, qué lástima! El shell vio las comillas simples dentro de los valores de la lista e intentó usarlas para definir un único valor de datos, y lo estropeó todo.
-
-Tienes dos maneras de resolver este problema:
-
-■ Usa el carácter de escape (la barra invertida) para escapar de las comillas simples.
-
-■ Usa comillas dobles para definir los valores que las contienen.
-
-```
-#!/bin/bash
-
-# another example of how not to use the for command
-
-for test in I don\'t know if "this'll" work
-do
-echo "word:$test"
-done
-```
-
-En el primer valor del problema, añadiste la barra invertida para escapar las comillas simples en el valor "don't". En el segundo valor del problema, encerraste el valor "this'll" entre comillas dobles. Ambos métodos funcionaron correctamente para distinguir el valor.
-
-Otro problema que puedes encontrar son los valores de varias palabras. Recuerda que el bucle "for" asume que cada valor está separado por un espacio. Si tienes valores de datos que contienen espacios, te encontrarás con otro problema:
-
-```
-#!/bin/bash
-
-# another example of how not to use the for command
-
-for test in Nevada New Hampshire New Mexico New York North Carolina
-do
-echo "Now going to $test"
-done
-```
-
-Vaya, eso no es exactamente lo que queríamos. El comando for separa cada valor de la lista con un espacio. Si hay espacios en los valores de datos individuales, debes escribirlos entre comillas dobles:
-
-```
-#!/bin/bash
-
-# another example of how not to use the for command
-
-for test in Nevada "New Hampshire" "New Mexico" "New York" "North Carolina"
-do
-echo "Now going to $test"
-done
-```
-
-Ahora el comando "for" puede distinguir correctamente entre los diferentes valores. Además, tenga en cuenta que al usar comillas dobles alrededor de un valor, el shell no las incluye como parte del valor.
-
-## Leyendo una lista de una variable 
-
-Lo que suele ocurrir en un script de shell es que se acumula una lista de valores almacenados en una variable y luego es necesario iterarla. También se puede hacer esto con el comando for:
-
-```
-#!/bin/bash
-
-# using a variable to hold the list
-
-list="Alabama Alaska Arizona Arkansas Colorado"
-list=$list" Connecticut"
-
-for state in $list
-do
-echo "Have you ever visited $state?"
-done
-```
-
-La variable **$list** contiene la lista de texto estándar de valores que se usarán en las iteraciones. Observe que el código también utiliza otra sentencia de asignación para añadir (o concatenar) un elemento a la lista existente en la variable **$list**. Este es un método común para añadir texto al final de una cadena de texto existente almacenada en una variable.
-
-## Ejercicio1
-
-Revisa este [manual de fastp](https://github.com/OpenGene/fastp) y establezca el ejercicio de [fastp1](https://sxh1136.quarto.pub/amrflows-metagenomic-data-analysis-course/9.%20For-loops.html) y [fastp2](https://sxh1136.quarto.pub/amrflows-metagenomic-data-analysis-course/9.5.%20Paired-End-Data.html)
-
-* Haz una carpeta con el nombre de practica2
-
-* Copia los archivos que están en la dirección **fastq.gz** que están en esta dirección /home/lab13/Documents/MAGH/Cahuantzi_Preneoplasias/PruebaEcologia
-
-* Crea un bash scripting
-
-* Genera un bucle for para procesar los archivos
-
-* Haz la interpretación de los resultados 
 
 ## Explicación de los archivos fastqz
 
