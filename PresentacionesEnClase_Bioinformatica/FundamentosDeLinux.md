@@ -942,23 +942,7 @@ done
 
 ```
 
-Cada vez que el comando for itera la lista de valores proporcionados, asigna a la variable $test el siguiente valor de la lista. La variable $test puede usarse como cualquier otra variable de script dentro de las sentencias del comando for. Tras la última iteración, la variable $test sigue siendo válida durante el resto del script de shell. Conserva el valor de la última iteración (a menos que se modifique).
-
-```
-#!/bin/bash
-
-for test in Alabama Alaska Arizona Arkansas California Colorado
-do
-echo "The next state is $test"
-done
-echo "The last state we visited was $test"
-test=Connecticut
-echo "Wait, now we're visiting $test"
-```
-
-La variable $test conservó su valor y nos permitió cambiarlo y usarlo fuera del bucle del comando for, como lo haría cualquier otra variable.
-
-Ejemplo con variables
+Otro ejemplo
 
 ```
 #!/bin/bash
