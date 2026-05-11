@@ -21,7 +21,8 @@ En esta sección, los estudiantes analizan los datos generados durante el compon
 
 Ligas de interés para aprender: i) **[bash](https://vinuesa.github.io/intro2linux/index.html#expresiones-regulares---una-breve-introducci%C3%B3n)** y ii) **[r](https://r4ds.had.co.nz/index.html)**.
 
-**[Video de secuenciación masiva](https://www.youtube.com/watch?v=DxTYORWo3Iw)**
+
+**[Video de secuenciación masiva en el laboratorio nacional en salud](https://www.youtube.com/watch?v=DxTYORWo3Iw)**
 
 
 ## **Profesores del curso**
