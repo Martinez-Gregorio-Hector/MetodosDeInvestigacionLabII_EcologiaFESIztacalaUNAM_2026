@@ -9,7 +9,7 @@ Dirección ip
 ssh lab13@132.248.216.138
 
 Password
-ULabo13.
+XXXXXXXX
 ```
 
 Dirigirse al a la carpeta del trabajo
